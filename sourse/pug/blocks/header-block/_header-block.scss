@@ -6,11 +6,11 @@
 	h1{
 		@include media-breakpoint-up(xxl){
 			
-			margin-top: em(19);
 			line-height: 1.2;
 		}
+		margin-top: em(19);
 		line-height: 1;
-		margin-top: em(10);
+		// margin-top: em(10);
 	}
 	&__sub-title{
 		@extend .h3;

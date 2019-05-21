@@ -15,7 +15,10 @@
 	}
 	&__logo{
 		// margin-bottom: rem(15);
-
+			img{
+				width: rem(150px);
+				height: rem(134px);
+			}
 	}
 	&__tel{
 		@extend h6;
@@ -76,7 +79,7 @@ $h: em(2);
 	position: relative;
 	z-index: 999 !important;
 	right: rem(-20px);  
-	top: rem(-12px);
+	top: rem(-8px);
 
 
 	// span:after,
