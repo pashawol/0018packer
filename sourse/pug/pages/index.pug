@@ -1,0 +1,44 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-first/_s-first.pug
+include ../blocks/s-steps/_s-steps.pug
+include ../blocks/s-complex/_s-complex.pug
+include ../blocks/s-team/_s-team.pug
+include ../blocks/s-why/_s-why.pug
+include ../blocks/s-cases/_s-cases.pug
+include ../blocks/s-logos/_s-logos.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/s-result/_s-result.pug
+include ../blocks/s-soc/_s-soc.pug
+include ../blocks/s-prices/_s-prices.pug
+include ../blocks/s-about/_s-about.pug
+include ../blocks/s-order2/_s-order2.pug
+
+block title
+	title title
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+
+		+header-block()
+	+s-first
+	+s-steps
+	+s-complex
+	+s-team
+	+s-why
+	+s-cases
+	+s-logos
+	+s-order
+	+s-result
+	+s-soc
+	+s-prices
+	+s-about
+	+s-order2
+	+s-contact()
+	+footer()
+
