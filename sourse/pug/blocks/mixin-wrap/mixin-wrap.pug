@@ -1,4 +1,5 @@
-
+- let dur = .3
+- let delay = dur * 2
 
 mixin icon(name,mod)
 	- mod = mod || ''
@@ -67,7 +68,7 @@ mixin soc()
 //- 			li.menu-item: a(href="#")= linkName
 
 mixin mnu()
-	- var nav= {"Продукция ":"#","Услуги  ":"#","Подбор септика   ":"#","Акции ":"#"," О компании  ":"#"," Доставка и оплата ":"#"," Клиентам  ":"#"," Наши работы   ":"#","Контакты ":"#"}
+	- var nav= {"Начало":"#header","Услуги":"#s-complex","О нас":"#s-about","Кейсы":"#s-cases","Заказать разбор":"#s-order","Заказать услугу":"#s-prices","Контакты":"#s-contact"}
 	+e.UL.nav
 		each linkPatch, linkName in nav
 			+e.LI.item: +e.A.link(href= linkPatch)= linkName

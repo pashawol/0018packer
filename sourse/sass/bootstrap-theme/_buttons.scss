@@ -16,7 +16,10 @@
   border: $btn-border-width solid transparent;
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
-
+  @include media-breakpoint-down(sm) {
+    padding: ($btn-padding-y  * .8) ($btn-padding-x * .8);
+  }
+  box-shadow: none !important;
   @include hover {
     color: $body-color;
     text-decoration: none;
@@ -25,22 +28,22 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    // box-shadow: $btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
     opacity: $btn-disabled-opacity;
-    @include box-shadow(none);
+    // @include box-shadow(none);
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
-    @include box-shadow($btn-active-box-shadow);
+    // // @include box-shadow($btn-active-box-shadow);
 
     &:focus {
-      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      // @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
     }
   }
 }
@@ -69,6 +72,11 @@ fieldset:disabled a.btn {
 }
 
 
+.btn-primary{
+  &:hover{
+    background-color: #ffdf5a;
+  }
+}
 //
 // Link buttons
 //
@@ -87,7 +95,7 @@ fieldset:disabled a.btn {
   &:focus,
   &.focus {
     text-decoration: $link-hover-decoration;
-    box-shadow: none;
+    // box-shadow: none;
   }
 
   &:disabled,

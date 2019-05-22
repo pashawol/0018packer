@@ -132,43 +132,30 @@ var JSCCommon = {
 	},
 
 	mobileMenu: function () {
-		// закрыть/открыть мобильное меню
-		var toggMnu = $(".toggle-menu-mobile--js").click(function () {
-
-			$(".toggle-menu-mobile--js").toggleClass("on");
-			// $("body").toggleClass("fixed");
-			$(".menu-mobile--js").toggleClass("active");
-			$("body, html").toggleClass("fixed");
-			return false;
-		});
-		$('.menu-mobile--js ul li a').on('click', function () {
-			$(".menu-mobile--js .toggle-mnu").click();
-		});
-		$(document).mouseup(function (e) {
-			var container = $(".menu-mobile--js.active");
-			if (container.has(e.target).length === 0) {
-				$(".toggle-menu-mobile--js").removeClass("on");
-				// $("body").toggleClass("fixed");
-				$(".menu-mobile--js").removeClass("active");
-				$("body, html").removeClass("fixed");
+		const menu = document.querySelector('.menu-mobile--js')
+					toggle = document.querySelector('.toggle-menu-mobile--js')
+					body = document.querySelector('body')
+					beforeHTML ='<div class="menu-mobile__before menu-mobile__before--js">' 
+		menu.insertAdjacentHTML('beforeend', beforeHTML)
+		before = document.querySelector('.menu-mobile__before--js')
+		function toggleMobileMnu(){
+			toggle.classList.toggle("on")
+			body.classList.toggle("fixed")
+			menu.classList.toggle("active");
+		} 
+		toggle.addEventListener('click', function(){
+		 toggleMobileMnu()
+		})
+		
+		before.addEventListener('click', function(){
+			if (menu.classList.contains('active')) { 
+				toggleMobileMnu()
 			}
+		})  
+		$('.menu-mobile__link').on('click', function () {
+			toggleMobileMnu()
 		});
-		// закрыть меню при горизонтальном свайпе
-		$('.menu-mobile--js.active').swipe({
-			swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-				if (direction == 'left') {
-					$(".toggle-menu-mobile--js").removeClass("on");
-					$(".menu-mobile--js.active").removeClass("active");
-					$("body, html").removeClass("fixed");
-				}
-				if (direction == 'right') {
-					$(".toggle-menu-mobile--js").removeClass("on");
-					$(".menu-mobile--js.active").removeClass("active");
-					$("body, html").removeClass("fixed");
-				}
-			},
-			triggerOnTouchEnd: false,
-		});
+ 
 	},
 
 
@@ -195,13 +182,11 @@ var JSCCommon = {
 
 			$.get(imgURL, function (data) {
 				// Get the SVG tag, ignore the rest
-				var $svg = $(data).find('svg');
-
+				var $svg = $(data).find('svg'); 
 				// Add replaced image's classes to the new SVG
 				if (typeof imgClass !== 'undefined') {
 					$svg = $svg.attr('class', imgClass + ' replaced-svg');
-				}
-
+				} 
 				// Remove any invalid XML tags as per http://validator.w3.org
 				$svg = $svg.removeAttr('xmlns:a');
 
@@ -274,25 +259,7 @@ jQuery(document).ready(function ($) {
 	JSCCommon.CustomYoutubeBlock();
 
 
-
-
-	var url = document.location.href;
-	$.each($(".top-nav__nav a "), function () {
-
-		if (this.href == url) {
-			if ($(this).hasClass("top-nav__link") == true) {
-
-				$(this).addClass('top-nav__link-active');
-			}
-			if ($(this).hasClass("footer__link") == true) {
-
-				$(this).addClass('footer__link-active');
-			}
-
-		};
-
-	});
-
+ 
 
 	// / закрыть меню при горизонтальном свайпе
 	// /закрыть/открыть мобильное меню
@@ -333,14 +300,14 @@ jQuery(document).ready(function ($) {
 
 
 	// листалка по стр
-	// $(" .top-nav a").click(function () {
-	//        var elementClick = $(this).attr("href");
-	//        var destination = $(elementClick).offset().top;
+	$(" .menu-mobile__link").click(function () {
+	       var elementClick = $(this).attr("href");
+	       var destination = $(elementClick).offset().top;
 
-	//            $('html, body').animate({ scrollTop: destination }, 1100);
+	           $('html, body').animate({ scrollTop: destination }, 1100);
 
-	//        return false;
-	//    });
+	       return false;
+	   });
 
 
 

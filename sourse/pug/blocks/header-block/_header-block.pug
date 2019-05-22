@@ -1,24 +1,29 @@
-- let dur = .3
-- let delay = .6
+
 mixin header-block()
 	// start header-block
-	+b.header-block#header-block
+	+b.header-block#header-block(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`) 
 		.container
-			+e.head
-				h1
-					span.blockWithAnimate
-						span.d-block(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay}s`) Создаем имидж 
-					span.blockWithAnimate
-						span.d-block(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur}s`) лидера рынка
-				+e.sub-title.blockWithAnimate
-					span.d-block(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 2}s`) с помощью упаковки
-				+e.text.blockWithAnimate
-					span.d-block(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 3}s`) Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
-				+e.btn-wrap.blockWithAnimate
-					+e.btn(href="#" class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 4}s`) Стать лидером рынка
-			+e.foot.blockWithAnimate(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 5}s`) 
-				+e.foot-item Сайты
-				+e.foot-item Брендинг
-				+e.foot-item SMM
-				+e.foot-item Реклама  
+			+e.head.blockWithAnimate
+				+e.logo.d-sm-none
+					img.res-i.lazy(src="#" data-src="img/logo-dark.png", alt="")
+				div(class="wow slideInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 2}s`) 
+					h1
+						
+						span.d-block Создаем имидж
+						span.d-block лидера рынка
+					+e.sub-title с помощью упаковки
+					+e.text.d-none.d-sm-block Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
+					.blockWithAnimate.d-sm-none
+						+e.foot(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 6}s`) 
+							+e.foot-item Сайты
+							+e.foot-item Брендинг
+							+e.foot-item SMM
+							+e.foot-item Реклама 
+					+e.btn(href="#" class="wow slideInUp"  ) Стать лидером рынка
+			.blockWithAnimate.d-none.d-sm-block
+				+e.foot(class="wow slideInUp" data-wow-duration=`${dur}s` data-wow-delay=`${delay + dur * 6}s`) 
+					+e.foot-item Сайты
+					+e.foot-item Брендинг
+					+e.foot-item SMM
+					+e.foot-item Реклама  
 	// end header-block
