@@ -1,9 +1,45 @@
 mixin s-first()
 	// start s-first
 	+b.s-first.section#s-first&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 s-first
-				
-			.row
+		.container 
+			+e.row.row
+				.col-xl-6.order-xl-last.text-xl-left.text-center(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay   * 4.5}s`) 
+
+					+e.sub-title В&nbsp;первую очередь&nbsp;мы
+					h2 Упаковываем точки соприкосновения потенциального 
+						|
+						span.underline  клиента с&nbsp;вашим  продуктом
+				.col-xl-6
+					.row
+						mixin item(t, l,del)
+							+e.col.col-lg-12.col-md-3
+								+e.item(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)&attributes(attributes)
+									+e.circle= t
+										.before(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * del}s`)
+									+e.text
+										block
+										div: +e.label= l
+								// /+e.item
+
+						+item("РЕКЛАМА","упаковываем","1")( )
+							+e.caption--sm Потенциальный клиент видит вашу рекламу 
+						+e.col.col-lg-12.col-md-3
+							+e.item(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 2}s`) 
+								+e.circle Сайт, 
+									br
+									|  соц. сеть, др. канал
+									//- block
+									.before(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 3.5}s`)
+								+e.text
+									+e.caption Посещает вашу площадку с&nbsp;линейкой продукции/услуг
+									div: +e.label упаковываем
+							// /+e.item
+						+item("Бренд","упаковываем","3.5")(data-wow-delay=`${delay * 2.5 }s`)
+							+e.caption Формирует впечатление о&nbsp;вашем бизнесе и&nbsp;его продукте
+						+item("$","")(class="s-first__item--dark" data-wow-delay=`${delay * 3.5}s`)
+							+e.caption--sm Клиент совершает покупку 
+								| 
+								strong если ваш бизнес вызывает доверие, а&nbsp;УТП отвечает его потребностям.
+
+
 	// end s-first

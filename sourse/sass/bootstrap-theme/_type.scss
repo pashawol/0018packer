@@ -20,13 +20,43 @@ h1, .h1 {
   @include media-breakpoint-up(xxl) {
     font-size: $h1-font-size;
   }
-  @include font-size($h1-font-size *.90);
+  @include font-size($h1-font-size *.9);
 }
-h2, .h2 { @include font-size($h2-font-size); }
-h3, .h3 { @include font-size($h3-font-size); }
-h4, .h4 { @include font-size($h4-font-size); }
-h5, .h5 { @include font-size($h5-font-size); }
-h6, .h6 { @include font-size($h6-font-size); }
+h2, .h2 { 
+  @include media-breakpoint-up(xxl) {
+    font-size: $h2-font-size;
+  }
+      @include media-breakpoint-up(sm) {
+
+        
+        @include font-size($h2-font-size *.9);
+      }
+  @include font-size($h2-font-size *.75);
+ }
+h3, .h3 { 
+  // @include media-breakpoint-up(xxl) {
+  //   font-size: $h3-font-size;
+  // }
+  @include font-size($h3-font-size);
+ }
+h4, .h4 { 
+  // @include media-breakpoint-up(xxl) {
+  //   font-size: $h4-font-size;
+  // }
+  @include font-size($h4-font-size *1);
+ }
+h5, .h5 { 
+  // @include media-breakpoint-up(xxl) {
+  //   font-size: $h5-font-size;
+  // }
+  @include font-size($h5-font-size * 1);
+ }
+h6, .h6 { 
+  @include media-breakpoint-up(xxl) {
+    font-size: $h6-font-size;
+  }
+  @include font-size($h6-font-size *1);
+ }
 
 .lead {
   @include font-size($lead-font-size);

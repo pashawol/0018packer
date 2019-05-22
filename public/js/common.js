@@ -424,7 +424,12 @@ jQuery(document).ready(function ($) {
 
 	// wowAnim.eq(i).attr("data-wow-delay", i*.1*2 + "s");
 
-	   var wow = new WOW({ mobile: false });
+		 var wow = new WOW({ mobile: false ,
+			callback:     function(box) {
+				// the callback is fired every time an animation is started
+				// the argument that is passed in is the DOM node being animated
+			},
+		});
 	        wow.init();
  
 	// });

@@ -1,27 +1,234 @@
 .s-first {
-		 
+	&__row {
+		align-items: center;
+	}
+
+	&__item {
+		@include media-breakpoint-up(xl){
+			text-align: left;
+			flex-direction: row;
+		}
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+		text-align: center;
+		font-size: $small;
+
+		@include media-breakpoint-up(xxl) {
+
+			max-width: rem(450);
+		}
+		@include media-breakpoint-up(lg) {
+
+			max-width: rem(480);
+		}
+
+		&--dark {
+			.s-first__circle {
+				background-color: $body-color;
+				font-size: rem(30px);
+				color: $primary;
+			}
+
+			.s-first__label {
+
+				display: none;
+			}
+		}
+	}
+
+	&__col {
+		&:not(:last-child) { 
+			margin-bottom: rem(100);
+			.before {
+				content: '';
+				position: absolute;
+				background-image: url(../img/arrow-foot.svg);
+			
+				background-size: cover;
+				background-position: center bottom;
+				background-repeat: no-repeat;
+				height: rem(100);
+				@include media-breakpoint-up(xl){
+					height: rem(200);
+					
+					transform: translateX(rem(48)) rotate(-45deg)  ;
+					top: 68%;
+					left: 100%;
+				}
+				@include media-breakpoint-up(lg){
+
+					left: 200%;
+				}
+				@include media-breakpoint-up(md) {
+
+					left: 150%;
+					// margin-left: -50%;
+					
+					top: -3%;
+					transform:  translateX(100%) rotate(-90deg);
+					// width: rem(25);
+					margin-left: 0;
+				}
+				margin-left: rem(4);
+				width: rem(20);
+				top: 110%;
+			}
+		} 
+ 
+
+		@include media-breakpoint-up(xl){
+		&:nth-child(2) {
+			.before{
+				left: auto;
+				top: 70%;
+				right: 100%;
+
+					transform: translateX(rem(-48)) rotate(45deg) !important;
+				}
+			}
+		}
+		@include media-breakpoint-up(lg) {
+
+			&:nth-child(even) {
+				.s-first__item{ 
+					margin-left: auto;
+				}
+			}
+		}
+
+	
+	}
+
+	&__circle {
+		//  min-width: rem(100);
+		@include media-breakpoint-up(md) {
+
+			position: relative;
+		}
+		width: rem(100);
+		height: rem(100);
+		font-weight: bold;
+		flex-shrink: 0;
+		padding-left: rem(11);
+		padding-right: rem(11);
+		font-size: rem(14);
+		border-radius: 50%;
+		background-color: $primary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1;
+		font-weight: 700;
+		@include media-breakpoint-up(xl) {
+
+			margin-right: rem(31);
+			margin-bottom: 0;
+		}
+		margin-bottom: rem(31);
+	}
+
+	&__label {
+		font-size: rem(10);
+		border-radius: rem(5px);
+		background-color: $warning;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #ffffff;
+		display: inline-block;
+		padding: em(12) em(18) em(10);
+		line-height: 1;
+		margin-bottom: em(10);
+		width: auto;
+		flex-shrink: 1;
+		flex-grow: 1;
+	}
+
+	&__text {
+		@include media-breakpoint-up(xl){
+			display: flex;
+
+			flex-direction: column-reverse;
+		}
+
+	}
+
+	&__caption {
+		line-height: 1.56;
+		max-width: rem(340);
+		@include media-breakpoint-up(md) {
+			max-width: rem(300);
+
+			&--sm {
+				max-width: rem(240);
+				
+			}
+		}
+	}
+
+	&__sub-title {
+		@extend h5;
+		font-weight: 900;
+		color: $warning;
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: em(25);
+		}
+		@include media-breakpoint-up(md) {
+
+			margin-bottom: em(15);
+		}
+		margin-bottom: em(5);
+	}
+
+	h2 {
+		
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 0;
+			margin-left: 0;
+		}
+		margin-bottom: rem(78);
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em(260);
+	}
+
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
+
 	@include media-breakpoint-down(lg) {}
+
 	@include media-breakpoint-down(md) {}
+
 	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+
+	@include media-breakpoint-down(xs) {}
 
 }

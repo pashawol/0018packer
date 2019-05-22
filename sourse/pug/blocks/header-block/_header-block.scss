@@ -1,5 +1,6 @@
 .header-block {
 	display: block;
+	margin-bottom: 0;
 	@include media-breakpoint-up(sm) {
 
 		color: #ffffff;
