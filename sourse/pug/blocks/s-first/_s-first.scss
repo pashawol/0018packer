@@ -1,4 +1,15 @@
 .s-first {
+	 
+		padding-top: rem(50px);
+		padding-bottom: rem(50px); 
+		@include media-breakpoint-up(xxl) {
+			padding-top: rem(150);
+			padding-bottom: rem(140);
+		}
+		@include media-breakpoint-up(md) {
+			padding-top: rem(100);
+			padding-bottom: rem(100);
+		} 
 	&__row {
 		align-items: center;
 	}

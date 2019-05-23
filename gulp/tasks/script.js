@@ -9,6 +9,7 @@ module.exports = function (){
 }); 
   
   $.gulp.task('scripts', function() {
+	 
 	return $.gulp.src('sourse/js/common.js')
 	.pipe($.gulp.dest('public/js'))
 	.pipe($.browserSync.stream());

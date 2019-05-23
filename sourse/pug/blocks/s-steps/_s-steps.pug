@@ -1,9 +1,51 @@
 mixin s-steps()
 	// start s-steps
-	+b.s-steps.section#s-steps&attributes(attributes)
+	+b.s-steps.section.bg-light#s-steps&attributes(attributes)
+		+b.scrollblock(data-paroller-factor="0.3" data-paroller-type="foreground")
+			+e.text  упаковщики
 		.container
 			+b.section-title.text-center
-				h2 s-steps
-				
-			.row
+				h2 Упаковка бизнеса состоит 
+					|
+					span.underline из&nbsp;3&nbsp;этапов 
+			+e.slider.slider--js.swiper-container
+				.swiper-wrapper
+					mixin item(i,c,t,p)
+						+e.slide.swiper-slide
+							.row
+								+e.col.col-6.d-none.d-md-block
+									+e.img-wrap
+										img.res-i.lazy(src="#", data-src=`img/step-${i}.jpg` alt="")
+								.col
+									+e.left-block
+										block
+									
+						// /+e.slide.swiper-slide
+					+item("1")
+						+e.head.img-bg
+							img.lazy-bg(src="#" , data-src=`img/step-1.jpg` , alt="")
+							+e.head-wrap
+								+e.counter 1 этап
+								+e.title Анализ текущего состояния упаковки бизнеса и&nbsp;поиск уязвимых мест
+						+e.text Осуществляем детальный разбор всех точек соприкосновения вашего бизнеса с&nbsp;клиентом, ищем уязвимые места, изучаем позиционирование, прорабатываем целевую аудиторию и&nbsp;исследуем конкурентов.
+					+item("2")
+						+e.head.img-bg
+							img.lazy-bg(src="#" , data-src=`img/step-2.jpg` , alt="")
+							+e.head-wrap
+								+e.counter 2 этап
+								+e.title Определение точек роста для формирования имиджа лидера рынка
+						+e.text На&nbsp;основе полученных данных формируем аудиторский отчет в&nbsp;котором намечаем стратегию развития, предоставляем рекомендации по&nbsp;усилению упаковки компании и&nbsp;формированию имиджа лидера в&nbsp;своей нише.
+					+item("3")
+						+e.head.img-bg
+							img.lazy-bg(src="#" , data-src=`img/step-3.jpg` , alt="")
+							+e.head-wrap
+								+e.counter 3 этап
+								+e.title Внедрение необходимых услуг по&nbsp;упаковке 
+									br
+									|  в&nbsp;ваш бизнес
+						+e.text После изучения аудиторского отчета вы&nbsp;видите реальные на&nbsp;сегодняшний день слабые места вашего бизнеса в&nbsp;упаковке и&nbsp;можете принять осознанное решение по&nbsp;внедрению комплекса или выборочных услуг по&nbsp;развитию имиджа лидера вашей компании в&nbsp;своей нише.
+ 
+			.control-wrap.d-md-none
+				+arrow()
+				.swiper-pagination
 	// end s-steps

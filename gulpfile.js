@@ -6,6 +6,7 @@ global.$ = {
 	bourbon: require('node-bourbon'),
 	cleanCSS: require('gulp-clean-css'),
 	gulpif: require('gulp-if'), 
+	clean: require('gulp-clean'),
 	envDev: false,
 	sassGlob: require('gulp-sass-glob'),
 	bulkSass: require('gulp-sass-bulk-import'),
@@ -22,6 +23,6 @@ $.path.tasks.forEach(function (taskPath){
 		
 		 
 $.gulp.task('default', $.gulp.series(
-	$.gulp.parallel('svg','pug','scripts:lib','scripts','file'),
+	$.gulp.parallel( 'svg','pug','scripts:lib','scripts' ),
 	$.gulp.parallel('sass','watch','serv')
 	));

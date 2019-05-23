@@ -34,16 +34,16 @@ h2, .h2 {
   @include font-size($h2-font-size *.75);
  }
 h3, .h3 { 
-  // @include media-breakpoint-up(xxl) {
-  //   font-size: $h3-font-size;
-  // }
-  @include font-size($h3-font-size);
+  @include media-breakpoint-up(xxl) {
+    font-size: $h3-font-size;
+  }
+  @include font-size($h3-font-size * .9);
  }
 h4, .h4 { 
-  // @include media-breakpoint-up(xxl) {
-  //   font-size: $h4-font-size;
-  // }
-  @include font-size($h4-font-size *1);
+  @include media-breakpoint-up(xxl) {
+    font-size: $h4-font-size;
+  }
+  @include font-size($h4-font-size *.98);
  }
 h5, .h5 { 
   // @include media-breakpoint-up(xxl) {
