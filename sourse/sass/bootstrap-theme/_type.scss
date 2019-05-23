@@ -65,8 +65,11 @@ h6, .h6 {
 
 // Type display classes
 .display-1 {
-  @include font-size($display1-size);
-  font-weight: $display1-weight;
+  @include media-breakpoint-up(xxl){
+      font-size: $display1-size;
+  }
+  @include font-size($display1-size * .9);
+ 
   line-height: $display-line-height;
 }
 .display-2 {

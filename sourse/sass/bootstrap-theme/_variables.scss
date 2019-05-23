@@ -73,7 +73,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         #f6f6f6 !default;
-$dark:          $gray-800 !default;
+$dark:          #1d1b1d !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -86,7 +86,7 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    // "dark":       $dark
+    "dark":       $dark
   ),
   $theme-colors
 );
@@ -162,7 +162,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $dark !default;
 
 
 // Links

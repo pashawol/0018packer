@@ -13,7 +13,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top  - lazyImage.parentElement.clientHeight * 2)<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.parentElement.clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+							if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight)<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -54,7 +54,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top - lazyImage.parentElement.clientHeight ) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.parentElement.clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+							if (((lazyImage.getBoundingClientRect().top -  lazyImage.closest(".block-with-lazy").clientHeight ) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom +  lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
@@ -266,7 +266,7 @@ jQuery(document).ready(function ($) {
 				watchOverflow: true,
 				spaceBetween: 0, 
 				touchStartForcePreventDefault: true,
-				autoHeight: true, 
+				// autoHeight: true, 
 				// autoplay: {
 				// 	delay: 3000,
 				// },
@@ -285,9 +285,9 @@ jQuery(document).ready(function ($) {
 	}
 
 	
-	sliderSection('.section', '.slider--js', '.swiper-pagination')
+	sliderSection('.section.block-with-lazy', '.slider--js', '.swiper-pagination')
 
-	$('.scrollblock').paroller();  
+	$('.scrollblock--js').paroller();  
 
 
 	   var wow = new WOW({ mobile: false });

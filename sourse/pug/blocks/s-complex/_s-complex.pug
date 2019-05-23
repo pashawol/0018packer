@@ -1,9 +1,48 @@
 mixin s-complex()
 	// start s-complex
-	+b.s-complex.section#s-complex&attributes(attributes)
+	+b.s-complex.section.block-with-lazy#s-complex&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-complex
-				
+				h2(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`) Комплекс услуг по&nbsp;упаковке, 
+					|
+					span.underline которые мы&nbsp;внедряем
+				+e.text(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`) Полное представление о&nbsp;том, какую услугу необходимо внедрить в&nbsp;ваш бизнес вы&nbsp;получите из&nbsp;детального разбора
 			.row
+				mixin item(i, c)
+					+e.col.col-lg-3.col-sm-6&attributes(attributes)
+						+e.item(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2 * c}s`)
+							+e.img-wrap
+								img.lazy.res-i(src="#" data-src=`img/servise-${i}.png`, alt="")
+							+e.caption
+								block
+					// /+e.col.col-3
+				+item(1, 1 )
+					+e.title
+						span Сайт
+					+e.text Посадочная страница, Корпоративный сайт или интернет-магазин&nbsp;&mdash; подберем наиболее подходящее решение индивидуально под ваш продукт.
+				+item(2, 2 )
+					+e.title
+						span Брендинг
+					+e.text Формируем позиционирование, придумываем название, разрабатываем логотип и&nbsp;фирменный стиль, а&nbsp;также элементы полиграфической и&nbsp;сувенирной продукции.
+				+item(3, 3 )
+					+e.title
+						span Контекстная 
+						| 
+						span реклама
+					+e.text Создаем рекламную кампанию, полностью берем на&nbsp;себя управление, оптимизируем бюджет и&nbsp;ежемесячно присылаем отчеты.
+				+item(4, 4 )
+					+e.title
+						span SMM
+					+e.text Ведём ваши социальные сети: разрабатываем стратегию, создаем уникальный контент, запускаем рекламу и&nbsp;общаемся с&nbsp;клиентами, привлекаем лидеров мнений.
+				+e.col.col-lg-6
+					+e.item( class="wow fadeInUp"  data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2 * 5 }s`)
+						+e.lead-title  А также скоро...
+						+e.text Пока мы&nbsp;усиленно обучаемся и&nbsp;практикуемся в&nbsp;этих направлениях. Совсем скоро мы&nbsp;внедрим услуги по разработке видео-контента и&nbsp;презентаций, чтобы выжить максимум из&nbsp;упаковки бизнеса.
+				+item(5, 6)
+					+e.title--gray
+						span Видео-контент 
+				+item(6, 7)
+					+e.title--gray
+						span  Презентации 
+		block
 	// end s-complex

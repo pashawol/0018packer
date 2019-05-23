@@ -1,17 +1,17 @@
 mixin s-steps()
 	// start s-steps
-	+b.s-steps.section.bg-light#s-steps&attributes(attributes)
-		+b.scrollblock(data-paroller-factor="0.3" data-paroller-type="foreground")
+	+b.s-steps.section.block-with-lazy.bg-light#s-steps&attributes(attributes)
+		+b.scrollblock.scrollblock--js(data-paroller-factor="0.3" data-paroller-type="foreground")
 			+e.text  упаковщики
 		.container
-			+b.section-title.text-center
+			+b.section-title.text-center(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
 				h2 Упаковка бизнеса состоит 
 					|
 					span.underline из&nbsp;3&nbsp;этапов 
 			+e.slider.slider--js.swiper-container
 				.swiper-wrapper
 					mixin item(i,c,t,p)
-						+e.slide.swiper-slide
+						+e.slide.swiper-slide(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
 							.row
 								+e.col.col-6.d-none.d-md-block
 									+e.img-wrap
@@ -45,7 +45,5 @@ mixin s-steps()
 									|  в&nbsp;ваш бизнес
 						+e.text После изучения аудиторского отчета вы&nbsp;видите реальные на&nbsp;сегодняшний день слабые места вашего бизнеса в&nbsp;упаковке и&nbsp;можете принять осознанное решение по&nbsp;внедрению комплекса или выборочных услуг по&nbsp;развитию имиджа лидера вашей компании в&nbsp;своей нише.
  
-			.control-wrap.d-md-none
-				+arrow()
-				.swiper-pagination
+			+control-sl()
 	// end s-steps
