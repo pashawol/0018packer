@@ -1,6 +1,9 @@
 .s-why {
 	position: relative;
 	z-index: 5;
+	@include media-breakpoint-up(xxl) {
+		// padding-bottom: rem(60);
+	}
 	.section-title{
 		margin-left: auto;
 		margin-right: auto;
@@ -31,7 +34,7 @@
 	justify-content: center;
 	@include media-breakpoint-up(md) {
 
-		margin-bottom: rem(20);
+		margin-bottom: rem(30);
 	}
 	margin-bottom: rem(10);
 	@include media-breakpoint-up(lg) {
@@ -44,7 +47,7 @@
 &__title{
 	@include media-breakpoint-up(md) {
 
-		margin-bottom: rem(20);
+		margin-bottom: rem(30);
 	}
 	margin-bottom: rem(10);
 }

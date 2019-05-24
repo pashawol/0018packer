@@ -11,27 +11,27 @@ html {
 
 	// background-image: url(../screen/lend_v2.jpg);
 }
-.main-wrapper{
-	&::before{
-		// content:  url(../screen/lend_v2.jpg);
-		// opacity:.7; 
-		top: 0;
-		@include a-cent(x);
-		display: block;
-		pointer-events: none;
-		z-index: 2000;
-	} 
-	min-height: 10000px; 
-}
+		body {
+			// opacity: .7;
+			background-color: transparent;
+		}
 .header-block{
 	.container{
 		min-height: 1000px !important;
 	}
 }
-body {
-	// opacity: .7;
-	background-color: transparent;
-}
+// .main-wrapper{
+// 	&::before{
+// 		content:  url(../screen/lend_v2.jpg);
+// 		opacity:.7; 
+// 		top: 0;
+// 		@include a-cent(x);
+// 		display: block;
+// 		pointer-events: none;
+// 		z-index: 2000;
+// 	} 
+// 	min-height: 10000px; 
+// }
 .link-animate{
 
 	@include mt;

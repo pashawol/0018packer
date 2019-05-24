@@ -1,8 +1,357 @@
 .s-cases {
+	.section-title{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em(365);
+		&__text{
+			padding-top: .5rem;
+			font-weight: 900;
+			padding-bottom: .4rem;
+		}
+		@include media-breakpoint-up(xl) {
+
+			padding-bottom: em(25);
+		}
+		@include media-breakpoint-down(sm){
+			padding-bottom: em(0);
+
+		}
+	}
+
+	&__slide{
+		// height: 800px;
+		position: relative;
+		z-index: 2;
+		color: #ffffff;
+		display: flex;
+		background-color: $body-color;
+	}
+	&__bg{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		height: 100%;
+		background-attachment: fixed;
+
+	}
+	&__title{
+		@extend h2;
+		font-weight: 900;
+		margin-bottom: em(9);
+	}
+	&__caption{
+		position: relative;
+		max-width: rem(600);
+	}
+	&__container{
+		min-height: 100%;
+		position: relative;
+		display: flex;
+		// align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		// padding-top: rem(150);
+		@include media-breakpoint-up(md) {
+			
+			padding-top: rem(150);
+			padding-bottom: rem(150);
+		}
+		padding-top: rem(50);
+		z-index: 2;
+	}
+
+	&__label{
+		display: inline-block;
+		@extend h5;
+		font-weight: 900;
+		background-color: #665f5a;
+		padding: em(5) em(9);
+		margin-left: rem(7px);
+		margin-right: rem(7px);
+		margin-bottom: rem(14px);
+
+	}
+	&__labels{
+		margin-left: rem(-7px);
+		margin-right: rem(-7px);
+		padding-bottom: rem(25);
+	}
+	&__text{
+		max-width: 500px;
+		line-height: 1.8;
+		padding-bottom: rem(40);
+	}
+	&__img{
+		position: absolute;
+	 
+	 
+	}
+	&__slide--1 	&__img{
+	 
+		&--left{
+			// left: 0;
+			left: auto;
+			right: 100%;
+			bottom: 0;
+			width: rem(386);
+				height: rem(334);
+			// margin-right: re;
+			@include media-breakpoint-up(lg) {
+
+				transform: translateX(25%);
+				width: rem(386);
+				height: rem(334);
+			}
+			transform: translateX(55%);
+			width: rem(386 * .9);
+			height: rem(334 * .9);
+			img{
+					width: 100%;
+					height: 100%;
+
+			}
+		}
+		&--phone{ 
+			
+			@include media-breakpoint-up(lg) {
+				bottom: 0;
+				top: auto;
+				transform: translate(-15%, 19%);
+			}
+			@include media-breakpoint-up(md) {
+				
+				left: rem(640);
+				
+				transform: translate(-15%, -50%);
+				top: 50%;
+			} 
+							@include media-breakpoint-up(sm) {
+
+								transform: translateX(-3% );
+							}
+			img{
+				width: rem(320px);
+				height: rem(551px);
+
+			}
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				// margin-top: -60px;
+				margin-bottom: -100px;
+				margin-top: rem(10);
+				z-index: 2;
+			}
+		}
+		
+		&--desktop{ 
+			
+			left: rem(660);
+			top: rem(90);
+			z-index: -1;
+			transform: translateX(2%);
+			// transform: translate(-15%, 19%);
+			img{
+				width: rem(945px);
+				height: rem(718px);
+
+			}
+		}
+
+		
+	
+		
+		&--right{ 
+			z-index: 3;
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
+			display: none;
+		 
+		 
+			bottom: 0; 
+			
+			@include media-breakpoint-up(lg) {
+				
+				width: rem(660px);
+				height: rem(216px);
+				transform: translateX(-57%);
+			}
+			left: 100%;
+			@include media-breakpoint-up(sm) {
+
+				transform: translateX(-60%);
+			}
+			transform: translateX(-60%);
+			width: rem(455px);
+				height: rem(280px);
+			img{
+				width: 100%;
+				height: 100%;
+
+			}
+		}
+		&--sm{
+			display: block;
+		}
+
+	}
+	&__slide--2 &__label{
+		background-color: #0a6494;
+	}
+	&__slide--2 	&__img{
+	 
+		&--left{
+			// left: 0;
+			left: auto;
+			right: 100%;
+			@include media-breakpoint-up(md) {
+
+				bottom: rem(70);
+				top: auto;
+				transform: translateX(-5%);
+				width: rem(248);
+				height: rem(306);
+			}
+			transform: translateX(85%);
+			top:30%;
+			z-index: -1;
+
+			// margin-right: re;
+			width: rem(248 * .8);
+			height: rem(306 * .8);
+			img{
+				width: 100%;
+				height:100%;
+
+			}
+		}
+		&--phone{ 
+			@include media-breakpoint-up(lg) {
+
+				left: rem(440);
+			}
+			@include media-breakpoint-up(md) {
+
+				left: rem(320);
+				bottom: rem(24);
+			}
+			width: rem(731px);
+				height: rem(480px);
+			img{
+				width: 100%;
+				height:100%;
+
+			}
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				// margin-top: -60px;
+				// margin-bottom: -30px;
+				margin-top: rem(10);
+				z-index: 2;
+				left: -10%;
+				// transform: translateX(-50%);
+			}
+			@include media-breakpoint-down(xs) {
+				left: -90px;
+				width: rem(731px * .8);
+				height: rem(480px * .8);
+												// left: 0;
+											}
+		}
+		
+		&--desktop{ 
+			
+			left: rem(584);
+			@include a-cent(y);
+			z-index: -1;
+			margin-top: 2%;
+			// transform: translate(-15%, 19%);
+			img{
+				width: rem(915px);
+				height: rem(574px);
+
+			}
+		}
+
+		
+		&--right{ 
+			
+			left: auto;
+			left: 100%;
+			@include media-breakpoint-up(md) {
+				
+				top: rem(54);
+				transform: translateX(-17%);
+				width: rem(391px);
+				height: rem(375px);
+			}
+			width: rem(391px * .8);
+				height: rem(375px * .8);
+			top: rem(180%);
+			pointer-events: none;
+			z-index: 3;
+			transform: translateX(-47%);
+			img{
+				width: 100%;
+				height:100%;
+			}
+		}
+
+	}
+	 
+	&__slide--3 	&__img{
+	  
+		&--phone{ 
+			@include media-breakpoint-up(md) {
+
+				@include a-cent(y);
+				margin-top: 5%;
+			}	
+		@include media-breakpoint-up(xl) {
+
+			left: rem(615);
+		}
+		left: rem(465);
+		width: rem(669px);
+		height: rem(797px);
+			img{
+				width: 100%;
+				height: 100%;	
+			}
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				// margin-top: -60px;
+				margin-bottom: -30px;
+				 
+				left: 30%;
+				transform: translateX(-50%);
+			}
+			@include media-breakpoint-down(xs) {
+				left: 40%;
+												// left: 0;
+												width: rem(669px * .6);
+												height: rem(797px * .6);
+											}
+		}
+		 
+
+	}
+	 
+
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+		width: rem(260);
+	}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(md) {
+		text-align: left;
+	}
+	text-align: center;
 	@include media-breakpoint-up(sm) {}
 	@include media-breakpoint-up(xs) {}
 	

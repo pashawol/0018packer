@@ -17,7 +17,7 @@
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
   @include media-breakpoint-down(sm) {
-    padding: ($btn-padding-y  * .8) ($btn-padding-x * .8);
+    padding: ($btn-padding-y  * .62) ($btn-padding-x * .8);
   }
   box-shadow: none !important;
   @include hover {
