@@ -262,7 +262,7 @@ jQuery(document).ready(function ($) {
 		// slider
 		$(sec).each(function () {
 			var swiper4 = new Swiper($(this).find(sl), { 
-				slidesPerView: 1,
+				slidesPerView: 'auto',
 				watchOverflow: true,
 				spaceBetween: 0, 
 				touchStartForcePreventDefault: true,
@@ -285,7 +285,48 @@ jQuery(document).ready(function ($) {
 	}
 
 	
-	sliderSection('.section.block-with-lazy', '.slider--js', '.swiper-pagination')
+	sliderSection('.section', '.slider--js', '.swiper-pagination')
+	
+	function sliderTeam(sec, sl, pag) {
+
+		// slider
+		$(sec).each(function () {
+			var swiper4 = new Swiper($(this).find(sl), { 
+				slidesPerView: 1,
+				watchOverflow: true,
+				spaceBetween: 0, 
+				touchStartForcePreventDefault: true,
+				// autoHeight: true, 
+				// autoplay: {
+				// 	delay: 3000,
+				// },
+				pagination: {
+					el: $(this).find(pag),
+					clickable: true,
+				},
+				navigation: {
+					nextEl: $(this).find('.swiper-button-next'),
+					prevEl: $(this).find('.swiper-button-prev'),
+				},
+				loop: true,  
+				breakpointsInverse: true, 
+				// Responsive breakpoints
+				breakpoints: {
+				 
+					576: {
+						slidesPerView: 2, 
+					},
+					// when window width is <= 640px
+					991: {
+						slidesPerView: 4, 
+					}
+				}
+			});
+		})
+	}
+
+	
+	sliderTeam('.s-team', '.s-team__slider', '.swiper-pagination')
 
 	$('.scrollblock--js').paroller();  
 

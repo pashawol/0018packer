@@ -1,7 +1,7 @@
 mixin s-steps()
 	// start s-steps
 	+b.s-steps.section.block-with-lazy.bg-light#s-steps&attributes(attributes)
-		+b.scrollblock.scrollblock--js(data-paroller-factor="0.3" data-paroller-type="foreground")
+		+b.scrollblock.scrollblock--js(data-paroller-factor="0.2" data-paroller-type="foreground")
 			+e.text  упаковщики
 		.container
 			+b.section-title.text-center(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
@@ -13,7 +13,7 @@ mixin s-steps()
 					mixin item(i,c,t,p)
 						+e.slide.swiper-slide(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
 							.row
-								+e.col.col-6.d-none.d-md-block
+								+e.col.col-6.d-none.d-lg-block
 									+e.img-wrap
 										img.res-i.lazy(src="#", data-src=`img/step-${i}.jpg` alt="")
 								.col

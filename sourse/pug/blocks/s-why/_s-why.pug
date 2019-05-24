@@ -1,9 +1,39 @@
 mixin s-why()
 	// start s-why
-	+b.s-why.section.block-with-lazy#s-why&attributes(attributes)
+	+b.s-why.section.block-with-lazy.bg-primary#s-why&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-why
+				h2 
+					span.underline Почему клиенты доверяют нам 
+					.
+						формирование имиджа
+						своей&nbsp;компании?
 				
 			.row
+				mixin item(i, t)
+					+e.col.col-lg-6.col-sm-6&attributes(attributes)
+						+e.item(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2 * i}s`)
+							+e.head
+								+e.img-wrap
+									img.lazy.res-i(src="#" data-src=`img/why-${i}.png`, alt="")
+								+e.title= t
+							block
+					// /+e.col.col-6
+				+item("1","Мы за гибкость")
+					+e.text.
+						В&nbsp;штате работают только самые необходимые кадры,
+						остальных мы&nbsp;собираем в&nbsp;команду под конкретный проект,
+						поэтому мы&nbsp;можем выполнить любую задачу.
+				+item("2","Мы за ответственость")
+					+e.text.
+						Сохраняем каждый этап производства. Сгоревший диск
+						или сломанный компьютер не&nbsp;сорвут оговоренные
+						сроки проекта.
+				+item("3","Мы за качество")
+					+e.text.
+						В&nbsp;штате работают только самые необходимые кадры,
+						остальных мы&nbsp;собираем в&nbsp;команду под конкретный проект,
+						поэтому мы&nbsp;можем выполнить любую задачу.
+				+item("4","Мы за скорость")
+					+e.text Соблюдаем сроки, платим за&nbsp;просрочку и&nbsp;фиксируем этот пункт в&nbsp;договоре.
 	// end s-why

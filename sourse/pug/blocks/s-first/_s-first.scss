@@ -50,7 +50,14 @@
 
 	&__col {
 		&:not(:last-child) { 
+			@include media-breakpoint-up(lg) {
+
+			}
 			margin-bottom: rem(100);
+			@include media-breakpoint-only(lg) {
+
+				margin-bottom: rem(20);
+			}
 			.before {
 				content: '';
 				position: absolute;
@@ -138,7 +145,7 @@
 			margin-right: rem(31);
 			margin-bottom: 0;
 		}
-		margin-bottom: rem(31);
+		margin-bottom: rem(11);
 	}
 
 	&__label {
@@ -200,7 +207,11 @@
 			margin-bottom: 0;
 			margin-left: 0;
 		}
-		margin-bottom: rem(78);
+		@include media-breakpoint-up(md) {
+
+			margin-bottom: rem(78);
+		}
+		margin-bottom: rem(38);
 		margin-left: auto;
 		margin-right: auto;
 		max-width: em(260);

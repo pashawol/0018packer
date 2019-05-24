@@ -1,20 +1,20 @@
 mixin s-team()
 	// start s-team
 	 
-	+b.s-team.section.bg-dark.text-white.block-with-lazy.scrollblock--js(data-paroller-factor="0.5" data-paroller-type="foreground")#s-team&attributes(attributes)
+	+b.s-team.section.bg-dark.text-white.block-with-lazy#s-team&attributes(attributes)
 		.container
 			+b.section-title.text-center
 				h2 
 					span.text-primary Упаковщики&nbsp;
 					|&mdash; это дизайн-команда с&nbsp;аналитическим подходом
 				
-			+e.slider.slider--js.swiper-container
+			+e.slider--js.swiper-container
 				.swiper-wrapper
 					mixin item(i,t)
 						+e.slide.swiper-slide 
 							+e.item
 								+e.img-wrap
-									img.lazy(src="#" data-src=`img/team-${i}.png`, alt="")
+									img.lazy(src="#" data-src=`img/team-${i}.png`, alt="")&attributes(attributes)
 								+e.caption
 									+e.title= t
 									block
@@ -23,9 +23,9 @@ mixin s-team()
 						+e.text года в&nbsp;сфере 
 							br
 							| упаковки
-					+item('2','100+')
+					+item('2','100+')(class="ml2")
 						+e.text более 100 выполненных проектов
-					+item('3','10+')
+					+item('3','10+')(class="ml")
 						+e.text 4&nbsp;человека в&nbsp;штате и&nbsp;6&nbsp;удаленных
 					+item('4','90%')
 						+e.text клиентов обращаются к&nbsp;нам снова

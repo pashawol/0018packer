@@ -17,6 +17,18 @@
 .s-team {
 	padding-bottom: 0 !important;
 	position: relative; 
+	z-index: 4;
+	// &::after{
+	// 	content: '';
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	left: 0;
+	// 	top: 100%;
+	// 	z-index: -1;
+	// 	pointer-events: none;
+	// 	background-color: $primary;
+	// }
 	&::before{
 		content: '';
 		position: absolute;
@@ -28,11 +40,11 @@
 		pointer-events: none;
 		box-shadow:  	inset 0 em(-100)   em(100)  0 rgba($color: #000, $alpha: .9)  ;
 	}
-	z-index: 2;
-	margin-top: rem(-300px);
+ 
 	&__slide{
 
-	 @extend .col-lg-3;
+	//  @extend .col-lg-3;
+	//  @extend .col-md-6;
 	 position: relative ;
 	 display: flex;
 	//  flex-direction: column;
@@ -49,39 +61,37 @@
 			
 		}
 	}
-	&:nth-child(4n + 4) {
-	 
-		// z-index: $all - $i;
-		img{
-			margin-left: rem(-50);
-		}
-	 
-	}
-	
-	&:nth-child(3n + 3) {
-	 
-		// z-index: $all - $i;
-		img{
-			margin-left: rem(-50);
-		}
-	 
-	}
+	@include media-breakpoint-up(lg) { 
+			.ml2{
+				margin-left: rem(-80);
+			}  
+			
+			.ml{
+				margin-left: rem(-50);
+			}  
 
+	}
+		
 
 }
 
 	&__slider{
+		overflow: inherit;
+		
 		@include media-breakpoint-up(md) {
 			width: calc(100% + 30px);
 			margin-left: -15px;
 			margin-right: -15px;
-			overflow: inherit;
 		}
 	}
 	.swiper-wrapper{ 
 	}
 	.section-title{
-		padding-bottom: em(0);
+		@include media-breakpoint-up(lg) {
+
+			padding-bottom: em(0);
+		}
+		padding-bottom: em(10);
 		max-width: 100%;
 	}
 	&__caption{
@@ -90,16 +100,42 @@
 		font-size:  $small;
 		text-align: center;
 		max-width: rem(210);
-		top: 60%;
+		@include media-breakpoint-up(lg) {
+
+			top: 60%;
+		}
+		top: 50%;
 
 	}
 	&__title{
 		font-weight: bold;
 		@extend .display-1;
 	}
+
+	.control-wrap{
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+		top: -80px;
+		// margin-top: -30px;
+	}
+
+	.scrollblock--js{
+		position: absolute;
+		width: 100%;
+		height: 1000px;
+		background-color: $body-color;
+		// top: 100%;
+		bottom: calc(100% - 500px);
+		z-index: -1;
+	}
 		 
 	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+	 
+	}
+ 
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}
 	@include media-breakpoint-up(xs) {}
@@ -117,9 +153,22 @@
 	
 	//
 	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(md) {
+		img{
+			max-height: rem(700)
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		img{
+			max-height: rem(600)
+		}
+	}
+	@include media-breakpoint-down(xs) {
+		img{
+			max-height: rem(550)
+		}
+		transform: translate(0px, 0) !important;
+	}
 	@include media-breakpoint-down(xs) {} 
 
 }

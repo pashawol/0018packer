@@ -13,10 +13,14 @@
 	&__slide{
 	
 		font-size: $small;
-		margin-bottom: em(110);
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
+			margin-bottom: em(110);
 			text-align: left;
 		}
+				@include media-breakpoint-only(lg) {
+		margin-bottom: em(20);
+	}
+	margin-bottom: em(5);
 		text-align: center;
 		.row{
 			@include media-breakpoint-up(xl) {
@@ -30,7 +34,7 @@
 
 			max-width: rem(562);
 		}
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			max-width: rem(512);
 			margin-left: 0;
 			// margin-right: 0;
@@ -39,7 +43,7 @@
 		margin-right: auto;
 		// max-width: rem(522);
 	}
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 	&__slide:nth-child(even) &__left-block{
 
 			margin-left: auto;
@@ -70,7 +74,7 @@
 	font-weight: 900;
 	line-height: 1.29;
 
-	@include media-breakpoint-up(md) { 
+	@include media-breakpoint-up(lg) { 
 		color: $body-color;
 		max-width: none;
 		margin-left: 0;
@@ -89,7 +93,7 @@
 		line-height: 1.78;
 	}
 	&__head-wrap{
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 
 			position: absolute;
 			// @include 
@@ -102,11 +106,11 @@
 	&__head{
 		position: relative;
 		z-index: 2;
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			@include block(280, 186);
 			 
 		}
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 
 			background-image: none !important;
 			 
@@ -129,14 +133,19 @@
 		// padding: rem(40) rem(15) rem(30); 
 		margin-bottom: rem(26);
 	}
+	@include media-breakpoint-up(lg) {
+		.control-wrap{
+			display: none !important;
+		}
+	}
  
 .slider--js .swiper-wrapper{ 
-	@include media-breakpoint-up(md) { 
+	@include media-breakpoint-up(lg) { 
 	 
 		padding-bottom: 0;
 	 
 	} 
-	padding-bottom: 30px;
+	padding-bottom: rem(20);
 }
 		 
 	@include media-breakpoint-up(xl) {}
@@ -161,7 +170,11 @@
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	@include media-breakpoint-down(xs) {
+		.s-team{
+			
+		}
+	} 
 	z-index: 2;
 	position: relative;
 }
@@ -171,6 +184,8 @@
 	z-index: -1;
 	width: 100%;
 	height: 100%;
+	top: 30%;
+	
 	left: 0;
 	// top: 0;
 	// top: 50%;
