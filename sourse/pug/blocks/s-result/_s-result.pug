@@ -3,7 +3,11 @@ mixin s-result()
 	+b.s-result.section.block-with-lazy#s-result&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-result
-				
-			.row
+				h2(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1}s`)
+					span.underline Результат
+					| 
+					| детального разбора
+				+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2}s`) Вы&nbsp;увидите реальные слабые места вашего бизнеса в&nbsp;упаковке на&nbsp;сегодняшний день	и&nbsp;сможете принять осознанное решение по&nbsp;внедрению комплекса или выборочных	услуг по&nbsp;развитию имиджа лидера вашей компании в&nbsp;своей нише.
+
+				+e.btn(href="#" class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .3}s`) Заказать детальный разбор
 	// end s-result

@@ -8,44 +8,46 @@ mixin s-cases()
 					h2 Мы&nbsp;упаковали огромное
 						|
 						span.underline  количество компаний, вот некоторые из&nbsp;них
-		+e.slider--js
-			mixin slide(lSm, rSm, d,l,r,i,t,p, ...items)
-				+e.slide(class=`s-cases__slide--${i}`)
-					+e.bg.img-bg
-						img.lazy-bg(src="#" data-src=`img/cases/slide-${i}-bg.jpg`, alt="")
-					+e.container.container
-						+e.caption
-							+e.title= t
-							+e.labels
-								each item in items
-									+e.label= item
-							+e.text.d-none.d-md-block= p
-							+e.btn(href="#") Смотреть кейс 
-						+e.img--phone
-							img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
-								
-						if d
-							+e.img--desktop.d-none.d-lg-block
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-${d}.png`, alt="")
-						
-						if l
-							+e.img--left
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-${l}.png`, alt="")
-						if lSm
-							+e.img--left.--sm.d-lg-none
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-${lSm}.png`, alt="")
-						
-						if r
-							+e.img--right
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-${r}.png`, alt="")
-						if rSm
-							+e.img--right.--sm.d-lg-none
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-${rSm}.png`, alt="")
-								
-				// /+e.slide
-			+slide("","right-sm","desktop","left-lg","right-lg","1","Первая нерудная компания","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Корпоративный сайт","Брендинг" )
+		+e.slider--js.swiper-container(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
+			.swiper-wrapper
+				mixin slide(lSm, rSm, d,l,r,i,t,p, ...items)
+					+e.slide.swiper-slide(class=`s-cases__slide--${i}`)
+						+e.bg.img-bg
+							img.lazy-bg(src="#" data-src=`img/cases/slide-${i}-bg.jpg`, alt="")
+						+e.container.container
+							+e.caption
+								+e.title= t
+								+e.labels
+									each item in items
+										+e.label= item
+								+e.text.d-none.d-md-block= p
+								+e.btn(href="#") Смотреть кейс 
+							+e.img--phone
+								img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
+									
+							if d
+								+e.img--desktop.d-none.d-lg-block
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-${d}.png`, alt="")
+							
+							if l
+								+e.img--left
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-${l}.png`, alt="")
+							if lSm
+								+e.img--left.--sm.d-lg-none
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-${lSm}.png`, alt="")
+							
+							if r
+								+e.img--right
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-${r}.png`, alt="")
+							if rSm
+								+e.img--right.--sm.d-lg-none
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-${rSm}.png`, alt="")
+									
+					// /+e.slide
+				+slide("","right-sm","desktop","left-lg","right-lg","1","Первая нерудная компания","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Корпоративный сайт","Брендинг" )
 
-			+slide("","","desktop","left","right","2","TOUCAN","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-магазин","Брендинг" )
-			
-			+slide("","","","","","3","Техномаркет «БАЗА»","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-каталог","Брендинг","Корпоративный сайт") 
+				+slide("","","desktop","left","right","2","TOUCAN","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-магазин","Брендинг" )
+				
+				+slide("","","","","","3","Техномаркет «БАЗА»","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-каталог","Брендинг","Корпоративный сайт") 
+			.swiper-pagination
 	// end s-cases

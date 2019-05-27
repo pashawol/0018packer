@@ -9,7 +9,7 @@
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" type="image/ico" href="img/favicon/favicon.ico">
     <!-- Custom Browsers Color-->
-    <meta name="theme-color" content="#3361d8">
+    <meta name="theme-color" content="#f9d749">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
@@ -84,7 +84,7 @@
                     <div class="header-block__foot-item">Реклама 
                     </div>
                   </div>
-                </div><a class="header-block__btn wow slideInUp" href="#">Стать лидером рынка</a>
+                </div><a class="header-block__btn popup-with-move-anim wow slideInUp" href="#modal-call" data-order="Стать лидером рынка">Стать лидером рынка</a>
               </div>
             </div>
             <div class="blockWithAnimate d-none d-sm-block">
@@ -135,7 +135,7 @@
                 <div class="s-first__col col-xl-12 col-md-3">
                   <div class="s-first__item wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="1.2s"> 
                     <div class="s-first__circle">Сайт, <br/> соц. сеть, др. канал
-                      <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="2.1s"></div>
+                      <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="1.2s"></div>
                     </div>
                     <div class="s-first__text">
                       <div class="s-first__caption">Посещает вашу площадку с&nbsp;линейкой продукции/услуг
@@ -376,7 +376,7 @@
       </div>
       <!-- end s-complex-->
       <!-- start s-team-->
-      <div class="s-team section bg-dark text-white block-with-lazy" id="s-team">
+      <div class="s-team section bg-dark text-white block-with-lazy wow fadeInUp" id="s-team" data-wow-duration="0.6s">
         <div class="container">
           <div class="section-title text-center">
             <h2> <span class="text-primary">Упаковщики&nbsp;</span>&mdash; это дизайн-команда с&nbsp;аналитическим подходом</h2>
@@ -454,7 +454,7 @@
               
             </h2>
           </div>
-          <div class="row">
+          <div class="row align-self-end">
                 <div class="s-why__col col-lg-6 col-sm-6">
                   <div class="s-why__item wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.12s">
                     <div class="s-why__head">
@@ -532,106 +532,138 @@
             </div>
           </div>
         </div>
-        <div class="s-cases__slider s-cases__slider--js">
-          <div class="s-cases__slide s-cases__slide s-cases__slide--1">
-            <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-1-bg.jpg" alt=""/>
-            </div>
-            <div class="s-cases__container container">
-              <div class="s-cases__caption">
-                <div class="s-cases__title">Первая нерудная компания
+        <div class="s-cases__slider s-cases__slider--js swiper-container wow fadeInUp" data-wow-duration="0.6s">
+          <div class="swiper-wrapper">
+              <div class="s-cases__slide swiper-slide s-cases__slide s-cases__slide--1">
+                <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-1-bg.jpg" alt=""/>
                 </div>
-                <div class="s-cases__labels">
-                  <div class="s-cases__label">Корпоративный сайт
+                <div class="s-cases__container container">
+                  <div class="s-cases__caption">
+                    <div class="s-cases__title">Первая нерудная компания
+                    </div>
+                    <div class="s-cases__labels">
+                      <div class="s-cases__label">Корпоративный сайт
+                      </div>
+                      <div class="s-cases__label">Брендинг
+                      </div>
+                    </div>
+                    <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
+                    </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
                   </div>
-                  <div class="s-cases__label">Брендинг
+                  <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-1-phone.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--desktop d-none d-lg-block"><img class="lazy" src="#" data-src="img/cases/slide-1-desktop.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--left"><img class="lazy" src="#" data-src="img/cases/slide-1-left-lg.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--right"><img class="lazy" src="#" data-src="img/cases/slide-1-right-lg.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--right s-cases__img--sm d-lg-none"><img class="lazy" src="#" data-src="img/cases/slide-1-right-sm.png" alt=""/>
                   </div>
                 </div>
-                <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
-                </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
               </div>
-              <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-1-phone.png" alt=""/>
+              <!-- /+e.slide-->
+              <div class="s-cases__slide swiper-slide s-cases__slide s-cases__slide--2">
+                <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-2-bg.jpg" alt=""/>
+                </div>
+                <div class="s-cases__container container">
+                  <div class="s-cases__caption">
+                    <div class="s-cases__title">TOUCAN
+                    </div>
+                    <div class="s-cases__labels">
+                      <div class="s-cases__label">Интернет-магазин
+                      </div>
+                      <div class="s-cases__label">Брендинг
+                      </div>
+                    </div>
+                    <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
+                    </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
+                  </div>
+                  <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-2-phone.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--desktop d-none d-lg-block"><img class="lazy" src="#" data-src="img/cases/slide-2-desktop.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--left"><img class="lazy" src="#" data-src="img/cases/slide-2-left.png" alt=""/>
+                  </div>
+                  <div class="s-cases__img s-cases__img--right"><img class="lazy" src="#" data-src="img/cases/slide-2-right.png" alt=""/>
+                  </div>
+                </div>
               </div>
-              <div class="s-cases__img s-cases__img--desktop d-none d-lg-block"><img class="lazy" src="#" data-src="img/cases/slide-1-desktop.png" alt=""/>
+              <!-- /+e.slide-->
+              <div class="s-cases__slide swiper-slide s-cases__slide s-cases__slide--3">
+                <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-3-bg.jpg" alt=""/>
+                </div>
+                <div class="s-cases__container container">
+                  <div class="s-cases__caption">
+                    <div class="s-cases__title">Техномаркет «БАЗА»
+                    </div>
+                    <div class="s-cases__labels">
+                      <div class="s-cases__label">Интернет-каталог
+                      </div>
+                      <div class="s-cases__label">Брендинг
+                      </div>
+                      <div class="s-cases__label">Корпоративный сайт
+                      </div>
+                    </div>
+                    <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
+                    </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
+                  </div>
+                  <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-3-phone.png" alt=""/>
+                  </div>
+                </div>
               </div>
-              <div class="s-cases__img s-cases__img--left"><img class="lazy" src="#" data-src="img/cases/slide-1-left-lg.png" alt=""/>
-              </div>
-              <div class="s-cases__img s-cases__img--right"><img class="lazy" src="#" data-src="img/cases/slide-1-right-lg.png" alt=""/>
-              </div>
-              <div class="s-cases__img s-cases__img--right s-cases__img--sm d-lg-none"><img class="lazy" src="#" data-src="img/cases/slide-1-right-sm.png" alt=""/>
-              </div>
-            </div>
+              <!-- /+e.slide-->
           </div>
-          <!-- /+e.slide-->
-          <div class="s-cases__slide s-cases__slide s-cases__slide--2">
-            <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-2-bg.jpg" alt=""/>
-            </div>
-            <div class="s-cases__container container">
-              <div class="s-cases__caption">
-                <div class="s-cases__title">TOUCAN
-                </div>
-                <div class="s-cases__labels">
-                  <div class="s-cases__label">Интернет-магазин
-                  </div>
-                  <div class="s-cases__label">Брендинг
-                  </div>
-                </div>
-                <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
-                </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
-              </div>
-              <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-2-phone.png" alt=""/>
-              </div>
-              <div class="s-cases__img s-cases__img--desktop d-none d-lg-block"><img class="lazy" src="#" data-src="img/cases/slide-2-desktop.png" alt=""/>
-              </div>
-              <div class="s-cases__img s-cases__img--left"><img class="lazy" src="#" data-src="img/cases/slide-2-left.png" alt=""/>
-              </div>
-              <div class="s-cases__img s-cases__img--right"><img class="lazy" src="#" data-src="img/cases/slide-2-right.png" alt=""/>
-              </div>
-            </div>
-          </div>
-          <!-- /+e.slide-->
-          <div class="s-cases__slide s-cases__slide s-cases__slide--3">
-            <div class="s-cases__bg img-bg"><img class="lazy-bg" src="#" data-src="img/cases/slide-3-bg.jpg" alt=""/>
-            </div>
-            <div class="s-cases__container container">
-              <div class="s-cases__caption">
-                <div class="s-cases__title">Техномаркет «БАЗА»
-                </div>
-                <div class="s-cases__labels">
-                  <div class="s-cases__label">Интернет-каталог
-                  </div>
-                  <div class="s-cases__label">Брендинг
-                  </div>
-                  <div class="s-cases__label">Корпоративный сайт
-                  </div>
-                </div>
-                <div class="s-cases__text d-none d-md-block">Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.
-                </div><a class="s-cases__btn" href="#">Смотреть кейс </a>
-              </div>
-              <div class="s-cases__img s-cases__img--phone"><img class="lazy" src="#" data-src="img/cases/slide-3-phone.png" alt=""/>
-              </div>
-            </div>
-          </div>
-          <!-- /+e.slide-->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <!-- end s-cases-->
       <!-- start s-logos-->
       <div class="s-logos section block-with-lazy" id="s-logos">
+        <div class="s-logos__bg img-bg wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.96s" data-wow-offset="150"><img class="lazy-bg" src="#" data-src="img/logo-bg.jpg" alt=""/>
+        </div>
         <div class="container">
           <div class="section-title text-center">
-            <h2>s-logos</h2>
+            <div class="section-title__text text-warning wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.06s">За&nbsp;3&nbsp;года мы&nbsp;помогли
+            </div>
+            <h2 class="wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.24s">
+              сформировать нашим клиентам <span class="underline"> имидж лидера рынка</span></h2>
+            <div class="section-title__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.48s">в&nbsp;различных сферах b2b и&nbsp;b2c
+            </div><a class="section-title__btn popup-with-move-anim wow fadeIn" href="#modal-call" data-order="Заказать упаковку бизнеса " data-wow-duration="0.6s" data-wow-delay="0.72s">Заказать упаковку бизнеса </a>
           </div>
-          <div class="row"></div>
         </div>
       </div>
       <!-- end s-logos-->
       <!-- start s-order-->
-      <div class="s-order section block-with-lazy" id="s-order">
+      <div class="s-order section block-with-lazy bg-primary pb-0" id="s-order">
         <div class="container">
-          <div class="section-title text-center">
-            <h2>s-order</h2>
+          <div class="row">
+            <div class="col">
+              <div class="section-title">
+                <h2 class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s"><span class="underline"> Закажите детальный разбор</span> 
+                  упаковки вашего бизнеса<br/>
+                </h2>
+                <div class="h2 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s"> за <span class="strike text-white">15 000<span class="rub text-white">r</span></span><span class="date">до&nbsp;30&nbsp;мая</span></div>
+              </div>
+              <div class="s-order__big wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">10 000<span class="rub">r</span>
+              </div>
+              <div class="s-order__list-title wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.48s">Вы получите:
+              </div>
+              <ul>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Разбор точек соприкосновения вашего бизнеса с клиентом;</li>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Поиск уязвимых мест;</li>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Проработка целевой аудитории;</li>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Исследование конкурентов;</li>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Стратегия развития;</li>
+                <li class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">Рекомендации по усилению упаковки.</li>
+                <li class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.72s"></li>
+              </ul>
+            </div>
+            <div class="col-5 align-self-end d-none d-lg-block">
+              <div class="s-order__img-wrap"><img class="lazy res-i" src="#" data-src="img/order-img.png" alt=""/>
+              </div>
+            </div>
           </div>
-          <div class="row"></div>
         </div>
       </div>
       <!-- end s-order-->
@@ -639,85 +671,535 @@
       <div class="s-result section block-with-lazy" id="s-result">
         <div class="container">
           <div class="section-title text-center">
-            <h2>s-result</h2>
+            <h2 class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.06s"><span class="underline">Результат</span> 
+              детального разбора
+            </h2>
+            <div class="section-title__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s">Вы&nbsp;увидите реальные слабые места вашего бизнеса в&nbsp;упаковке на&nbsp;сегодняшний день	и&nbsp;сможете принять осознанное решение по&nbsp;внедрению комплекса или выборочных	услуг по&nbsp;развитию имиджа лидера вашей компании в&nbsp;своей нише.
+            </div><a class="section-title__btn wow fadeIn" href="#" data-wow-duration="0.6s" data-wow-delay="0.18s">Заказать детальный разбор</a>
           </div>
-          <div class="row"></div>
         </div>
       </div>
       <!-- end s-result-->
       <!-- start s-soc-->
       <div class="s-soc section block-with-lazy" id="s-soc">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>s-soc</h2>
+        <div class="scrollblock scrollblock scrollblock--js" data-paroller-factor="0.5" data-paroller-type="foreground">
+          <div class="scrollblock__text"> SOCIAL
           </div>
-          <div class="row"></div>
+        </div>
+        <div class="container">
+          <div class="section-title text-center wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.06s">
+            <h2>Мы ведем активную <span class="d-block text-primary">социальную деятельность </span></h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="s-soc__img-wrap wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s"><img class="res-i lazy" src="#" data-src="img/soc-img.jpg" alt=""/><a class="s-soc__play" href="#">
+                <svg class="icon icon-play ">
+                  <use xlink:href="img/svg/sprite.svg#play"></use>
+                </svg></a>
+              </div>
+              <div class="s-soc__small wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s">
+                Скоро запуск канала на youtube —  <span>УПАКОВЩИКИ</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="s-soc__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.18s">
+                Делимся опытом, делаем индивидуальные 
+                предложения клиентам, рассказываем 
+                и&nbsp;показываем интересные факты 
+                с&nbsp;нашей&nbsp;кухни.
+              </div>
+              <div class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s">
+                <div class="soc"><a class="soc__item soc__item--vk" href="" target="_blank">
+                  <svg class="icon icon-vk ">
+                    <use xlink:href="img/svg/sprite.svg#vk"></use>
+                  </svg></a><a class="soc__item soc__item--fb" href="" target="_blank">
+                  <svg class="icon icon-fb ">
+                    <use xlink:href="img/svg/sprite.svg#fb"></use>
+                  </svg></a><a class="soc__item soc__item--instagram" href="" target="_blank">
+                  <svg class="icon icon-instagram ">
+                    <use xlink:href="img/svg/sprite.svg#instagram"></use>
+                  </svg></a><a class="soc__item soc__item--play" href="" target="_blank">
+                  <svg class="icon icon-play ">
+                    <use xlink:href="img/svg/sprite.svg#play"></use>
+                  </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- end s-soc-->
       <!-- start s-prices-->
-      <div class="s-prices section block-with-lazy" id="s-prices">
+      <div class="s-prices block-with-lazy" id="s-prices">
         <div class="container">
-          <div class="section-title text-center">
-            <h2>s-prices</h2>
+          <div class="s-prices__head section">
+            <div class="section-title text-center">
+              <h2>
+                Уже знаете с&nbsp;чего начать <span class="underline">упаковку&nbsp;вашего бизнеса?</span></h2>
+            </div>
+            <div class="s-prices__slider slider slider--js swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="s-prices__slide swiper-slide col-lg-3 col-md-6 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.06s">
+                    <div class="s-prices__item">
+                      <div class="s-prices__img-wrap"><img class="lazy res-i" src="#" data-src="img/servise-1.png" alt=""/>
+                      </div>
+                      <div class="s-prices__title-wrap">
+                        <div class="s-prices__title">Сайт 
+                        </div>
+                      </div>
+                      <div class="s-prices__price">45 000<span class="rub">r</span>
+                      </div>
+                      <div class="s-prices__text">Посадочная страница, корпоративный сайт или интернет-магазин
+                      </div><a class="s-prices__btn btn-sm btn-block popup-with-move-anim" href="#modal-call" data-order="Рассчитать проект -  Сайт ">Рассчитать проект</a>
+                    </div>
+                  </div>
+                  <!-- /+e.slide.swiper-slide.col-lg-3.col-md-6-->
+                  <div class="s-prices__slide swiper-slide col-lg-3 col-md-6 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s">
+                    <div class="s-prices__item">
+                      <div class="s-prices__img-wrap"><img class="lazy res-i" src="#" data-src="img/servise-2.png" alt=""/>
+                      </div>
+                      <div class="s-prices__title-wrap">
+                        <div class="s-prices__title">Брендинг 
+                        </div>
+                      </div>
+                      <div class="s-prices__price">25 000<span class="rub">r</span>
+                      </div>
+                      <div class="s-prices__text">Логотип, фирменный стиль, полиграфическая и&nbsp;сувенирная продукция
+                      </div><a class="s-prices__btn btn-sm btn-block popup-with-move-anim" href="#modal-call" data-order="Рассчитать проект -  Брендинг ">Рассчитать проект</a>
+                    </div>
+                  </div>
+                  <!-- /+e.slide.swiper-slide.col-lg-3.col-md-6-->
+                  <div class="s-prices__slide swiper-slide col-lg-3 col-md-6 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.18s">
+                    <div class="s-prices__item">
+                      <div class="s-prices__img-wrap"><img class="lazy res-i" src="#" data-src="img/servise-3.png" alt=""/>
+                      </div>
+                      <div class="s-prices__title-wrap">
+                        <div class="s-prices__title">Контекстная реклама 
+                        </div>
+                      </div>
+                      <div class="s-prices__price">20 000<span class="rub">r</span>
+                      </div>
+                      <div class="s-prices__text">Создание, ведение, оптимизация и&nbsp;отчетность
+                      </div><a class="s-prices__btn btn-sm btn-block popup-with-move-anim" href="#modal-call" data-order="Рассчитать проект -  Контекстная реклама ">Рассчитать проект</a>
+                    </div>
+                  </div>
+                  <!-- /+e.slide.swiper-slide.col-lg-3.col-md-6-->
+                  <div class="s-prices__slide swiper-slide col-lg-3 col-md-6 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s">
+                    <div class="s-prices__item">
+                      <div class="s-prices__img-wrap"><img class="lazy res-i" src="#" data-src="img/servise-4.png" alt=""/>
+                      </div>
+                      <div class="s-prices__title-wrap">
+                        <div class="s-prices__title">SMM 
+                        </div>
+                      </div>
+                      <div class="s-prices__price">20 000<span class="rub">r</span>
+                      </div>
+                      <div class="s-prices__text">Логотип, фирменный стиль, полиграфическая и&nbsp;сувенирная продукция
+                      </div><a class="s-prices__btn btn-sm btn-block popup-with-move-anim" href="#modal-call" data-order="Рассчитать проект -  SMM ">Рассчитать проект</a>
+                    </div>
+                  </div>
+                  <!-- /+e.slide.swiper-slide.col-lg-3.col-md-6-->
+              </div>
+            </div>
+            <div class="d-md-none">
+              <div class="control-wrap">
+                <div class="swiper-button-hand swiper-button-hand-next swiper-button-next"></div>
+                <div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev"> </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
           </div>
-          <div class="row"></div>
+          <div class="s-prices__gray-text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s"> или
+          </div>
+          <div class="s-prices__foot section">
+            <div class="section-title text-center">
+              <div class="h2 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">Подписка на&nbsp;комплекс</div>
+              <div class="section-title__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.42s">Сайт, брендинг, контекстная реклама&nbsp;и&nbsp;SMM
+              </div>
+            </div>
+            <div class="s-prices__strike wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.48s">от 110 000<span class="rub">r</span>
+            </div><br/>
+            <div class="s-prices__price-lg underline wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.54s"> 
+              <div class="s-prices__small">от 
+              </div> 
+              55 000<span class="rub">r</span>
+            </div><br/><a class="s-prices__btn s-prices__btn--all popup-with-move-anim wow fadeIn" href="#modal-call" data-order="Рассчитать проект -  полный комплекс" data-wow-duration="0.6s" data-wow-delay="0.6s">Рассчитать проект</a>
+          </div>
         </div>
       </div>
       <!-- end s-prices-->
       <!-- start s-about-->
-      <div class="s-about section block-with-lazy" id="s-about">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>s-about</h2>
+      <div class="s-about section block-with-lazy" id="s-about"> 
+        <div class="s-about__sub-title">
+          <div class="s-about__bg wow fadeIn" data-wow-duration="0.6s"> 
           </div>
-          <div class="row"></div>
+          <div class="container">Что отличает нас от&nbsp;других веб-студий и&nbsp;агентств?</div>
+        </div>
+        <div class="container"> 
+          <div class="section-title"> 
+            <h2>
+              Мы&nbsp;всегда стремимся 
+              <div class="text-primary">к&nbsp;упрощению</div>
+            </h2>
+          </div>
+          <div class="s-about__text"> 
+            <p>
+              В&nbsp;сложности нет ничего хорошего, чем сложнее&nbsp;процессы 
+              в&nbsp;бизнесе, тем более хрупким и&nbsp;менее гибким он&nbsp;становится.
+               
+              Одна&nbsp;ошибка кладется на&nbsp;другую и&nbsp;система рушится.
+               
+              В&nbsp;простоте кроется сила, в&nbsp;сложности&nbsp;&mdash; уязвимость.
+            </p>
+            <p>
+              Именно поэтому мы&nbsp;выстраиваем простые, но 
+              эффективные&nbsp;коммуникации с&nbsp;клиентом.
+            </p>
+          </div><a class="s-about__btn popup-with-move-anim" href="#modal-call" data-order="Получить консультацию">Получить консультацию</a>
         </div>
       </div>
       <!-- end s-about-->
       <!-- start s-order2-->
       <div class="s-order2 section block-with-lazy" id="s-order2">
-        <div class="container">
+        <div class="container"> 
           <div class="section-title text-center">
-            <h2>s-order2</h2>
+            <div class="h2 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
+              Все еще сомневаетесь нужна&nbsp;ли <span class="underline">упаковка вашему бизнесу?</span></div>
+            <div class="section-title__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.42s">Закажите детальный разбор&nbsp;упаковки
+            </div>
           </div>
-          <div class="row"></div>
+          <div class="s-order2__text wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.48s"> <span>за </span> <span class="s-order2__strike">15 000<span class="rub">r</span></span> <span class="s-order2__last"><span class="bg-primary">до&nbsp;30&nbsp;мая </span></span>
+          </div>
+          <div class="s-order2__price-lg underline wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.54s"> 10 000<span class="rub">r</span>
+          </div><br/><a class="s-order2__btn s-order2__btn--all popup-with-move-anim wow fadeIn" href="#modal-call" data-order="Заказать детальный разбор" data-wow-duration="0.6s" data-wow-delay="0.6s">Заказать детальный разбор</a>
         </div>
       </div>
       <!-- end s-order2-->
       <!-- start s-contact-->
-      <div class="s-contact section block-with-lazy" id="s-contact">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>s-contact</h2>
+      <div class="s-contact block-with-lazy" id="s-contact">
+        <div class="scrollblock scrollblock scrollblock--js" data-paroller-factor="0.5" data-paroller-type="foreground">
+          <div class="scrollblock__text"> CONTACTS
           </div>
-          <div class="row"></div>
+        </div>
+        <div class="container section">
+          <div class="section-title text-center">
+            <h2>Контакты</h2>
+          </div>
+          <div class="s-contact__body"><a class="s-contact__tel" href="tel:89959669888">8 995 96 69 888</a><br/><a class="s-contact__mail" href="mailto:info@thepackers.ru">info@thepackers.ru</a>
+            <div class="s-contact__text"> <strong>Подпишитесь на&nbsp;нас, </strong><span>чтобы не&nbsp;потерять!</span>
+            </div>
+            <div class="soc"><a class="soc__item soc__item--vk" href="" target="_blank">
+              <svg class="icon icon-vk ">
+                <use xlink:href="img/svg/sprite.svg#vk"></use>
+              </svg></a><a class="soc__item soc__item--fb" href="" target="_blank">
+              <svg class="icon icon-fb ">
+                <use xlink:href="img/svg/sprite.svg#fb"></use>
+              </svg></a><a class="soc__item soc__item--instagram" href="" target="_blank">
+              <svg class="icon icon-instagram ">
+                <use xlink:href="img/svg/sprite.svg#instagram"></use>
+              </svg></a><a class="soc__item soc__item--play" href="" target="_blank">
+              <svg class="icon icon-play ">
+                <use xlink:href="img/svg/sprite.svg#play"></use>
+              </svg></a>
+            </div>
+          </div>
+          <div class="s-contact__copy">© Упаковщики 2019.
+          </div>
         </div>
       </div>
       <!-- end s-contact-->
-      <footer class="footer block-with-lazy">
-        <div class="container">footer</div>
-      </footer>
     </div>
     <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form block-with-lazy" id="modal-call">
       <form>
-        <div class="text-center">
-          <div class="form-wrap__title h3 ttu">Обратный звонок
+        <input class="order order" type="hidden" name="order"/>
+        <div class="form-wrap__title h3 strong">Оставьте заявку,
+          <spun class="underline">перезвоним за&nbsp;15&nbsp;минут</spun>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя"/>
+            </div>
+            <!-- +e.input-wrap-->
           </div>
-          <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+          <div class="col-md-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="email" placeholder="Ваш email"/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-md-6">
+            <div class="form-wrap__input-wrap form-group">
+              <input type="hidden" name="phone-code" value="+7"/>
+              <label class="input-phone" style=" "><span class="code-btn">
+                  <svg class="icon icon-arrow ">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg></span><span class="code-span">+7</span>
+                <ul class="code-menu">
+                  <li>Russia <span>+7</span></li>
+                  <li>Belarus <span>+375</span></li>
+                  <li>Ukraine <span>+380</span></li>
+                  <li>Kazakhstan <span>+76</span></li>
+                  <li>Kyrgyzstan <span>+996</span></li>
+                  <li class="border"></li>
+                  <li>Aruba <span>+297</span></li>
+                  <li>Afghanistan <span>+93</span></li>
+                  <li>Angola <span>+244</span></li>
+                  <li>Anguilla <span>+1264</span></li>
+                  <li>Åland Islands <span>+358</span></li>
+                  <li>Albania <span>+355</span></li>
+                  <li>Andorra <span>+376</span></li>
+                  <li>United Arab Emirates <span>+971</span></li>
+                  <li>Argentina <span>+54</span></li>
+                  <li>Armenia <span>+374</span></li>
+                  <li>American Samoa <span>+1684</span></li>
+                  <li>Antarctica <span>+</span></li>
+                  <li>French Southern and Antarctic Lands <span>+</span></li>
+                  <li>Antigua and Barbuda <span>+1268</span></li>
+                  <li>Australia <span>+61</span></li>
+                  <li>Austria <span>+43</span></li>
+                  <li>Azerbaijan <span>+994</span></li>
+                  <li>Burundi <span>+257</span></li>
+                  <li>Belgium <span>+32</span></li>
+                  <li>Benin <span>+229</span></li>
+                  <li>Burkina Faso <span>+226</span></li>
+                  <li>Bangladesh <span>+880</span></li>
+                  <li>Bulgaria <span>+359</span></li>
+                  <li>Bahrain <span>+973</span></li>
+                  <li>Bahamas <span>+1242</span></li>
+                  <li>Bosnia and Herzegovina <span>+387</span></li>
+                  <li>Saint Barthélemy <span>+590</span></li>
+                  <li>Belarus <span>+375</span></li>
+                  <li>Belize <span>+501</span></li>
+                  <li>Bermuda <span>+1441</span></li>
+                  <li>Bolivia <span>+591</span></li>
+                  <li>Brazil <span>+55</span></li>
+                  <li>Barbados <span>+1246</span></li>
+                  <li>Brunei <span>+673</span></li>
+                  <li>Bhutan <span>+975</span></li>
+                  <li>Bouvet Island <span>+</span></li>
+                  <li>Botswana <span>+267</span></li>
+                  <li>Central African Republic <span>+236</span></li>
+                  <li>Canada <span>+1</span></li>
+                  <li>Cocos (Keeling) Islands <span>+61</span></li>
+                  <li>Switzerland <span>+41</span></li>
+                  <li>Chile <span>+56</span></li>
+                  <li>China <span>+86</span></li>
+                  <li>Ivory Coast <span>+225</span></li>
+                  <li>Cameroon <span>+237</span></li>
+                  <li>DR Congo <span>+243</span></li>
+                  <li>Republic of the Congo <span>+242</span></li>
+                  <li>Cook Islands <span>+682</span></li>
+                  <li>Colombia <span>+57</span></li>
+                  <li>Comoros <span>+269</span></li>
+                  <li>Cape Verde <span>+238</span></li>
+                  <li>Costa Rica <span>+506</span></li>
+                  <li>Cuba <span>+53</span></li>
+                  <li>Curaçao <span>+5999</span></li>
+                  <li>Christmas Island <span>+61</span></li>
+                  <li>Cayman Islands <span>+1345</span></li>
+                  <li>Cyprus <span>+357</span></li>
+                  <li>Czech Republic <span>+420</span></li>
+                  <li>Germany <span>+49</span></li>
+                  <li>Djibouti <span>+253</span></li>
+                  <li>Dominica <span>+1767</span></li>
+                  <li>Denmark <span>+45</span></li>
+                  <li>Dominican Republic <span>+1809</span></li>
+                  <li>Algeria <span>+213</span></li>
+                  <li>Ecuador <span>+593</span></li>
+                  <li>Egypt <span>+20</span></li>
+                  <li>Eritrea <span>+291</span></li>
+                  <li>Western Sahara <span>+212</span></li>
+                  <li>Spain <span>+34</span></li>
+                  <li>Estonia <span>+372</span></li>
+                  <li>Ethiopia <span>+251</span></li>
+                  <li>Finland <span>+358</span></li>
+                  <li>Fiji <span>+679</span></li>
+                  <li>Falkland Islands <span>+500</span></li>
+                  <li>France <span>+33</span></li>
+                  <li>Faroe Islands <span>+298</span></li>
+                  <li>Micronesia <span>+691</span></li>
+                  <li>Gabon <span>+241</span></li>
+                  <li>United Kingdom <span>+44</span></li>
+                  <li>Georgia <span>+995</span></li>
+                  <li>Guernsey <span>+44</span></li>
+                  <li>Ghana <span>+233</span></li>
+                  <li>Gibraltar <span>+350</span></li>
+                  <li>Guinea <span>+224</span></li>
+                  <li>Guadeloupe <span>+590</span></li>
+                  <li>Gambia <span>+220</span></li>
+                  <li>Guinea-Bissau <span>+245</span></li>
+                  <li>Equatorial Guinea <span>+240</span></li>
+                  <li>Greece <span>+30</span></li>
+                  <li>Grenada <span>+1473</span></li>
+                  <li>Greenland <span>+299</span></li>
+                  <li>Guatemala <span>+502</span></li>
+                  <li>French Guiana <span>+594</span></li>
+                  <li>Guam <span>+1671</span></li>
+                  <li>Guyana <span>+592</span></li>
+                  <li>Hong Kong <span>+852</span></li>
+                  <li>Heard Island and McDonald Islands <span>+</span></li>
+                  <li>Honduras <span>+504</span></li>
+                  <li>Croatia <span>+385</span></li>
+                  <li>Haiti <span>+509</span></li>
+                  <li>Hungary <span>+36</span></li>
+                  <li>Indonesia <span>+62</span></li>
+                  <li>Isle of Man <span>+44</span></li>
+                  <li>India <span>+91</span></li>
+                  <li>British Indian Ocean Territory <span>+246</span></li>
+                  <li>Ireland <span>+353</span></li>
+                  <li>Iran <span>+98</span></li>
+                  <li>Iraq <span>+964</span></li>
+                  <li>Iceland <span>+354</span></li>
+                  <li>Israel <span>+972</span></li>
+                  <li>Italy <span>+39</span></li>
+                  <li>Jamaica <span>+1876</span></li>
+                  <li>Jersey <span>+44</span></li>
+                  <li>Jordan <span>+962</span></li>
+                  <li>Japan <span>+81</span></li>
+                  <li>Kazakhstan <span>+76</span></li>
+                  <li>Kenya <span>+254</span></li>
+                  <li>Kyrgyzstan <span>+996</span></li>
+                  <li>Cambodia <span>+855</span></li>
+                  <li>Kiribati <span>+686</span></li>
+                  <li>Saint Kitts and Nevis <span>+1869</span></li>
+                  <li>South Korea <span>+82</span></li>
+                  <li>Kosovo <span>+383</span></li>
+                  <li>Kuwait <span>+965</span></li>
+                  <li>Laos <span>+856</span></li>
+                  <li>Lebanon <span>+961</span></li>
+                  <li>Liberia <span>+231</span></li>
+                  <li>Libya <span>+218</span></li>
+                  <li>Saint Lucia <span>+1758</span></li>
+                  <li>Liechtenstein <span>+423</span></li>
+                  <li>Sri Lanka <span>+94</span></li>
+                  <li>Lesotho <span>+266</span></li>
+                  <li>Lithuania <span>+370</span></li>
+                  <li>Luxembourg <span>+352</span></li>
+                  <li>Latvia <span>+371</span></li>
+                  <li>Macau <span>+853</span></li>
+                  <li>Saint Martin <span>+590</span></li>
+                  <li>Morocco <span>+212</span></li>
+                  <li>Monaco <span>+377</span></li>
+                  <li>Moldova <span>+373</span></li>
+                  <li>Madagascar <span>+261</span></li>
+                  <li>Maldives <span>+960</span></li>
+                  <li>Mexico <span>+52</span></li>
+                  <li>Marshall Islands <span>+692</span></li>
+                  <li>Macedonia <span>+389</span></li>
+                  <li>Mali <span>+223</span></li>
+                  <li>Malta <span>+356</span></li>
+                  <li>Myanmar <span>+95</span></li>
+                  <li>Montenegro <span>+382</span></li>
+                  <li>Mongolia <span>+976</span></li>
+                  <li>Northern Mariana Islands <span>+1670</span></li>
+                  <li>Mozambique <span>+258</span></li>
+                  <li>Mauritania <span>+222</span></li>
+                  <li>Montserrat <span>+1664</span></li>
+                  <li>Martinique <span>+596</span></li>
+                  <li>Mauritius <span>+230</span></li>
+                  <li>Malawi <span>+265</span></li>
+                  <li>Malaysia <span>+60</span></li>
+                  <li>Mayotte <span>+262</span></li>
+                  <li>Namibia <span>+264</span></li>
+                  <li>New Caledonia <span>+687</span></li>
+                  <li>Niger <span>+227</span></li>
+                  <li>Norfolk Island <span>+672</span></li>
+                  <li>Nigeria <span>+234</span></li>
+                  <li>Nicaragua <span>+505</span></li>
+                  <li>Niue <span>+683</span></li>
+                  <li>Netherlands <span>+31</span></li>
+                  <li>Norway <span>+47</span></li>
+                  <li>Nepal <span>+977</span></li>
+                  <li>Nauru <span>+674</span></li>
+                  <li>New Zealand <span>+64</span></li>
+                  <li>Oman <span>+968</span></li>
+                  <li>Pakistan <span>+92</span></li>
+                  <li>Panama <span>+507</span></li>
+                  <li>Pitcairn Islands <span>+64</span></li>
+                  <li>Peru <span>+51</span></li>
+                  <li>Philippines <span>+63</span></li>
+                  <li>Palau <span>+680</span></li>
+                  <li>Papua New Guinea <span>+675</span></li>
+                  <li>Poland <span>+48</span></li>
+                  <li>Puerto Rico <span>+1787</span></li>
+                  <li>North Korea <span>+850</span></li>
+                  <li>Portugal <span>+351</span></li>
+                  <li>Paraguay <span>+595</span></li>
+                  <li>Palestine <span>+970</span></li>
+                  <li>French Polynesia <span>+689</span></li>
+                  <li>Qatar <span>+974</span></li>
+                  <li>Réunion <span>+262</span></li>
+                  <li>Romania <span>+40</span></li>
+                  <li>Rwanda <span>+250</span></li>
+                  <li>Saudi Arabia <span>+966</span></li>
+                  <li>Sudan <span>+249</span></li>
+                  <li>Senegal <span>+221</span></li>
+                  <li>Singapore <span>+65</span></li>
+                  <li>South Georgia <span>+500</span></li>
+                  <li>Svalbard and Jan Mayen <span>+4779</span></li>
+                  <li>Solomon Islands <span>+677</span></li>
+                  <li>Sierra Leone <span>+232</span></li>
+                  <li>El Salvador <span>+503</span></li>
+                  <li>San Marino <span>+378</span></li>
+                  <li>Somalia <span>+252</span></li>
+                  <li>Saint Pierre and Miquelon <span>+508</span></li>
+                  <li>Serbia <span>+381</span></li>
+                  <li>South Sudan <span>+211</span></li>
+                  <li>São Tomé and Príncipe <span>+239</span></li>
+                  <li>Suriname <span>+597</span></li>
+                  <li>Slovakia <span>+421</span></li>
+                  <li>Slovenia <span>+386</span></li>
+                  <li>Sweden <span>+46</span></li>
+                  <li>Swaziland <span>+268</span></li>
+                  <li>Sint Maarten <span>+1721</span></li>
+                  <li>Seychelles <span>+248</span></li>
+                  <li>Syria <span>+963</span></li>
+                  <li>Turks and Caicos Islands <span>+1649</span></li>
+                  <li>Chad <span>+235</span></li>
+                  <li>Togo <span>+228</span></li>
+                  <li>Thailand <span>+66</span></li>
+                  <li>Tajikistan <span>+992</span></li>
+                  <li>Tokelau <span>+690</span></li>
+                  <li>Turkmenistan <span>+993</span></li>
+                  <li>Timor-Leste <span>+670</span></li>
+                  <li>Tonga <span>+676</span></li>
+                  <li>Trinidad and Tobago <span>+1868</span></li>
+                  <li>Tunisia <span>+216</span></li>
+                  <li>Turkey <span>+90</span></li>
+                  <li>Tuvalu <span>+688</span></li>
+                  <li>Taiwan <span>+886</span></li>
+                  <li>Tanzania <span>+255</span></li>
+                  <li>Uganda <span>+256</span></li>
+                  <li>Ukraine <span>+380</span></li>
+                  <li>United States Minor Outlying Islands <span>+</span></li>
+                  <li>Uruguay <span>+598</span></li>
+                  <li>United States <span>+1</span></li>
+                  <li>Uzbekistan <span>+998</span></li>
+                  <li>Vatican City <span>+3906698</span></li>
+                  <li>Saint Vincent and the Grenadines <span>+1784</span></li>
+                  <li>Venezuela <span>+58</span></li>
+                  <li>British Virgin Islands <span>+1284</span></li>
+                  <li>United States Virgin Islands <span>+1340</span></li>
+                  <li>Vietnam <span>+84</span></li>
+                  <li>Vanuatu <span>+678</span></li>
+                  <li>Wallis and Futuna <span>+681</span></li>
+                  <li>Samoa <span>+685</span></li>
+                  <li>Yemen <span>+967</span></li>
+                  <li>South Africa <span>+27</span></li>
+                  <li>Zambia <span>+260</span></li>
+                  <li>Zimbabwe <span>+263</span></li>
+                </ul><input class="form-wrap__input form-control" type="text" name="phone" autocomplete="off" placeholder="Ваш телефон"/><span class="error-message">Некорректные данные</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button class="form-wrap__btn btn btn-block btn-primary mb-4" type="submit"> Отправить
+            </button>
+          </div>
         </div>
-        <div class="form-wrap__input-wrap form-group">
-          <label><span class="form-wrap__title">text</span><input class="form-wrap__input form-control" type="Ваше Имя" required="required"/>
-          </label>
-        </div>
-        <!-- +e.input-wrap-->
-        <div class="form-wrap__input-wrap form-group">
-          <label><span class="form-wrap__title">tel</span><input class="form-wrap__input form-control" type="Ваш телефон" required="required"/>
-          </label>
-        </div>
-        <!-- +e.input-wrap--><input class="form-wrap__btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
         <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text text-secondary">
+            Принимаю  <a class="text-body" href="#">условия передачи данных</a> 
+             и&nbsp;согласен с&nbsp;<a class="text-body" href="#">политикой конфеденциальности.</a></span>
           </label>
         </div>
       </form>

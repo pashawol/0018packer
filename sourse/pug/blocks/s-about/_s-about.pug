@@ -1,9 +1,24 @@
 mixin s-about()
 	// start s-about
-	+b.s-about.section.block-with-lazy#s-about&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 s-about
-				
-			.row
+	+b.s-about.section.block-with-lazy#s-about&attributes(attributes) 
+		+e.sub-title
+			+e.bg(class="wow fadeIn" data-wow-duration=`${dur * 2}s`) 
+			.container Что отличает нас от&nbsp;других веб-студий и&nbsp;агентств?
+		.container 
+			+b.section-title 
+				h2 Мы&nbsp;всегда стремимся 
+					|
+					.text-primary к&nbsp;упрощению
+			+e.text 
+				p В&nbsp;сложности нет ничего хорошего, чем сложнее&nbsp;процессы
+					| 
+					| в&nbsp;бизнесе, тем более хрупким и&nbsp;менее гибким он&nbsp;становится.
+					| 
+					| Одна&nbsp;ошибка кладется на&nbsp;другую и&nbsp;система рушится.
+					| 
+					| В&nbsp;простоте кроется сила, в&nbsp;сложности&nbsp;&mdash; уязвимость.
+				p Именно поэтому мы&nbsp;выстраиваем простые, но
+					| 
+					| эффективные&nbsp;коммуникации с&nbsp;клиентом.
+			+e.btn.popup-with-move-anim(href="#modal-call" data-order=`Получить консультацию`  ) Получить консультацию
 	// end s-about

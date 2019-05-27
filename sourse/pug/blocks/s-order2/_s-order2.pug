@@ -1,9 +1,23 @@
 mixin s-order2()
 	// start s-order2
 	+b.s-order2.section.block-with-lazy#s-order2&attributes(attributes)
-		.container
+		.container 
 			+b.section-title.text-center
-				h2 s-order2
-				
-			.row
+				.h2(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 6}s`) Все еще сомневаетесь нужна&nbsp;ли
+					| 
+					span.underline упаковка вашему бизнесу?
+				+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 7}s`) Закажите детальный разбор&nbsp;упаковки
+			+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 8}s`) 
+				span за 
+				| 
+				+e.SPAN.strike 15 000
+					span.rub r
+					
+				|  
+				+e.SPAN.last
+					span.bg-primary до&nbsp;30&nbsp;мая 
+			+e.price-lg.underline(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 9}s`)  10 000
+				span.rub r
+			br
+			+e.btn--all.popup-with-move-anim(href="#modal-call" data-order=`Заказать детальный разбор`    class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 10}s`) Заказать детальный разбор
 	// end s-order2

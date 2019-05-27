@@ -33,14 +33,785 @@ mixin modal()
 	//- 			br 
 
 	+form-wrap()(id="modal-call" class="zoom-anim-dialog mfp-hide modal-win modal-form  block-with-lazy" )
-		.text-center
-			+e.title.h3.ttu Обратный звонок
-			p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-		+input("text","Ваше Имя")(required) 
-		+input("tel","Ваш телефон")(required)
-		//- +input("email","Ваше email")(required)
-		//- +text( "Комментарий")
-		+e.INPUT.btn.btn.btn-block.btn-warning.mb-4(type="submit" value="Рассчитать") 
+		input.order(type="hidden" class="order" name="order")
+		+e.title.h3.strong Оставьте заявку,
+			spun.underline перезвоним за&nbsp;15&nbsp;минут
+		.row
+			.col-md-6
+				+input("text","Ваше Имя")
+			.col-md-6
+				+input("email","Ваш email")
+			
+			.col-md-6
+				+e.input-wrap.form-group
+					input(type='hidden', name='phone-code', value='+7')
+					label.input-phone(style=' ')
+						span.code-btn
+							+icon('arrow')
+						span.code-span +7
+						ul.code-menu
+							li
+								| Russia 
+								span +7
+							li
+								| Belarus 
+								span +375
+							li
+								| Ukraine 
+								span +380
+							li
+								| Kazakhstan 
+								span +76
+							li
+								| Kyrgyzstan 
+								span +996
+							li.border
+							li
+								| Aruba 
+								span +297
+							li
+								| Afghanistan 
+								span +93
+							li
+								| Angola 
+								span +244
+							li
+								| Anguilla 
+								span +1264
+							li
+								| Åland Islands 
+								span +358
+							li
+								| Albania 
+								span +355
+							li
+								| Andorra 
+								span +376
+							li
+								| United Arab Emirates 
+								span +971
+							li
+								| Argentina 
+								span +54
+							li
+								| Armenia 
+								span +374
+							li
+								| American Samoa 
+								span +1684
+							li
+								| Antarctica 
+								span +
+							li
+								| French Southern and Antarctic Lands 
+								span +
+							li
+								| Antigua and Barbuda 
+								span +1268
+							li
+								| Australia 
+								span +61
+							li
+								| Austria 
+								span +43
+							li
+								| Azerbaijan 
+								span +994
+							li
+								| Burundi 
+								span +257
+							li
+								| Belgium 
+								span +32
+							li
+								| Benin 
+								span +229
+							li
+								| Burkina Faso 
+								span +226
+							li
+								| Bangladesh 
+								span +880
+							li
+								| Bulgaria 
+								span +359
+							li
+								| Bahrain 
+								span +973
+							li
+								| Bahamas 
+								span +1242
+							li
+								| Bosnia and Herzegovina 
+								span +387
+							li
+								| Saint Barthélemy 
+								span +590
+							li
+								| Belarus 
+								span +375
+							li
+								| Belize 
+								span +501
+							li
+								| Bermuda 
+								span +1441
+							li
+								| Bolivia 
+								span +591
+							li
+								| Brazil 
+								span +55
+							li
+								| Barbados 
+								span +1246
+							li
+								| Brunei 
+								span +673
+							li
+								| Bhutan 
+								span +975
+							li
+								| Bouvet Island 
+								span +
+							li
+								| Botswana 
+								span +267
+							li
+								| Central African Republic 
+								span +236
+							li
+								| Canada 
+								span +1
+							li
+								| Cocos (Keeling) Islands 
+								span +61
+							li
+								| Switzerland 
+								span +41
+							li
+								| Chile 
+								span +56
+							li
+								| China 
+								span +86
+							li
+								| Ivory Coast 
+								span +225
+							li
+								| Cameroon 
+								span +237
+							li
+								| DR Congo 
+								span +243
+							li
+								| Republic of the Congo 
+								span +242
+							li
+								| Cook Islands 
+								span +682
+							li
+								| Colombia 
+								span +57
+							li
+								| Comoros 
+								span +269
+							li
+								| Cape Verde 
+								span +238
+							li
+								| Costa Rica 
+								span +506
+							li
+								| Cuba 
+								span +53
+							li
+								| Curaçao 
+								span +5999
+							li
+								| Christmas Island 
+								span +61
+							li
+								| Cayman Islands 
+								span +1345
+							li
+								| Cyprus 
+								span +357
+							li
+								| Czech Republic 
+								span +420
+							li
+								| Germany 
+								span +49
+							li
+								| Djibouti 
+								span +253
+							li
+								| Dominica 
+								span +1767
+							li
+								| Denmark 
+								span +45
+							li
+								| Dominican Republic 
+								span +1809
+							li
+								| Algeria 
+								span +213
+							li
+								| Ecuador 
+								span +593
+							li
+								| Egypt 
+								span +20
+							li
+								| Eritrea 
+								span +291
+							li
+								| Western Sahara 
+								span +212
+							li
+								| Spain 
+								span +34
+							li
+								| Estonia 
+								span +372
+							li
+								| Ethiopia 
+								span +251
+							li
+								| Finland 
+								span +358
+							li
+								| Fiji 
+								span +679
+							li
+								| Falkland Islands 
+								span +500
+							li
+								| France 
+								span +33
+							li
+								| Faroe Islands 
+								span +298
+							li
+								| Micronesia 
+								span +691
+							li
+								| Gabon 
+								span +241
+							li
+								| United Kingdom 
+								span +44
+							li
+								| Georgia 
+								span +995
+							li
+								| Guernsey 
+								span +44
+							li
+								| Ghana 
+								span +233
+							li
+								| Gibraltar 
+								span +350
+							li
+								| Guinea 
+								span +224
+							li
+								| Guadeloupe 
+								span +590
+							li
+								| Gambia 
+								span +220
+							li
+								| Guinea-Bissau 
+								span +245
+							li
+								| Equatorial Guinea 
+								span +240
+							li
+								| Greece 
+								span +30
+							li
+								| Grenada 
+								span +1473
+							li
+								| Greenland 
+								span +299
+							li
+								| Guatemala 
+								span +502
+							li
+								| French Guiana 
+								span +594
+							li
+								| Guam 
+								span +1671
+							li
+								| Guyana 
+								span +592
+							li
+								| Hong Kong 
+								span +852
+							li
+								| Heard Island and McDonald Islands 
+								span +
+							li
+								| Honduras 
+								span +504
+							li
+								| Croatia 
+								span +385
+							li
+								| Haiti 
+								span +509
+							li
+								| Hungary 
+								span +36
+							li
+								| Indonesia 
+								span +62
+							li
+								| Isle of Man 
+								span +44
+							li
+								| India 
+								span +91
+							li
+								| British Indian Ocean Territory 
+								span +246
+							li
+								| Ireland 
+								span +353
+							li
+								| Iran 
+								span +98
+							li
+								| Iraq 
+								span +964
+							li
+								| Iceland 
+								span +354
+							li
+								| Israel 
+								span +972
+							li
+								| Italy 
+								span +39
+							li
+								| Jamaica 
+								span +1876
+							li
+								| Jersey 
+								span +44
+							li
+								| Jordan 
+								span +962
+							li
+								| Japan 
+								span +81
+							li
+								| Kazakhstan 
+								span +76
+							li
+								| Kenya 
+								span +254
+							li
+								| Kyrgyzstan 
+								span +996
+							li
+								| Cambodia 
+								span +855
+							li
+								| Kiribati 
+								span +686
+							li
+								| Saint Kitts and Nevis 
+								span +1869
+							li
+								| South Korea 
+								span +82
+							li
+								| Kosovo 
+								span +383
+							li
+								| Kuwait 
+								span +965
+							li
+								| Laos 
+								span +856
+							li
+								| Lebanon 
+								span +961
+							li
+								| Liberia 
+								span +231
+							li
+								| Libya 
+								span +218
+							li
+								| Saint Lucia 
+								span +1758
+							li
+								| Liechtenstein 
+								span +423
+							li
+								| Sri Lanka 
+								span +94
+							li
+								| Lesotho 
+								span +266
+							li
+								| Lithuania 
+								span +370
+							li
+								| Luxembourg 
+								span +352
+							li
+								| Latvia 
+								span +371
+							li
+								| Macau 
+								span +853
+							li
+								| Saint Martin 
+								span +590
+							li
+								| Morocco 
+								span +212
+							li
+								| Monaco 
+								span +377
+							li
+								| Moldova 
+								span +373
+							li
+								| Madagascar 
+								span +261
+							li
+								| Maldives 
+								span +960
+							li
+								| Mexico 
+								span +52
+							li
+								| Marshall Islands 
+								span +692
+							li
+								| Macedonia 
+								span +389
+							li
+								| Mali 
+								span +223
+							li
+								| Malta 
+								span +356
+							li
+								| Myanmar 
+								span +95
+							li
+								| Montenegro 
+								span +382
+							li
+								| Mongolia 
+								span +976
+							li
+								| Northern Mariana Islands 
+								span +1670
+							li
+								| Mozambique 
+								span +258
+							li
+								| Mauritania 
+								span +222
+							li
+								| Montserrat 
+								span +1664
+							li
+								| Martinique 
+								span +596
+							li
+								| Mauritius 
+								span +230
+							li
+								| Malawi 
+								span +265
+							li
+								| Malaysia 
+								span +60
+							li
+								| Mayotte 
+								span +262
+							li
+								| Namibia 
+								span +264
+							li
+								| New Caledonia 
+								span +687
+							li
+								| Niger 
+								span +227
+							li
+								| Norfolk Island 
+								span +672
+							li
+								| Nigeria 
+								span +234
+							li
+								| Nicaragua 
+								span +505
+							li
+								| Niue 
+								span +683
+							li
+								| Netherlands 
+								span +31
+							li
+								| Norway 
+								span +47
+							li
+								| Nepal 
+								span +977
+							li
+								| Nauru 
+								span +674
+							li
+								| New Zealand 
+								span +64
+							li
+								| Oman 
+								span +968
+							li
+								| Pakistan 
+								span +92
+							li
+								| Panama 
+								span +507
+							li
+								| Pitcairn Islands 
+								span +64
+							li
+								| Peru 
+								span +51
+							li
+								| Philippines 
+								span +63
+							li
+								| Palau 
+								span +680
+							li
+								| Papua New Guinea 
+								span +675
+							li
+								| Poland 
+								span +48
+							li
+								| Puerto Rico 
+								span +1787
+							li
+								| North Korea 
+								span +850
+							li
+								| Portugal 
+								span +351
+							li
+								| Paraguay 
+								span +595
+							li
+								| Palestine 
+								span +970
+							li
+								| French Polynesia 
+								span +689
+							li
+								| Qatar 
+								span +974
+							li
+								| Réunion 
+								span +262
+							li
+								| Romania 
+								span +40
+							li
+								| Rwanda 
+								span +250
+							li
+								| Saudi Arabia 
+								span +966
+							li
+								| Sudan 
+								span +249
+							li
+								| Senegal 
+								span +221
+							li
+								| Singapore 
+								span +65
+							li
+								| South Georgia 
+								span +500
+							li
+								| Svalbard and Jan Mayen 
+								span +4779
+							li
+								| Solomon Islands 
+								span +677
+							li
+								| Sierra Leone 
+								span +232
+							li
+								| El Salvador 
+								span +503
+							li
+								| San Marino 
+								span +378
+							li
+								| Somalia 
+								span +252
+							li
+								| Saint Pierre and Miquelon 
+								span +508
+							li
+								| Serbia 
+								span +381
+							li
+								| South Sudan 
+								span +211
+							li
+								| São Tomé and Príncipe 
+								span +239
+							li
+								| Suriname 
+								span +597
+							li
+								| Slovakia 
+								span +421
+							li
+								| Slovenia 
+								span +386
+							li
+								| Sweden 
+								span +46
+							li
+								| Swaziland 
+								span +268
+							li
+								| Sint Maarten 
+								span +1721
+							li
+								| Seychelles 
+								span +248
+							li
+								| Syria 
+								span +963
+							li
+								| Turks and Caicos Islands 
+								span +1649
+							li
+								| Chad 
+								span +235
+							li
+								| Togo 
+								span +228
+							li
+								| Thailand 
+								span +66
+							li
+								| Tajikistan 
+								span +992
+							li
+								| Tokelau 
+								span +690
+							li
+								| Turkmenistan 
+								span +993
+							li
+								| Timor-Leste 
+								span +670
+							li
+								| Tonga 
+								span +676
+							li
+								| Trinidad and Tobago 
+								span +1868
+							li
+								| Tunisia 
+								span +216
+							li
+								| Turkey 
+								span +90
+							li
+								| Tuvalu 
+								span +688
+							li
+								| Taiwan 
+								span +886
+							li
+								| Tanzania 
+								span +255
+							li
+								| Uganda 
+								span +256
+							li
+								| Ukraine 
+								span +380
+							li
+								| United States Minor Outlying Islands 
+								span +
+							li
+								| Uruguay 
+								span +598
+							li
+								| United States 
+								span +1
+							li
+								| Uzbekistan 
+								span +998
+							li
+								| Vatican City 
+								span +3906698
+							li
+								| Saint Vincent and the Grenadines 
+								span +1784
+							li
+								| Venezuela 
+								span +58
+							li
+								| British Virgin Islands 
+								span +1284
+							li
+								| United States Virgin Islands 
+								span +1340
+							li
+								| Vietnam 
+								span +84
+							li
+								| Vanuatu 
+								span +678
+							li
+								| Wallis and Futuna 
+								span +681
+							li
+								| Samoa 
+								span +685
+							li
+								| Yemen 
+								span +967
+							li
+								| South Africa 
+								span +27
+							li
+								| Zambia 
+								span +260
+							li
+								| Zimbabwe 
+								span +263
+						+e.INPUT.input.form-control(type='text', name='phone' autocomplete="off", placeholder='Ваш телефон')
+						span.error-message Некорректные данные
+
+			.col-md-6
+				+e.btn.btn.btn-block.btn-primary.mb-4(type="submit" )  Отправить
 		+polite()
 	// #modal-call
 	// modal

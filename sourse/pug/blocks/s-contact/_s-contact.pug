@@ -1,9 +1,19 @@
 mixin s-contact()
 	// start s-contact
-	+b.s-contact.section.block-with-lazy#s-contact&attributes(attributes)
-		.container
+	+b.s-contact.block-with-lazy#s-contact&attributes(attributes)
+		+b.scrollblock.scrollblock--js(data-paroller-factor="0.5" data-paroller-type="foreground")
+			+e.text  CONTACTS
+		.container.section
 			+b.section-title.text-center
-				h2 s-contact
-				
-			.row
+				h2 Контакты
+			+e.body
+				+e.tel(href="tel:89959669888") 8 995 96 69 888
+				br
+				+e.mail(href="mailto:info@thepackers.ru") info@thepackers.ru
+				+e.text 
+					strong Подпишитесь на&nbsp;нас, 
+					|
+					span чтобы не&nbsp;потерять!
+				+soc()
+			+e.copy © Упаковщики 2019.
 	// end s-contact

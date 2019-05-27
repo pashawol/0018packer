@@ -50,11 +50,18 @@ mixin control-sl()
  
 mixin soc()
 	+b.soc
-		mixin item()
-			+e.A.item(href="" target="_blank"): i(class="fab")&attributes(attributes)
-		+item()(class="fa-twitter")
-		+item()(class=" fa-facebook")
-		+item()(class="fa-google-plus")
+		+e.A.item--vk(href="" target="_blank")
+			+icon('vk')
+		
+		+e.A.item--fb(href="" target="_blank")
+			+icon('fb')
+		
+		+e.A.item--instagram(href="" target="_blank")
+			+icon('instagram')
+		
+		+e.A.item--play(href="" target="_blank")
+			+icon('play')
+			
 //- WP menu
 //- mixin mnu()
 //- 	- var nav= { "Наши работы":"#","Цены":"#","Калькулятор":"#","Акции":"#" ,"Заказать":"#"}

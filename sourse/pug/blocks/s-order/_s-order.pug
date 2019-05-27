@@ -1,9 +1,28 @@
 mixin s-order()
 	// start s-order
-	+b.s-order.section.block-with-lazy#s-order&attributes(attributes)
+	+b.s-order.section.block-with-lazy.bg-primary.pb-0#s-order&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-order
-				
 			.row
+				.col
+					+b.section-title
+						h2(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2}s`)
+							span.underline  Закажите детальный разбор
+							| 
+							| упаковки вашего бизнеса
+							br
+						.h2(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .4}s`)  за 
+							span.strike.text-white 15 000
+								span.rub.text-white r
+							span.date до&nbsp;30&nbsp;мая
+					+e.big(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .6}s`) 10 000
+						span.rub r
+					+e.list-title(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .8}s`) Вы получите:
+					- const liCont = ["Разбор точек соприкосновения вашего бизнеса с клиентом;","Поиск уязвимых мест;","Проработка целевой аудитории;","Исследование конкурентов;","Стратегия развития;","Рекомендации по усилению упаковки."]
+					ul
+						each lin in liCont 
+							li(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 1}s`)= lin 
+						li.before(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 1.2}s`)
+				.col-5.align-self-end.d-none.d-lg-block
+					+e.img-wrap
+						img.lazy.res-i(src="#" data-src="img/order-img.png", alt="")
 	// end s-order

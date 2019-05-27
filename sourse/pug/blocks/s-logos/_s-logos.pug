@@ -1,9 +1,14 @@
 mixin s-logos()
 	// start s-logos
 	+b.s-logos.section.block-with-lazy#s-logos&attributes(attributes)
+		+e.bg.img-bg(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 1.6}s`  data-wow-offset="150")
+			img.lazy-bg(src="#", data-src="img/logo-bg.jpg" alt="")
 		.container
 			+b.section-title.text-center
-				h2 s-logos
-				
-			.row
+				+e.text.text-warning(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1}s`) За&nbsp;3&nbsp;года мы&nbsp;помогли
+				h2(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .4}s`) сформировать нашим клиентам 
+					|
+					span.underline  имидж лидера рынка
+				+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .8}s`) в&nbsp;различных сферах b2b и&nbsp;b2c
+				+e.btn.popup-with-move-anim(href="#modal-call" data-order="Заказать упаковку бизнеса "  class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 1.2}s`) Заказать упаковку бизнеса 
 	// end s-logos

@@ -1,4 +1,194 @@
 .s-prices {
+	.section-title{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em(320);
+		margin-bottom: 0;
+		padding-bottom: em(26);
+	}
+	&__slider{
+
+		margin-bottom: rem(30);
+	}
+	&__slide{
+		@include media-breakpoint-down(sm) {
+
+			border: rem(2) solid $secondary;
+			text-align: center;
+			border-radius: 5px;
+		}
+		@include media-breakpoint-up(md) {
+
+			&:not(:nth-child(4n + 4)){
+				
+				border-right: rem(2) solid $secondary;
+			}
+		}
+		height: auto;
+		@include media-breakpoint-only(md) {
+			&:nth-child(4n + 2){
+
+				border-right: none;
+			}
+			&:nth-child(4n + 1),
+			&:nth-child(4n + 2){
+
+				border-bottom: rem(2) solid $secondary;
+			}
+		}
+	}
+	&__item{
+		height: 100%;
+		font-size: rem(16);
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(255px);
+		padding-top: rem(40);
+		padding-bottom: rem(55);
+		display: flex;
+		flex-direction: column;
+
+	}
+	&__title-wrap{
+		@extend .h4;
+
+		display: flex;
+		align-items: center;
+		min-height: em(50);
+		// padding-bottom: rem(10);
+		margin-bottom: rem(10);
+		@include media-breakpoint-down(sm) {
+			justify-content: center;
+		}
+	}
+	&__title{
+		font-weight: 900;
+		&::after{
+			content: 'от';
+			color: $secondary;
+		}
+	}
+	&__price{
+		@extend .display-2;
+		margin-bottom: rem(20);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+	}
+	&__text{
+		margin-bottom: auto;
+		padding-bottom: rem(32);
+	}
+
+	&__gray-text{
+		text-align: center;
+		color: $secondary;
+		// font-family: "Proxima Nova - Black";
+		// font-size: $h3-font-size;
+		@extend .h3;
+		font-weight: 900;
+	}
+	&__foot{
+	
+		text-align: center;
+		&.section{
+			@include media-breakpoint-up(xxl) {
+
+				padding-top: rem(55);
+			}
+			padding-top: rem(25);
+		}
+		.section-title{
+			.h2{
+				position: relative;
+				@include media-breakpoint-up(md) {
+					&::before,
+					&::after{
+						content: 'x4';
+						color: $primary;
+						position: absolute;
+						top: em(-8);
+						// left: 100%;
+						
+					}
+					&::before{
+						display: none;
+					}
+
+				}
+				&::before{
+					content: 'x4';
+					color: $primary;
+				display: block;
+				text-align: center;
+				font-size: 2em;
+				} 
+			}
+			padding-bottom: em(5);
+			&__text{
+				@extend .h4;
+				font-weight: 400;
+			}
+		}
+	}
+	&__strike{
+		color: $secondary;
+		@extend .h4;
+		font-weight: 900;
+		position: relative;
+		display: inline-block;
+		margin-bottom: 0;
+		&::after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			background-color: $body-color;
+			height: rem(2);
+		}
+	}
+	&__price-lg{
+		@extend .display-1;
+		font-weight: 900;
+		display: inline-block;
+		margin-bottom: rem(20);
+	}
+	&__small{
+		@extend .h2;
+		font-weight: 900;
+		display: inline;
+	}
+	&__btn--all{
+			@extend .btn-block;
+			margin-left: auto;
+			margin-right: auto;
+			@include media-breakpoint-up(xxl) {
+				
+			}
+			@include media-breakpoint-up(md) {
+
+				max-width: rem(365);
+				margin-bottom: rem(100);
+			}
+			max-width: rem(285);
+			margin-bottom: rem(50);
+	}
+	&__img-wrap{
+		height: rem(80);
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(40);
+		margin-left: auto;
+		margin-right: auto;
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+		img{
+			flex-shrink: 0;
+		}
+	}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

@@ -1,9 +1,27 @@
 mixin s-soc()
 	// start s-soc
 	+b.s-soc.section.block-with-lazy#s-soc&attributes(attributes)
+		+b.scrollblock.scrollblock--js(data-paroller-factor="0.5" data-paroller-type="foreground")
+			+e.text  SOCIAL
 		.container
-			+b.section-title.text-center
-				h2 s-soc
-				
+			+b.section-title.text-center(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1}s`)
+				h2 Мы ведем активную 
+					span.d-block.text-primary социальную деятельность 
 			.row
+				.col-lg-6
+					+e.img-wrap(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2}s`)
+						img.res-i.lazy(src="#" data-src=`img/soc-img.jpg`, alt="")
+						+e.play(href="#")
+							+icon('play')
+					+e.small(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .4}s`) Скоро запуск канала на youtube — 
+						| 
+						span УПАКОВЩИКИ
+				.col
+					+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .3}s`).
+						Делимся опытом, делаем индивидуальные 
+						предложения клиентам, рассказываем 
+						и&nbsp;показываем интересные факты 
+						с&nbsp;нашей&nbsp;кухни.
+					div(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .4}s`)
+						+soc()
 	// end s-soc

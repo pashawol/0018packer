@@ -1,4 +1,47 @@
 .s-contact {
+	text-align: center;
+	background-color: $body-color;
+	color: #ffffff;
+	@extend .h5;
+	position: relative;
+	margin-bottom: 0;
+	overflow: hidden;
+	z-index: 2;
+	.container{
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	h2{
+		color: $primary;
+	}
+	&__tel{
+		@extend .display-1;
+		@extend .text-white;
+		text-decoration: none !important;
+		font-weight: 900;
+	}
+	&__mail{
+		color: #ffffff !important;
+		text-decoration: none !important;
+		border-bottom: 1px solid;
+		display: inline-block;
+		margin-bottom: em(40);
+		@include mt;
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+	&__text{
+		margin-bottom: em(40);
+
+	}
+	&__copy{
+		font-weight: 1rem;
+		padding-top: rem(100);
+		padding-bottom: rem(70);
+	}
 	//
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -24,4 +67,21 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	.scrollblock{
+		// top: 0;
+		position: absolute;
+		bottom: auto;
+		height: auto;
+		top: 0;
+		&__text{
+			line-height: 1;
+			color: #151415;
+			@include media-breakpoint-up(xl) {
+
+				font-size: calc(   18.4vw);
+			}
+			// font-size: calc(   13.3vw);
+			font-size: calc(   17.4vw);
+		}
+	}
 }

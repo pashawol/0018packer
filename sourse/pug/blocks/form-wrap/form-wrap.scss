@@ -1,22 +1,208 @@
 .form-wrap{
- 	&__input-wrap{
-
- 		max-width: 466px;
- 	}
- 	&__input{
-		//  outline: 0 !important;
-		 resize: none;
- 	}
+ 	 
  	&__btn{
  		cursor: pointer;
- 	}
- 	label{
- 		width: 100%;
- 		display: block;
- 	}
+	 }
+	 &__input{
+		 outline: none;
+		 border: 1px solid #d9d9d9;
+		 &:focus{
+			box-shadow: 0 5px 15px rgba(29, 27, 29, 0.15);
+	
+		}
+	 }
+ 	&__title{
+		 font-weight: 900;
+		 margin-bottom: .8em;
+		 margin-right: -10px;
+		 @include media-breakpoint-up(md) {
+			 text-align: left;
+			 margin-right: 0;
+			 margin-left: 0;
+			}
+			max-width: em(280);
+		 text-align: center;
+		 margin-left: auto;
+		 margin-right: auto;
+		//  margin-right: -10px;
+	 }
+	 &__btn{
+		 margin-left: auto;
+		 margin-right: auto;
+		 @include media-breakpoint-up(md) {
+			 max-width: none;
+			 margin-top: 0;
+		 }
+		 margin-top: rem(20);
+		 max-width: rem(300);
+		 margin-bottom: rem(20);
+	 }
+  .code-btn {
+ 
+  -moz-transition: .3s ;
+		width: rem(32px);
+		height: rem(32px);
+		border-radius: 2px;
+		background-color: #f5f7f7;
+		left: 14px;
+		@include a-cent(y);
+		cursor: pointer;
+		transition: .3s
+	}
+}
+.input-phone{
+	width: 100%;
+	display: block;
+	border: 1px solid #ced4da;
+	position: relative;
+	@include mt;
+	&:focus{
+		
+		// box-shadow: 0 5px 15px rgba(29, 27, 29, 0.15);
+	}
+	input{
+		border: none !important;
+		padding-left: rem(90);
+		margin-bottom: 0;
+		// box-shadow: none !important;
+	}
+}
+
+ .error-message,
+ .error-message {
+  z-index: -1;
+  -webkit-transition: top .4s, opacity .4s;
+  // font-family: Circe, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  opacity: 0
+}
+.error-message {
+  width: 100%;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ef5d60;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 18px 24px;
+  font-size: 14px;
+  line-height: .57;
+  color: #fff;
+  text-transform: none;
+  -o-transition: top .4s, opacity .4s;
+  -moz-transition: top .4s, opacity .4s;
+  transition: top .4s, opacity .4s
+}
+
+  .code-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  background-color: #f5f7f7;
+  left: 14px;
+  top: 14px;
+  cursor: pointer;
+	transition: .3s;
+	position: absolute;
+}
+
+  .code-btn .icon {
+  font-size: rem(10);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+ 
+  transform: translate(-50%, -50%) ;
+ 
+  transition: .3s
+}
+
+ .code-btn.active svg {
+ 
+  transform: translate(-50%, -50%) rotate(-180deg)
 }
 
 
+form .input-phone .code-btn:hover {
+  background-color: $primary;
+}
+
+form .input-phone .code-btn:hover svg {
+  // fill: #fff
+}
+
+form .input-phone .code-span {
+  // font-family: Circe, sans-serif;  
+  letter-spacing: 0;
+  text-transform: none;
+  position: absolute;
+	left: rem(68px);
+	@include a-cent(y);
+	margin-top: em(0);
+  // top: rem(23px);
+}
+
+  .code-menu {
+  width: rem(280px);
+  height: rem(216px);
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .1);
+  overflow-y: scroll; 
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+	display: none;
+	position: absolute;
+	width: 100%;
+}
+
+ .code-menu li {
+  // font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  color: #1e2831;
+  letter-spacing: 0;
+  font-weight: 600;
+  padding: 4px 15px 6px;
+  cursor: pointer
+}
+
+ .code-menu li:first-child {
+  padding-top: 12px
+}
+
+ .code-menu li.border {
+  height: 1px;
+  padding: 0;
+  margin: 10px 0;
+  background-color: #e5e5e5
+}
+
+ .code-menu li span {
+  font-weight: 400;
+  padding-left: 2px
+}
+
+ .code-menu li:hover {
+  background-color: #f5f7f7
+}
+
+ .code-menu.show {
+  display: block
+}
 .parsley-error{
 	border-image: none;
 	border: 2px solid  red !important;
@@ -31,6 +217,20 @@
 .parsley-errors-list{
 	color: red;
 }
+ .input-phone.has-error input {
+  border: 2px solid #ef5d60
+}
+
+ .input-phone.has-error:hover input {
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0
+}
+
+
 
 // 
 @include media-breakpoint-up(xl) {}
@@ -78,8 +278,10 @@
 	margin-bottom: rem(20);
 	cursor: pointer;
 	position: relative;
-	padding-left: 35px;
+	padding-left: rem(60);
 	display: inline-block;
+	font-size: rem(16);
+	margin-top: rem(20);
 	&__input{
 		position: absolute;
 		// opacity: 0;
@@ -94,11 +296,12 @@
 	&__lab{
 		left: 0;
 		display: block;
-		top: -1px;
+		@include a-cent(y);
 		// display: inline-block;
-		width: 20px;
-		height: 20px;
-		background-color: $primary;
+		width: rem(40px);
+		height: rem(40px);
+		border-radius: rem(5px);
+		border: 1px solid #d9d9d9;
 		@include mt;
 		position: absolute; 
 		margin-right: 10px;
@@ -106,33 +309,22 @@
 	}
 	&__input[type="checkbox"] + &__lab{
 		&::after{ 
-			content:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z' class='st0'/%3E%3C/svg%3E");
+			content: '';
+			background-image: url("../img/check.svg");
 			position: absolute;
 			@include a-cent; 
+			background-size: 100% 100%;
+			width: 17px;
+			height: 13px;
 			opacity: 0;
+			// transform: rotateY(90deg);
+			@include mt;
 		}
 	}
-	&__input[type="radio"] + &__lab{
-		 
-		border-radius: 50%;
-		&::after{ 
-			content: '';
-			position: absolute;
-			@include a-cent;
-			background-color: $success;
-			opacity: 0;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-		}
-	}
-
-	&__input[type="checkbox"]:checked + &__lab{
-		background-color: $success;
-		 
-	}
+	
 	&__input:checked + &__lab{ 
 		&::after{
+			// transform: rotateY(0);
 
 			opacity: 1;
 		}

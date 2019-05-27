@@ -48,7 +48,11 @@
 		@include media-breakpoint-up(xxl) { 
 			padding-bottom: rem(75);
 		}
-		min-height: 100vh;
+		@include media-breakpoint-up(sm) {
+
+			min-height: 100vh;
+		}
+		min-height: calc(100vh - 50px);
 		
 		display: flex;
 		flex-direction: column;
@@ -153,7 +157,11 @@
 		@include media-breakpoint-up(xl) {
 			
 		}
-		margin-bottom: rem(35);
+		@include media-breakpoint-up(sm) {
+
+			margin-bottom: rem(35);
+		}
+		margin-bottom: rem(15);
 		// margin-bottom: rem(70);
 		@include media-breakpoint-down(xs) {
 			background-color: $body-color !important;
@@ -175,8 +183,13 @@
 			margin-bottom: 0;
 			margin-top: 0;
 		}
+		@include media-breakpoint-up(sm) {
+
 			margin-top: rem(26);
 			margin-bottom: rem(36);
+		}
+		margin-top: rem(16);
+		margin-bottom: rem(26);
 		&:not(:last-child){
 			@include media-breakpoint-up(sm) {
 
@@ -204,7 +217,7 @@
 	
 	&__logo{
 		// margin-bottom: rem(15);
-		min-height: rem(134px * 1.2);
+		min-height: rem(134px * 1);
 		img{
 			// width: rem(150px * 1.2);
 		}

@@ -1,22 +1,60 @@
  
 
 .soc{
-	margin: 0 -5px;
+	margin: 0 -7px;
 	&__item{
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		text-decoration: none !important;
-		margin: 0 5px;
+		margin: 0 7px;
 		vertical-align: middle;
+		width: rem(70);
+		height: rem(70);
+		border-radius: 50%;
 		@include mt;
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: .6 ;
+		color: #ffffff !important;
+		
+		.icon{
+			font-size: rem(20px);
 		}
+		&--vk{
+			background-color: #4a76a8;
+		&	:hover{
+				box-shadow: 0 5px 15px rgba(74, 118, 168, 0.4);
+			}
+		}
+		
+		&--fb{
+		 
+			background-color: #3b5998;
+			&:hover{
+				box-shadow: 0 5px 15px rgba(59, 89, 152, 0.4);
+			}
+		}
+		&--instagram{
+			.icon{
+				font-size: rem(22px);
+			}
+
+			background-color: #ef4a5a;
+			&:hover{
+				box-shadow: 0 5px 15px rgba(239, 74, 90, 0.4);
+			}
+		}
+		&--play{
+			.icon{
+				font-size: rem(14px);
+			}
+			background-color: #f00;
+
+			&:hover{
+				box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+			}
+		}
+
 	}
-	svg{
-		width: 31px;
-		height: 31px;
-	}
+ 
 	 
 
 }

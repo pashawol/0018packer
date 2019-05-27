@@ -1,9 +1,50 @@
 mixin s-prices()
 	// start s-prices
-	+b.s-prices.section.block-with-lazy#s-prices&attributes(attributes)
+	+b.s-prices.block-with-lazy#s-prices&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-prices
-				
-			.row
+			+e.head.section
+				+b.section-title.text-center
+					h2 Уже знаете с&nbsp;чего начать
+						| 
+						span.underline упаковку&nbsp;вашего бизнеса?
+				+e.slider.slider--js.swiper-container
+					.swiper-wrapper
+						mixin item(t, pr, x)
+							+e.slide.swiper-slide.col-lg-3.col-md-6(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * x}s`)
+								+e.item
+									+e.img-wrap
+										img.lazy.res-i(src="#" data-src=`img/servise-${x}.png`, alt="")
+									+e.title-wrap
+										+e.title= t
+									+e.price= pr
+										span.rub r
+									block
+									+e.btn.btn-sm.btn-block.popup-with-move-anim(href="#modal-call" data-order=`Рассчитать проект -  ${t}`   ) Рассчитать проект
+									
+							// /+e.slide.swiper-slide.col-lg-3.col-md-6
+						+item("Сайт ","45 000","1")
+							+e.text Посадочная страница, корпоративный сайт или интернет-магазин
+						+item("Брендинг ","25 000","2")
+							+e.text Логотип, фирменный стиль, полиграфическая и&nbsp;сувенирная продукция
+						+item("Контекстная реклама ","20 000","3")
+							+e.text Создание, ведение, оптимизация и&nbsp;отчетность
+						+item("SMM ","20 000","4")
+							+e.text Логотип, фирменный стиль, полиграфическая и&nbsp;сувенирная продукция
+				.d-md-none
+					+control-sl()
+			+e.gray-text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 *5}s`)  или
+			+e.foot.section
+				+b.section-title.text-center
+					.h2(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 6}s`) Подписка на&nbsp;комплекс
+					+e.text(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 7}s`) Сайт, брендинг, контекстная реклама&nbsp;и&nbsp;SMM
+				+e.strike(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 8}s`) от 110 000
+					span.rub r
+				br
+				+e.price-lg.underline(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 9}s`) 
+					+e.small от 
+					| 
+					| 55 000
+					span.rub r
+				br
+				+e.btn--all.popup-with-move-anim(href="#modal-call" data-order=`Рассчитать проект -  полный комплекс`   class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * 10}s`) Рассчитать проект
 	// end s-prices
