@@ -2,9 +2,9 @@ mixin form-head()
 	form.js-form-validate( data-parsley-validate="") 
 		input(type='hidden', class="order", name='order', value=`Заявка  с сайта` ) 
 		block
-mixin input(  t , pl)
+mixin input(  t , pl, n)
 	+e.input-wrap.form-group
-		+e.INPUT.input.form-control(type= t placeholder= pl)&attributes(attributes)
+		+e.INPUT.input.form-control(type= t  placeholder= pl name= n)&attributes(attributes)
 	// +e.input-wrap
 mixin ta(p , pl)
 	+e.input-wrap.form-group

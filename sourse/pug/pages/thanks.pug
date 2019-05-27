@@ -16,31 +16,12 @@ include ../blocks/s-soc/_s-soc.pug
 include ../blocks/s-prices/_s-prices.pug
 include ../blocks/s-about/_s-about.pug
 include ../blocks/s-order2/_s-order2.pug
+include ../blocks/s-thanks/_s-thanks.pug
 
 block title
-	title title
+	title Спасибо за обращение!
 
 block pagecontent
 	//- +mob-mnu()
-	+top-nav()
-	+header()
-
-		+header-block()
-	+s-first
-	+s-steps
-	+s-complex()(class="bg-white")
-	+s-team
-	//- +b.bg.bg-primary.scrollblock--js(data-paroller-factor="0.3"   data-paroller-type="foreground")
-	+s-why
-	
-	+s-cases
-	+s-logos
-	+s-order
-	+s-result
-	+s-soc
-	+s-prices
-	+s-about
-	+s-order2
-	+s-contact()
-	//- +footer()
+	+s-thanks
 

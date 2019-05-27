@@ -55,6 +55,7 @@
 	display: block;
 	border: 1px solid #ced4da;
 	position: relative;
+	border-radius: rem(5);
 	@include mt;
 	&:focus{
 		
@@ -67,42 +68,7 @@
 		// box-shadow: none !important;
 	}
 }
-
- .error-message,
- .error-message {
-  z-index: -1;
-  -webkit-transition: top .4s, opacity .4s;
-  // font-family: Circe, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0;
-  opacity: 0
-}
-.error-message {
-  width: 100%;
-  height: 44px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #ef5d60;
-  -webkit-border-bottom-left-radius: 2px;
-  -moz-border-radius-bottomleft: 2px;
-  border-bottom-left-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -moz-border-radius-bottomright: 2px;
-  border-bottom-right-radius: 2px;
-  padding: 18px 24px;
-  font-size: 14px;
-  line-height: .57;
-  color: #fff;
-  text-transform: none;
-  -o-transition: top .4s, opacity .4s;
-  -moz-transition: top .4s, opacity .4s;
-  transition: top .4s, opacity .4s
-}
-
+ 
   .code-btn {
   width: 32px;
   height: 32px;
@@ -132,15 +98,13 @@
 }
 
 
-form .input-phone .code-btn:hover {
+ .code-btn:hover {
   background-color: $primary;
 }
-
-form .input-phone .code-btn:hover svg {
-  // fill: #fff
+.input-phone.has-error{
+	border-color: #ef3838;
 }
-
-form .input-phone .code-span {
+ .input-phone .code-span {
   // font-family: Circe, sans-serif;  
   letter-spacing: 0;
   text-transform: none;

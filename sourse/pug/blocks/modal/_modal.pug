@@ -38,9 +38,9 @@ mixin modal()
 			spun.underline перезвоним за&nbsp;15&nbsp;минут
 		.row
 			.col-md-6
-				+input("text","Ваше Имя")
+				+input("text","Ваше Имя","name")
 			.col-md-6
-				+input("email","Ваш email")
+				+input("email","Ваш email","email")
 			
 			.col-md-6
 				+e.input-wrap.form-group
@@ -807,9 +807,7 @@ mixin modal()
 							li
 								| Zimbabwe 
 								span +263
-						+e.INPUT.input.form-control(type='text', name='phone' autocomplete="off", placeholder='Ваш телефон')
-						span.error-message Некорректные данные
-
+						+e.INPUT.input.form-control(type='text', name='phone' autocomplete="off", placeholder='Ваш телефон') 
 			.col-md-6
 				+e.btn.btn.btn-block.btn-primary.mb-4(type="submit" )  Отправить
 		+polite()

@@ -60,6 +60,7 @@
 		@extend .btn;
 		@extend .btn-primary;
 		position: absolute;
+		cursor: pointer;
 		@include media-breakpoint-up(md) {
 			left: auto;
 			top: auto;
