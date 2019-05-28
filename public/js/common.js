@@ -1,3 +1,9 @@
+const menu = document.querySelector('.menu-mobile--js')
+toggle = document.querySelector('.toggle-menu-mobile--js')
+body = document.querySelector('body')
+
+var prld = $('.prld');
+
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJX
 	LazyFunction: function () {
@@ -13,7 +19,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (getComputedStyle(lazyImage).display !== "none") {
+							if (( lazyImage.closest(".block-with-lazy").getBoundingClientRect().top   <= window.innerHeight &&  lazyImage.closest(".block-with-lazy").getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none")  {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -132,10 +138,7 @@ var JSCCommon = {
 	},
 
 	mobileMenu: function () {
-		const menu = document.querySelector('.menu-mobile--js')
-		toggle = document.querySelector('.toggle-menu-mobile--js')
-		body = document.querySelector('body')
-		beforeHTML = '<div class="menu-mobile__before menu-mobile__before--js">'
+		const beforeHTML = '<div class="menu-mobile__before menu-mobile__before--js">'
 		menu.insertAdjacentHTML('beforeend', beforeHTML)
 		before = document.querySelector('.menu-mobile__before--js')
 
@@ -185,7 +188,7 @@ jQuery(document).ready(function ($) {
 	}
 	$(window).resize(function () {
 		heightses();
-
+		paddingInput();
 	});
 	$(window).on("load", function () {
 		heightses();
@@ -237,10 +240,28 @@ jQuery(document).ready(function ($) {
 			});
 		})
 	}
+ 
+		$('.s-cases').each(function () {
+			var swiper4 = new Swiper($(this).find('.s-cases__slider--js'), {
+				slidesPerView: 'auto',
+				watchOverflow: true,
+				spaceBetween: 0, 
+				allowTouchMove: false, 
+				pagination: {
+					el: $(this).find('.swiper-pagination'),
+					clickable: true,
+				},
+				navigation: {
+					nextEl: $(this).find('.swiper-button-next'),
+					prevEl: $(this).find('.swiper-button-prev'),
+				},
+				loop: true,
+				loopFillGroupWithBlank: true,
+			});
+		}) 
 
 
-	sliderSection('.section', '.slider--js', '.swiper-pagination')
-	sliderSection('.s-cases', '.s-cases__slider--js', '.swiper-pagination')
+	sliderSection('.section', '.slider--js', '.swiper-pagination') 
 
 	function sliderTeam(sec, sl, pag) {
 
@@ -286,37 +307,25 @@ jQuery(document).ready(function ($) {
 	$('.scrollblock--js').paroller();
 
 
-	var wow = new WOW({
-		mobile: false
+	$(window).on('load', function () {
+		// preloader
+		prld.delay(1050).fadeOut(function(){
+			body.classList.remove('prld-on');
+			var wow = new WOW({
+				mobile: false
+			});
+			wow.init();
+		}).find('i').fadeOut();
+		// masonry 
+	
+		// $grid.one( 'layoutComplete', fullPage())
 	});
-	wow.init();
+
 
 	
 	$('.popup-with-move-anim').click(function () {
 		var th = $(this);
-		// if (th.is(".tabs__link")) {
-
-			 
-		// 	$(th.attr('href')).find(".order").val(th.data('order'));
-		// } else if (th.is(".s-why__btn")) {
-		// 	// $(th.attr('href')).find(".form-wrap__title--js").html(th.data('title'));
-		// 	$(th.attr('href')).find(".order").val(th.data('btn') + ' ' + th.parent().find('.s-why__title').text());
-			
-		// }
-		// else if(th.is('.header-block__btn')){
-		// 	// $(th.attr('href')).find(".form-wrap__title--js").html(th.data('title'));
-			
-		// 	$(th.attr('href')).find(".order")
-		// 	.val(th.data('btn')+"  " + th.parents(".header-block__inner").find(".h1").text());
-		// } 
-		// else {
-		// 	$(th.attr('href')).find(".order").val(th.data('btn'));
-			
-		// }
-		
-		// $(th.attr('href')).find(".form-wrap__title--js").html(th.data('title'));
-		// $(th.attr('href')).find(".form-wrap__title-sub--js").text('Заполните форму, и мы свяжемся с Вами в течение дня для уточнения деталей');
-		// $(th.attr('href')).find(".form-wrap__btn").val(th.data('btn'));
+ 
 		$(th.attr('href')).find(".order").val(th.data('order'));
 	})
  
@@ -342,15 +351,19 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	var codeSpan = 	$(".input-phone").find('.code-span');
+	function paddingInput() {
+
+		$(".input-phone input").css('padding-left', 74 + codeSpan.width());
+	}
 	phone.find('.code-menu li').click(function () {
 		if (!$(this).hasClass('border')) {
-			var code = $(this).find('span').text(),
-				codeSpan = $(this).parent().parent().find('.code-span');
+			var code = $(this).find('span').text();
 			$(this).parent().parent().find('.code-btn').removeClass('active');
 			$(this).parent().removeClass('show');
 			codeSpan.html(code);
 			$(this).parent().parent().parent().find('[name="phone-code"]').val(code);
-			$(this).parent().parent().find('input').css('padding-left', 68 + codeSpan.width());
+			paddingInput();
 		}
 	});
 
@@ -378,8 +391,6 @@ jQuery(document).ready(function ($) {
 	$('form').submit(function (e) {
 		e.preventDefault();
 
-		var pattern = /^([A-Za-z0-9_\.-])+@[A-Za-z0-9-]+\.([A-Za-z]{2,4}\.)?[A-Za-z]{2,4}$/i;
-
 		$(this).find(' input[name="phone"]').each(function () {
 			if ($(this).val().length < 1) $(this).parent().addClass('has-error');
 		});
@@ -393,14 +404,14 @@ jQuery(document).ready(function ($) {
 				url: 'action.php', //Change
 				data: th.serialize()
 			}).success(function () {
-				$.magnificPopup.close();
-				$.magnificPopup.open({
-					items: {
-						src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
-						type: 'inline'
-					}
-				})
-				// window.location.replace("/thanks.html");
+				// $.magnificPopup.close();
+				// $.magnificPopup.open({
+				// 	items: {
+				// 		src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
+				// 		type: 'inline'
+				// 	}
+				// })
+				window.location.replace("/thanks.html");
 				setTimeout(function () {
 					// Done Functions
 					th.trigger("reset");
@@ -410,4 +421,6 @@ jQuery(document).ready(function ($) {
 			return false;
 		}
 	});
+
+
 });

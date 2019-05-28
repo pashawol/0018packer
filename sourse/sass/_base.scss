@@ -627,3 +627,23 @@ input::-webkit-inner-spin-button {
 		padding-left: 10px;
 	}
 }
+
+.prld{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: $primary;
+	background-position: center center;
+ 
+	z-index:2000;
+	&__img-wrap{
+		@include a-cent;
+	}
+}
+.prld-on{
+	// position: absolute;
+	height: 100vh;
+	overflow: hidden;
+}
