@@ -19,7 +19,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (( lazyImage.closest(".block-with-lazy").getBoundingClientRect().top   <= window.innerHeight &&  lazyImage.closest(".block-with-lazy").getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none")  {
+							if ((lazyImage).display !== "none") {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -60,7 +60,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (getComputedStyle(lazyImage).display !== "none") {
+							if ( (lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
