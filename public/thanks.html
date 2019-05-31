@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="oh loading-enabled" id="html-doc" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Спасибо за обращение!</title>
@@ -10,6 +10,52 @@
     <link rel="shortcut icon" type="image/ico" href="img/favicon/favicon.ico">
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#f9d749">
+    <script src="js/pace.min.js"></script>
+    <style>
+      .pace {
+      	/* pointer-events: none; */
+      	user-select: none;
+      	z-index: 10000;
+      	position: absolute;
+      	top: 0;
+      	left: 0;
+      	width: 100%;
+      	height: 100vh;
+      	background-color: #f9d749; 
+      	display: flex;
+      	justify-content: center;
+      	align-items: center;
+      	opacity: 1;
+      	@include mt;
+      }
+      
+      .pace-inactive {
+      	opacity: 0;
+      	z-index: -100;
+      }
+      .pace .pace-progress {
+      	background: #575757;
+      	position: fixed;
+      	z-index: 2000;
+      	top: 50%;
+      	margin-top: -.5px;
+      	right: 100%;
+      	width: 100%;
+      	height: 1px;
+      	transition: .05s ease-in transform;
+      	
+      }
+      .pace .heading { 
+      	position: relative;
+      	z-index: 2001; 
+      	
+      }
+      	.pace .heading::before{
+      		content: url(img/prld.png);
+      		display: block;
+      		background-color: #f9d749;
+      	}
+    </style>
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body class="prld-on">

@@ -1,5 +1,15 @@
 .top-nav {
-	z-index: 1000;
+	z-index: 1001;
+	&__container{
+		position: relative;
+	}
+	&--fixed{
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1000;
+	}
 	@include media-breakpoint-up(xxl) {
 		padding-top: rem(40);
 	}
@@ -24,11 +34,11 @@
 		align-items: center;
 	}
 	&__logo{
-		z-index: -10000;
-		// margin-bottom: rem(15);
+		z-index: -10000; 
+		width: rem(150px);
+		height: rem(134px);
 			img{
-				width: rem(150px);
-				height: rem(134px);
+				width: 100%;
 			}
 			@include media-breakpoint-up(xl) {
 				text-align: left;
@@ -100,57 +110,15 @@ $h: em(2);
 .toggle-menu-mobile {
 	display: block; 
 	cursor: pointer;
-	position: relative;
-	z-index: 1002 !important;
+	// position: fixed;
+	z-index: 1020  ;
 	right: rem(-20px);  
 	text-align: right;
-	// top: rem(-8px);
-
-
-	// span:after,
-	// span:before {
-	// 	content: "";
-	// 	position: absolute;
-	// 	left: 0;
-	// 	top: $h*3;
-	// }
-
-	// span:after {
-	// 	top: $h * 6;
-	// }
-
-	// span {
-	// 	position: relative;
-	// 	display: block;
-	// }
-
-	// span,
-	// span:after,
-	// span:before {
-	// 	// width: 32px;
-	// 	font-size: rem(36px);
-	// 	width: 1em;
-	// 	height: $h;
-	// 	background-color: $primary;
-	// 	transition: all 0.3s;
-	// 	backface-visibility: hidden; 
-	// }
-
-	// &.on {
-	// 	opacity: 0;
-	// }
-
-	// &.on span {
-	// 	background-color: transparent;
-	// }
-
-	// &.on span:before {
-	// 	transform: rotate(45deg) translate(em(-1), 0px);
-	// }
-
-	// &.on span:after {
-	// 	transform: rotate(-45deg) translate(em(3), em(-4));
-	// }
+	position: relative;
+	&--size{
+		opacity: 0;
+		// pointer-events: none;
+	}
 }
 
 .toggle-menu-mobile--js{
@@ -169,10 +137,36 @@ $h: em(2);
 
 			stroke:$primary;
 		}
-		stroke:$body-color;
 		stroke-width:5.5;
 		stroke-linecap:round;
+		stroke:$body-color;
 	}
+	&.line--dark:not(.on){
+		@include media-breakpoint-up(sm) {
+			.line{
+
+				stroke:$body-color;
+			}
+		}
+		.line{
+
+			stroke:$body-color;
+		}
+	}
+	
+	&.line--white:not(.on){
+		@include media-breakpoint-up(sm) {
+			.line{
+
+				stroke:$white;
+			}
+		}
+		.line{
+
+			stroke:$white;
+		}
+	}
+
 	.top {
 		stroke-dasharray: 40 139;
 	}
@@ -318,10 +312,10 @@ $h: em(2);
 				position: absolute;
 				width: 100%;
 				left: 0;
-				height: em(6) ;
+				height: em(5) ;
 				background-color: $primary;
 				z-index: -1;
-				bottom: em(4);
+				bottom: em(3);
 				opacity: 0;
 				@include mt;
 			}

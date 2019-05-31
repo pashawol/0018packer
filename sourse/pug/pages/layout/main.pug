@@ -13,7 +13,7 @@ include ../../blocks/header-block/_header-block.pug
 include ../../blocks/s-form/_s-form.pug
 
 doctype html
-html(lang="ru")
+html#html-doc(lang="ru"  class="oh loading-enabled")
 	head
 		meta(charset="utf-8")
 
@@ -33,6 +33,51 @@ html(lang="ru")
 		//- link(rel="stylesheet", href="libs/slick/slick.css")
 		//- link(rel="stylesheet", href="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.css")
 
+		script(src="js/pace.min.js")
+		style.
+			.pace {
+				/* pointer-events: none; */
+				user-select: none;
+				z-index: 10000;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background-color: #f9d749; 
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				opacity: 1;
+				@include mt;
+			}
+
+			.pace-inactive {
+				opacity: 0;
+				z-index: -100;
+			}
+			.pace .pace-progress {
+				background: #575757;
+				position: fixed;
+				z-index: 2000;
+				top: 50%;
+				margin-top: -.5px;
+				right: 100%;
+				width: 100%;
+				height: 1px;
+				transition: .05s ease-in transform;
+				
+			}
+			.pace .heading { 
+				position: relative;
+				z-index: 2001; 
+				
+			}
+				.pace .heading::before{
+					content: url(img/prld.png);
+					display: block;
+					background-color: #f9d749;
+				}
 		//- link(rel="stylesheet", href="css/main.css")
 		link(rel="stylesheet", href="css/main.min.css")
 	body.prld-on

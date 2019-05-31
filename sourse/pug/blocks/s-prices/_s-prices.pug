@@ -10,7 +10,7 @@ mixin s-prices()
 				+e.slider.slider--js.swiper-container
 					.swiper-wrapper
 						mixin item(t, pr, x)
-							+e.slide.swiper-slide.col-lg-3.col-md-6(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * x}s`)
+							+e.slide.swiper-slide(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * x}s`)
 								+e.item
 									+e.img-wrap
 										img.lazy.res-i(src="#" data-src=`img/servise-${x}.png`, alt="")
@@ -21,7 +21,7 @@ mixin s-prices()
 									block
 									+e.btn.btn-sm.btn-block.popup-with-move-anim(href="#modal-call" data-order=`Рассчитать проект -  ${t}`   ) Рассчитать проект
 									
-							// /+e.slide.swiper-slide.col-lg-3.col-md-6
+							// /+e.slide.swiper-slide
 						+item("Сайт ","45 000","1")
 							+e.text Посадочная страница, корпоративный сайт или интернет-магазин
 						+item("Брендинг ","25 000","2")

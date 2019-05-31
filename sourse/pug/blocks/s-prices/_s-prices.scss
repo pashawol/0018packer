@@ -11,6 +11,16 @@
 		margin-bottom: rem(30);
 	}
 	&__slide{
+		padding-left: 15px;
+		padding-right: 15px;
+		@include media-breakpoint-up(lg) {
+			width: (100% / 4);
+		}
+		@include media-breakpoint-up(md) {
+			width: (100% / 2);
+
+		}
+		
 		@include media-breakpoint-down(sm) {
 
 			border: rem(2) solid $secondary;
@@ -211,7 +221,9 @@
 	@include media-breakpoint-down(xl) {}
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+	 
+	}
 	@include media-breakpoint-down(xs) {} 
 
 }

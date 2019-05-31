@@ -1,5 +1,7 @@
+ 
+
 const menu = document.querySelector('.menu-mobile--js')
-toggle = document.querySelector('.toggle-menu-mobile--js')
+toggle =$('.toggle-menu-mobile--js')
 body = document.querySelector('body')
 
 var prld = $('.prld');
@@ -143,11 +145,11 @@ var JSCCommon = {
 		before = document.querySelector('.menu-mobile__before--js')
 
 		function toggleMobileMnu() {
-			toggle.classList.toggle("on")
+			toggle.toggleClass("on")
 			body.classList.toggle("fixed")
 			menu.classList.toggle("active");
 		}
-		toggle.addEventListener('click', function () {
+		toggle.click( function () {
 			toggleMobileMnu()
 		})
 
@@ -185,6 +187,37 @@ jQuery(document).ready(function ($) {
 		var w = $(window).width();
 		var topH = $("header ").innerHeight();
 
+		function toggleColor (){
+			var thScroll = $(this).scrollTop() + 80;
+						lineDark = (thScroll > $(".s-first").offset().top && thScroll < $(".s-team").offset().top),
+						lineDarkW = (thScroll > $(".s-why").offset().top && thScroll < $(".s-cases__slider--js").offset().top),
+						lineWhite = (thScroll > $(".s-team").offset().top  && thScroll < $(".s-why").offset().top),
+						lineWhiteSl = (thScroll > $(".s-cases__slider--js").offset().top  && thScroll < $(".s-logos__bg").offset().top),
+						lineDarkL = (thScroll > $(".s-logos__bg").offset().top && thScroll < $(".s-soc").offset().top),
+						lineWhitel2 = (thScroll > $(".s-soc").offset().top  && thScroll < $(".s-prices").offset().top),
+						lineWhitel2 = (thScroll > $(".s-soc").offset().top  && thScroll < $(".s-prices").offset().top),
+						lineDarkPrice = (thScroll > $(".s-prices").offset().top && thScroll < $(".s-about").offset().top),
+						lineWhitelAbout = (thScroll > $(".s-about").offset().top  && thScroll < $(".s-order2").offset().top),
+						lineDarkOrder = (thScroll > $(".s-order2").offset().top && thScroll < $(".s-contact").offset().top),
+						lineWhitelContact = (thScroll > $(".s-contact").offset().top  );
+			if   (thScroll < $(".s-first").offset().top   ) {
+				$('.toggle-menu-mobile--js').removeClass("line--dark").removeClass("line--white");
+				// $('header').removeClass("header-restyle");
+			}
+			if   (lineDark || lineDarkW || lineDarkL || lineDarkPrice || lineDarkOrder) {  
+				$('.toggle-menu-mobile--js').addClass("line--dark").removeClass("line--white");
+			}
+			
+			if    (lineWhite || lineWhiteSl || lineWhitel2 || lineWhitelAbout || lineWhitelContact) {
+				$('.toggle-menu-mobile--js').removeClass("line--dark").addClass("line--white"); 
+			 }
+		
+		}
+		toggleColor();
+		 // / mask for input
+	 $(window).scroll(function() {
+		 toggleColor();
+	 })
 	}
 	$(window).resize(function () {
 		heightses();
@@ -195,58 +228,29 @@ jQuery(document).ready(function ($) {
 
 	})
 
+	
 	heightses();
 	// листалка по стр
 	$(" .menu-mobile__link").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
-
+		
 		$('html, body').animate({
 			scrollTop: destination
 		}, 1100);
-
+		
 		return false;
 	});
+	
+	function allSlider(){
+
  
-	// / mask for input
-
-
-
-
-
-	function sliderSection(sec, sl, pag) {
-
-		// slider
-		$(sec).each(function () {
-			var swiper4 = new Swiper($(this).find(sl), {
-				slidesPerView: 'auto',
-				watchOverflow: true,
-				spaceBetween: 0,
-				touchStartForcePreventDefault: true,
-				// autoHeight: true, 
-				// autoplay: {
-				// 	delay: 3000,
-				// },
-				pagination: {
-					el: $(this).find(pag),
-					clickable: true,
-				},
-				navigation: {
-					nextEl: $(this).find('.swiper-button-next'),
-					prevEl: $(this).find('.swiper-button-prev'),
-				},
-				loop: true,
-				loopFillGroupWithBlank: true,
-			});
-		})
-	}
  
-		$('.s-cases').each(function () {
-			var swiper4 = new Swiper($(this).find('.s-cases__slider--js'), {
+		$(".section").each(function () {
+			var swiper2 = new Swiper($(this).find('.slider--js'), { 
 				slidesPerView: 'auto',
-				watchOverflow: true,
+				watchOverflow: true, 
 				spaceBetween: 0, 
-				allowTouchMove: false, 
 				pagination: {
 					el: $(this).find('.swiper-pagination'),
 					clickable: true,
@@ -255,13 +259,26 @@ jQuery(document).ready(function ($) {
 					nextEl: $(this).find('.swiper-button-next'),
 					prevEl: $(this).find('.swiper-button-prev'),
 				},
-				loop: true,
-				loopFillGroupWithBlank: true,
+				loop: true, 
 			});
 		}) 
+ 
+ 
+ 
+			var swiper5 = new Swiper($('.s-cases__slider--js'), {
+				slidesPerView: 1,
+				watchOverflow: true,
+				spaceBetween: 0, 
+				allowTouchMove: false, 
+				pagination: {
+					el: $(".s-cases").find('.swiper-pagination'),
+					clickable: true,
+				}, 
+				loop: true,
+				loopFillGroupWithBlank: true,
+			}); 
 
 
-	sliderSection('.section', '.slider--js', '.swiper-pagination') 
 
 	function sliderTeam(sec, sl, pag) {
 
@@ -301,25 +318,46 @@ jQuery(document).ready(function ($) {
 		})
 	}
 
-
 	sliderTeam('.s-team', '.s-team__slider', '.swiper-pagination')
+}
 
 	$('.scrollblock--js').paroller();
 
+	// var preloadImages = [];
+	// preloadImages[0] = new Image();
+	// preloadImages[0].src = 'https://helios-expert.ru/wp-content/themes/helioss/img/load.png';
+	Pace.on('start', function() {
+		document.documentElement.className+=" loading-proccessing";
+	});
 
 	$(window).on('load', function () {
+
+		Pace.on('hide', function() {
+			document.getElementById("html-doc").className =
+		  	document.getElementById("html-doc").className
+					 .replace(new RegExp('(?:^|\\s)'+ 'loading-proccessing' + '(?:\\s|$)'), ' ');
+					 
+					 	body.classList.remove('prld-on');
+							var wow = new WOW({
+								mobile: false
+							});
+							wow.init();
+							allSlider();
+						}).find('i').fadeOut();
+		});
 		// preloader
-		prld.delay(1050).fadeOut(function(){
-			body.classList.remove('prld-on');
-			var wow = new WOW({
-				mobile: false
-			});
-			wow.init();
-		}).find('i').fadeOut();
+		// prld.delay(1050).fadeOut(function(){
+		// 	body.classList.remove('prld-on');
+		// 	var wow = new WOW({
+		// 		mobile: false
+		// 	});
+		// 	wow.init();
+		// 	allSlider();
+		// }).find('i').fadeOut();
 		// masonry 
 	
 		// $grid.one( 'layoutComplete', fullPage())
-	});
+	// });
 
 
 	
@@ -421,6 +459,8 @@ jQuery(document).ready(function ($) {
 			return false;
 		}
 	});
+
+
 
 
 });
