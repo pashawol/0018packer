@@ -7,10 +7,19 @@
 		max-width: em(340);
 		@include media-breakpoint-down(md) {
 			margin-bottom: 0;
+			&__btn{
+				width: 19rem;
+			}
 		}
-	
+		
 	}
-	&__bg{
+	@include media-breakpoint-down(md) {
+
+		h2 +	.section-title__text{
+			padding-top: rem(20);
+		}
+	}
+		&__bg{
 		position: absolute;
 		z-index: -1;
 		left: 0;

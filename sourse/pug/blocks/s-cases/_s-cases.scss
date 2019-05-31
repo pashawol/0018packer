@@ -293,8 +293,8 @@
 			margin-top: 2%;
 			// transform: translate(-15%, 19%);
 			img{
-				width: rem(915px);
-				height: rem(574px);
+				width: rem(950px);
+				height: rem(608px);
 
 			}
 		}
@@ -396,6 +396,12 @@
 				background-color: #fff;
 				border-radius: rem(2px);
 				@include mt;
+			}
+			&::after{
+				content: '';
+				width: 100%;
+				height: rem(40);
+				@include a-cent
 			}
 			&:hover,
 			&-active{

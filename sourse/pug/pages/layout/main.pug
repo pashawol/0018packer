@@ -35,11 +35,14 @@ html#html-doc(lang="ru"  class="oh loading-enabled")
 
 		script(src="js/pace.min.js")
 		style.
+			.prld-on{
+				overflow: hidden;
+			}
 			.pace {
 				/* pointer-events: none; */
 				user-select: none;
 				z-index: 10000;
-				position: absolute;
+				position: fixed;
 				top: 0;
 				left: 0;
 				width: 100%;
@@ -49,7 +52,7 @@ html#html-doc(lang="ru"  class="oh loading-enabled")
 				justify-content: center;
 				align-items: center;
 				opacity: 1;
-				@include mt;
+				 
 			}
 
 			.pace-inactive {
@@ -57,7 +60,7 @@ html#html-doc(lang="ru"  class="oh loading-enabled")
 				z-index: -100;
 			}
 			.pace .pace-progress {
-				background: #575757;
+				background: #e6c53a;
 				position: fixed;
 				z-index: 2000;
 				top: 50%;

@@ -18,10 +18,13 @@
 		.icon{
 			font-size: rem(20px);
 		}
+		$size: 0 rem(5px) rem(15px);
+		$op: .8;
 		&--vk{
 			background-color: #4a76a8;
-		&	:hover{
-				box-shadow: 0 5px 15px rgba(74, 118, 168, 0.4);
+			&:hover{
+				box-shadow: $size rgba(74, 118, 168, $op);
+			 
 			}
 		}
 		
@@ -29,7 +32,7 @@
 		 
 			background-color: #3b5998;
 			&:hover{
-				box-shadow: 0 5px 15px rgba(59, 89, 152, 0.4);
+				box-shadow: $size rgba(59, 89, 152, $op);
 			}
 		}
 		&--instagram{
@@ -39,7 +42,7 @@
 
 			background-color: #ef4a5a;
 			&:hover{
-				box-shadow: 0 5px 15px rgba(239, 74, 90, 0.4);
+				box-shadow: $size rgba(239, 74, 90, $op);
 			}
 		}
 		&--play{
@@ -49,7 +52,7 @@
 			background-color: #f00;
 
 			&:hover{
-				box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+				box-shadow: $size rgba(255, 0, 0, $op);
 			}
 		}
 

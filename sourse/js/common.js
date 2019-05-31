@@ -1,8 +1,8 @@
- 
-
 const menu = document.querySelector('.menu-mobile--js')
-toggle =$('.toggle-menu-mobile--js')
+toggle = $('.toggle-menu-mobile--js')
 body = document.querySelector('body')
+html = document.querySelector('html')
+wrapper = document.querySelector('.main-wrapper')
 
 var prld = $('.prld');
 
@@ -62,7 +62,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if ( (lazyImage).display !== "none") {
+							if ((lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
@@ -138,18 +138,28 @@ var JSCCommon = {
 		})
 		// /modal галерея
 	},
-
+	
 	mobileMenu: function () {
 		const beforeHTML = '<div class="menu-mobile__before menu-mobile__before--js">'
 		menu.insertAdjacentHTML('beforeend', beforeHTML)
 		before = document.querySelector('.menu-mobile__before--js')
-
+		header = document.querySelector('header') 
+		var scrollWidth= window.innerWidth - $(document).width();  
+		// html.style.marginRight = 100;
 		function toggleMobileMnu() {
+			if (!html.classList.contains('fixed')) {
+				html.style.marginRight = scrollWidth + "px"; 
+			}
+			else{
+				
+				html.style.marginRight = '';  
+			}
 			toggle.toggleClass("on")
-			body.classList.toggle("fixed")
+			body.classList.toggle("fixed") 
+			html.classList.toggle("fixed");
 			menu.classList.toggle("active");
 		}
-		toggle.click( function () {
+		toggle.click(function () {
 			toggleMobileMnu()
 		})
 
@@ -170,14 +180,14 @@ JSCCommon.LazyFunction();
 /***/
 
 jQuery(document).ready(function ($) {
-
+	
 	// для свг
 	svg4everybody({});
 	// Custom JS
 
 	// вызов magnificPopupCall
 	JSCCommon.magnificPopupCall();
-	JSCCommon.mobileMenu();
+
 
 	// / закрыть меню при горизонтальном свайпе
 	// /закрыть/открыть мобильное меню
@@ -187,37 +197,37 @@ jQuery(document).ready(function ($) {
 		var w = $(window).width();
 		var topH = $("header ").innerHeight();
 
-		function toggleColor (){
+		function toggleColor() {
 			var thScroll = $(this).scrollTop() + 80;
-						lineDark = (thScroll > $(".s-first").offset().top && thScroll < $(".s-team").offset().top),
-						lineDarkW = (thScroll > $(".s-why").offset().top && thScroll < $(".s-cases__slider--js").offset().top),
-						lineWhite = (thScroll > $(".s-team").offset().top  && thScroll < $(".s-why").offset().top),
-						lineWhiteSl = (thScroll > $(".s-cases__slider--js").offset().top  && thScroll < $(".s-logos__bg").offset().top),
-						lineDarkL = (thScroll > $(".s-logos__bg").offset().top && thScroll < $(".s-soc").offset().top),
-						lineWhitel2 = (thScroll > $(".s-soc").offset().top  && thScroll < $(".s-prices").offset().top),
-						lineWhitel2 = (thScroll > $(".s-soc").offset().top  && thScroll < $(".s-prices").offset().top),
-						lineDarkPrice = (thScroll > $(".s-prices").offset().top && thScroll < $(".s-about").offset().top),
-						lineWhitelAbout = (thScroll > $(".s-about").offset().top  && thScroll < $(".s-order2").offset().top),
-						lineDarkOrder = (thScroll > $(".s-order2").offset().top && thScroll < $(".s-contact").offset().top),
-						lineWhitelContact = (thScroll > $(".s-contact").offset().top  );
-			if   (thScroll < $(".s-first").offset().top   ) {
+			lineDark = (thScroll > $(".s-first").offset().top && thScroll < $(".s-team").offset().top),
+				lineDarkW = (thScroll > $(".s-why").offset().top && thScroll < $(".s-cases__slider--js").offset().top),
+				lineWhite = (thScroll > $(".s-team").offset().top && thScroll < $(".s-why").offset().top),
+				lineWhiteSl = (thScroll > $(".s-cases__slider--js").offset().top && thScroll < $(".s-logos__bg").offset().top),
+				lineDarkL = (thScroll > $(".s-logos__bg").offset().top && thScroll < $(".s-soc").offset().top),
+				lineWhitel2 = (thScroll > $(".s-soc").offset().top && thScroll < $(".s-prices").offset().top),
+				lineWhitel2 = (thScroll > $(".s-soc").offset().top && thScroll < $(".s-prices").offset().top),
+				lineDarkPrice = (thScroll > $(".s-prices").offset().top && thScroll < $(".s-about").offset().top),
+				lineWhitelAbout = (thScroll > $(".s-about").offset().top && thScroll < $(".s-order2").offset().top),
+				lineDarkOrder = (thScroll > $(".s-order2").offset().top && thScroll < $(".s-contact").offset().top),
+				lineWhitelContact = (thScroll > $(".s-contact").offset().top);
+			if (thScroll < $(".s-first").offset().top) {
 				$('.toggle-menu-mobile--js').removeClass("line--dark").removeClass("line--white");
 				// $('header').removeClass("header-restyle");
 			}
-			if   (lineDark || lineDarkW || lineDarkL || lineDarkPrice || lineDarkOrder) {  
+			if (lineDark || lineDarkW || lineDarkL || lineDarkPrice || lineDarkOrder) {
 				$('.toggle-menu-mobile--js').addClass("line--dark").removeClass("line--white");
 			}
-			
-			if    (lineWhite || lineWhiteSl || lineWhitel2 || lineWhitelAbout || lineWhitelContact) {
-				$('.toggle-menu-mobile--js').removeClass("line--dark").addClass("line--white"); 
-			 }
-		
+
+			if (lineWhite || lineWhiteSl || lineWhitel2 || lineWhitelAbout || lineWhitelContact) {
+				$('.toggle-menu-mobile--js').removeClass("line--dark").addClass("line--white");
+			}
+
 		}
 		toggleColor();
-		 // / mask for input
-	 $(window).scroll(function() {
-		 toggleColor();
-	 })
+		// / mask for input
+		$(window).scroll(function () {
+			toggleColor();
+		})
 	}
 	$(window).resize(function () {
 		heightses();
@@ -228,29 +238,26 @@ jQuery(document).ready(function ($) {
 
 	})
 
-	
+
 	heightses();
 	// листалка по стр
 	$(" .menu-mobile__link").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
-		
+
 		$('html, body').animate({
 			scrollTop: destination
 		}, 1100);
-		
+
 		return false;
 	});
-	
-	function allSlider(){
 
- 
- 
+	function allSlider() {
 		$(".section").each(function () {
-			var swiper2 = new Swiper($(this).find('.slider--js'), { 
+			var swiper2 = new Swiper($(this).find('.slider--js'), {
 				slidesPerView: 'auto',
-				watchOverflow: true, 
-				spaceBetween: 0, 
+				watchOverflow: true,
+				spaceBetween: 30,
 				pagination: {
 					el: $(this).find('.swiper-pagination'),
 					clickable: true,
@@ -259,114 +266,100 @@ jQuery(document).ready(function ($) {
 					nextEl: $(this).find('.swiper-button-next'),
 					prevEl: $(this).find('.swiper-button-prev'),
 				},
-				loop: true, 
+				loop: true,
 			});
-		}) 
- 
- 
- 
-			var swiper5 = new Swiper($('.s-cases__slider--js'), {
-				slidesPerView: 1,
-				watchOverflow: true,
-				spaceBetween: 0, 
-				allowTouchMove: false, 
-				pagination: {
-					el: $(".s-cases").find('.swiper-pagination'),
-					clickable: true,
-				}, 
-				loop: true,
-				loopFillGroupWithBlank: true,
-			}); 
-
-
-
-	function sliderTeam(sec, sl, pag) {
-
-		// slider
-		$(sec).each(function () {
-			var swiper4 = new Swiper($(this).find(sl), {
-				slidesPerView: 1,
-				watchOverflow: true,
-				spaceBetween: 0,
-				touchStartForcePreventDefault: true,
-				// autoHeight: true, 
-				// autoplay: {
-				// 	delay: 3000,
-				// },
-				pagination: {
-					el: $(this).find(pag),
-					clickable: true,
-				},
-				navigation: {
-					nextEl: $(this).find('.swiper-button-next'),
-					prevEl: $(this).find('.swiper-button-prev'),
-				},
-				loop: true,
-				breakpointsInverse: true,
-				// Responsive breakpoints
-				breakpoints: {
-
-					576: {
-						slidesPerView: 2,
+		});
+		var swiper5 = new Swiper($('.s-cases__slider--js'), {
+			slidesPerView: 1,
+			watchOverflow: true,
+			spaceBetween: 0,
+			allowTouchMove: false,
+			pagination: {
+				el: $(".s-cases").find('.swiper-pagination'),
+				clickable: true,
+			},
+			loop: true,
+			loopFillGroupWithBlank: true,
+		}); 
+			$('.s-team').each(function () {
+				var swiper4 = new Swiper($(this).find('.s-team__slider'), {
+					slidesPerView: 1,
+					watchOverflow: true,
+					spaceBetween: 0,
+					touchStartForcePreventDefault: true,
+					navigation: {
+						nextEl: $(this).find('.swiper-button-next'),
+						prevEl: $(this).find('.swiper-button-prev'),
 					},
-					// when window width is <= 640px
-					991: {
-						slidesPerView: 4,
+					pagination: {
+						el: $(this).find('.swiper-pagination'),
+						clickable: true,
+					},
+					loop: true,
+					breakpointsInverse: true,
+					// Responsive breakpoints
+					breakpoints: {
+ 
+						// when window width is <= 640px
+						991: {
+							slidesPerView: 4,
+						}
 					}
-				}
-			});
-		})
+				});
+			})
+ 
 	}
-
-	sliderTeam('.s-team', '.s-team__slider', '.swiper-pagination')
-}
 
 	$('.scrollblock--js').paroller();
 
 	// var preloadImages = [];
 	// preloadImages[0] = new Image();
 	// preloadImages[0].src = 'https://helios-expert.ru/wp-content/themes/helioss/img/load.png';
-	Pace.on('start', function() {
-		document.documentElement.className+=" loading-proccessing";
+	Pace.on('start', function () {
+		document.documentElement.className += " loading-proccessing";
 	});
 
 	$(window).on('load', function () {
 
-		Pace.on('hide', function() {
+		Pace.on('hide', function () {
 			document.getElementById("html-doc").className =
-		  	document.getElementById("html-doc").className
-					 .replace(new RegExp('(?:^|\\s)'+ 'loading-proccessing' + '(?:\\s|$)'), ' ');
-					 
-					 	body.classList.remove('prld-on');
-							var wow = new WOW({
-								mobile: false
-							});
-							wow.init();
-							allSlider();
-						}).find('i').fadeOut();
+				document.getElementById("html-doc").className
+				.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
+
+			body.classList.remove('prld-on');
+			var wow = new WOW({
+				mobile: false
+			});
+			wow.init();
+			setTimeout(function() {
+
+				JSCCommon.mobileMenu();
+			},100);
+			allSlider();
 		});
-		// preloader
-		// prld.delay(1050).fadeOut(function(){
-		// 	body.classList.remove('prld-on');
-		// 	var wow = new WOW({
-		// 		mobile: false
-		// 	});
-		// 	wow.init();
-		// 	allSlider();
-		// }).find('i').fadeOut();
-		// masonry 
-	
-		// $grid.one( 'layoutComplete', fullPage())
+	});
+	// preloader
+	// prld.delay(1050).fadeOut(function(){
+	// 	body.classList.remove('prld-on');
+	// 	var wow = new WOW({
+	// 		mobile: false
+	// 	});
+	// 	wow.init();
+	// 	allSlider();
+	// }).find('i').fadeOut();
+	// masonry 
+
+	// $grid.one( 'layoutComplete', fullPage())
 	// });
 
 
-	
+
 	$('.popup-with-move-anim').click(function () {
 		var th = $(this);
- 
+
 		$(th.attr('href')).find(".order").val(th.data('order'));
 	})
- 
+
 	var formKill = true;
 	var self = this;
 
@@ -389,7 +382,8 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-	var codeSpan = 	$(".input-phone").find('.code-span');
+	var codeSpan = $(".input-phone").find('.code-span');
+
 	function paddingInput() {
 
 		$(".input-phone input").css('padding-left', 74 + codeSpan.width());
@@ -432,7 +426,7 @@ jQuery(document).ready(function ($) {
 		$(this).find(' input[name="phone"]').each(function () {
 			if ($(this).val().length < 1) $(this).parent().addClass('has-error');
 		});
- 
+
 
 		if ($(this).find('.has-error').length < 1 && formKill) {
 			formKill = false;

@@ -1,7 +1,7 @@
 mixin s-steps()
 	// start s-steps
 	+b.s-steps.section.block-with-lazy.bg-light#s-steps&attributes(attributes)
-		+b.scrollblock.scrollblock--js(data-paroller-factor="0.2" data-paroller-type="foreground")
+		+b.scrollblock.scrollblock--js(data-paroller-factor="0.5" data-paroller-type="foreground")
 			+e.text  упаковщики
 		.container
 			+b.section-title.text-center(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
@@ -11,7 +11,7 @@ mixin s-steps()
 			+e.slider.slider--js.swiper-container
 				.swiper-wrapper
 					mixin item(i,c,t,p)
-						+e.slide.swiper-slide(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`)
+						+e.slide.swiper-slide(class="wow fadeInUp" data-wow-duration=`${dur * 2}s`) 
 							.row
 								+e.col.col-6.d-none.d-lg-block
 									+e.img-wrap
@@ -19,7 +19,7 @@ mixin s-steps()
 								.col
 									+e.left-block
 										block
-									
+								
 						// /+e.slide.swiper-slide
 					+item("1")
 						+e.head.img-bg
@@ -33,17 +33,17 @@ mixin s-steps()
 							img.lazy-bg(src="#" , data-src=`img/step-2.jpg` , alt="")
 							+e.head-wrap
 								+e.counter 2 этап
-								+e.title Определение точек роста для формирования имиджа лидера рынка
+								+e.title Определение точек роста для&nbsp;формирования имиджа лидера рынка
 						+e.text На&nbsp;основе полученных данных формируем аудиторский отчет в&nbsp;котором намечаем стратегию развития, предоставляем рекомендации по&nbsp;усилению упаковки компании и&nbsp;формированию имиджа лидера в&nbsp;своей нише.
 					+item("3")
 						+e.head.img-bg
 							img.lazy-bg(src="#" , data-src=`img/step-3.jpg` , alt="")
 							+e.head-wrap
 								+e.counter 3 этап
-								+e.title Внедрение необходимых услуг по&nbsp;упаковке 
+								+e.title Внедрение необходимых услуг&nbsp;по&nbsp;упаковке 
 									br
 									|  в&nbsp;ваш бизнес
 						+e.text После изучения аудиторского отчета вы&nbsp;видите реальные на&nbsp;сегодняшний день слабые места вашего бизнеса в&nbsp;упаковке и&nbsp;можете принять осознанное решение по&nbsp;внедрению комплекса или выборочных услуг по&nbsp;развитию имиджа лидера вашей компании в&nbsp;своей нише.
- 
+
 			+control-sl()
 	// end s-steps

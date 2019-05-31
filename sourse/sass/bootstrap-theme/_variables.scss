@@ -74,6 +74,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         #f6f6f6 !default;
 $dark:          #1d1b1d !default;
+$gray:          #8f8f8f !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -86,6 +87,7 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
+    "gray":      $gray,
     "dark":       $dark
   ),
   $theme-colors
@@ -485,7 +487,7 @@ $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               $gray-600 !default;
+$input-placeholder-color:               $gray !default;
 $input-plaintext-color:                 $body-color !default;
 
 $input-height-border:                   $input-border-width * 2 !default;
@@ -510,7 +512,7 @@ $form-check-inline-margin-x:            .75rem !default;
 $form-check-inline-input-margin-x:      .3125rem !default;
 
 $form-grid-gutter-width:                10px !default;
-$form-group-margin-bottom:              1rem !default;
+$form-group-margin-bottom:              30px !default;
 
 $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-200 !default;

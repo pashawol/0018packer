@@ -80,14 +80,14 @@
 		margin-left: 0;
 	margin-right: 0;
 	} 
-	max-width: 320px;
+	max-width: em(420px);
 	margin-left: auto;
 	margin-right: auto;
 		color: #fff;
 	// margin-right: rem(-10);
 	}
 	&__slide:nth-child(4) &__title{
-		max-width: rem(420);
+		// max-width: em(420);
 	}
 	&__text{
 		line-height: 1.78;
@@ -179,28 +179,3 @@
 	position: relative;
 }
 
-.scrollblock{
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	top: 30%;
-	
-	left: 0;
-	// top: 0;
-	// top: 50%;
-	&__text{
-		// @include a-cent(x);
-		width: 100%;
-		text-align: center; 
-		@include media-breakpoint-up(xl) {
-
-			font-size: calc(   13.4vw);
-		}
-		font-size: calc(   13.3vw);
-		text-transform: uppercase;
-		font-weight: 900;
-		line-height: 1;
-	 	color: #ffffff;
-	}
-}

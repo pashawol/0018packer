@@ -12,11 +12,14 @@
     <meta name="theme-color" content="#f9d749">
     <script src="js/pace.min.js"></script>
     <style>
+      .prld-on{
+      	overflow: hidden;
+      }
       .pace {
       	/* pointer-events: none; */
       	user-select: none;
       	z-index: 10000;
-      	position: absolute;
+      	position: fixed;
       	top: 0;
       	left: 0;
       	width: 100%;
@@ -26,7 +29,7 @@
       	justify-content: center;
       	align-items: center;
       	opacity: 1;
-      	@include mt;
+      	 
       }
       
       .pace-inactive {
@@ -34,7 +37,7 @@
       	z-index: -100;
       }
       .pace .pace-progress {
-      	background: #575757;
+      	background: #e6c53a;
       	position: fixed;
       	z-index: 2000;
       	top: 50%;
@@ -64,9 +67,7 @@
       <div class="top-nav wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
         <div class="top-nav__container container">
           <div class="row"> 
-            <div class="col d-none d-sm-block">
-              <div class="top-nav__logo"><img class="res-i res-i lazy" src="#" data-src="img/logo.png" alt=""/>
-              </div>
+            <div class="col d-none d-sm-block"><a class="top-nav__logo d-block" href="/"><img class="res-i res-i lazy" src="#" data-src="img/prld.png" alt=""/></a>
             </div>
             <div class="col-lg-auto col d-sm-none d-xl-block"><a class="top-nav__tel" href="tel:+79959669888">+7 995 96 69 888</a>
             </div>
@@ -85,9 +86,11 @@
       <div class="top-nav top-nav--fixed">
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col d-none d-sm-block">
               <div class="top-nav__logo d-none d-sm-block">
               </div>
+            </div>
+            <div class="col-lg-auto col d-sm-none d-xl-block op-0"><a class="top-nav__tel" href="tel:+79959669888">+7 995 96 69 888</a>
             </div>
             <div class="col-xl-auto col-sm-2 col-auto">
               <div class="toggle-menu-mobile toggle-menu-mobile--js">
@@ -128,32 +131,28 @@
       <header class="header block-with-lazy">
         <!-- start header-block-->
         <div class="header-block wow fadeIn" id="header-block" data-wow-duration="0.3s" data-wow-delay="0.6s"> 
-          <div class="container">
-            <div class="header-block__head blockWithAnimate">
-              <div class="header-block__logo d-sm-none"><img class="res-i lazy" src="#" data-src="img/logo-dark.png" alt=""/>
+          <div class="container wow fadeIn" data-wow-duration="0.6s" data-wow-delay="1.2s"> 
+            <div class="header-block__head blockWithAnimate"><a class="header-block__logo d-sm-none" href="/"><img class="res-i lazy" src="#" data-src="img/logo-dark.png" alt=""/></a>
+              <h1><span class="d-block">Создаем имидж</span><span class="d-block">лидера рынка</span></h1>
+              <div class="header-block__sub-title">с помощью упаковки
               </div>
-              <div class="wow slideInUp" data-wow-duration="0.6s" data-wow-delay="1.2s"> 
-                <h1><span class="d-block">Создаем имидж</span><span class="d-block">лидера рынка</span></h1>
-                <div class="header-block__sub-title">с помощью упаковки
-                </div>
-                <div class="header-block__text d-none d-sm-block">Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
-                </div>
-                <div class="blockWithAnimate d-sm-none">
-                  <div class="header-block__foot wow slideInUp" data-wow-duration="0.3s" data-wow-delay="2.4s"> 
-                    <div class="header-block__foot-item">Сайты
-                    </div>
-                    <div class="header-block__foot-item">Брендинг
-                    </div>
-                    <div class="header-block__foot-item">SMM
-                    </div>
-                    <div class="header-block__foot-item">Реклама 
-                    </div>
+              <div class="header-block__text d-none d-sm-block">Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
+              </div>
+              <div class="blockWithAnimate d-sm-none">
+                <div class="header-block__foot">
+                  <div class="header-block__foot-item">Сайты
                   </div>
-                </div><a class="header-block__btn popup-with-move-anim wow slideInUp" href="#modal-call" data-order="Стать лидером рынка">Стать лидером рынка</a>
-              </div>
+                  <div class="header-block__foot-item">Брендинг
+                  </div>
+                  <div class="header-block__foot-item">SMM
+                  </div>
+                  <div class="header-block__foot-item">Реклама 
+                  </div>
+                </div>
+              </div><a class="header-block__btn popup-with-move-anim" href="#modal-call" data-order="Стать лидером рынка">Стать лидером рынка</a>
             </div>
             <div class="blockWithAnimate d-none d-sm-block">
-              <div class="header-block__foot wow slideInUp" data-wow-duration="0.3s" data-wow-delay="2.4s"> 
+              <div class="header-block__foot">
                 <div class="header-block__foot-item">Сайты
                 </div>
                 <div class="header-block__foot-item">Брендинг
@@ -182,9 +181,9 @@
             <div class="col-xl-6">
               <div class="row">
                     <div class="s-first__col col-xl-12 col-md-3">
-                      <div class="s-first__item wow fadeInUp" data-wow-duration="0.6s">
+                      <div class="s-first__item wow fadeInUp" data-wow-duration="0.12s">
                         <div class="s-first__circle">РЕКЛАМА
-                          <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s"></div>
+                          <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s"></div>
                         </div>
                         <div class="s-first__text">
                           <div class="s-first__caption s-first__caption--sm">Потенциальный клиент видит вашу рекламу 
@@ -198,9 +197,9 @@
                       <!-- /+e.item-->
                     </div>
                 <div class="s-first__col col-xl-12 col-md-3">
-                  <div class="s-first__item wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="1.2s"> 
+                  <div class="s-first__item wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.24s"> 
                     <div class="s-first__circle">Сайт, <br/> соц. сеть, др. канал
-                      <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="1.2s"></div>
+                      <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s"></div>
                     </div>
                     <div class="s-first__text">
                       <div class="s-first__caption">Посещает вашу площадку с&nbsp;линейкой продукции/услуг
@@ -214,9 +213,9 @@
                   <!-- /+e.item-->
                 </div>
                     <div class="s-first__col col-xl-12 col-md-3">
-                      <div class="s-first__item wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="1.5s">
+                      <div class="s-first__item wow fadeInUp" data-wow-duration="0.12s" data-wow-delay="0.3s">
                         <div class="s-first__circle">Бренд
-                          <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="2.1s"></div>
+                          <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.42s"></div>
                         </div>
                         <div class="s-first__text">
                           <div class="s-first__caption">Формирует впечатление о&nbsp;вашем бизнесе и&nbsp;его продукте
@@ -230,7 +229,7 @@
                       <!-- /+e.item-->
                     </div>
                     <div class="s-first__col col-xl-12 col-md-3">
-                      <div class="s-first__item wow fadeInUp s-first__item s-first__item--dark" data-wow-duration="0.6s" data-wow-delay="2.1s">
+                      <div class="s-first__item wow fadeInUp s-first__item s-first__item--dark" data-wow-duration="0.12s" data-wow-delay="0.42s">
                         <div class="s-first__circle">$
                           <div class="before wow fadeIn" data-wow-duration="0.6s" data-wow-delay="NaNs"></div>
                         </div>
@@ -254,7 +253,7 @@
       <!-- end s-first-->
       <!-- start s-steps-->
       <div class="s-steps section block-with-lazy bg-light" id="s-steps">
-        <div class="scrollblock scrollblock scrollblock--js" data-paroller-factor="0.2" data-paroller-type="foreground">
+        <div class="scrollblock scrollblock scrollblock--js" data-paroller-factor="0.5" data-paroller-type="foreground">
           <div class="scrollblock__text"> упаковщики
           </div>
         </div>
@@ -265,7 +264,7 @@
           </div>
           <div class="s-steps__slider slider slider--js swiper-container">
             <div class="swiper-wrapper">
-                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s">
+                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
                       <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-1.jpg" alt=""/>
@@ -288,7 +287,7 @@
                   </div>
                 </div>
                 <!-- /+e.slide.swiper-slide-->
-                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s">
+                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
                       <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-2.jpg" alt=""/>
@@ -300,7 +299,7 @@
                           <div class="s-steps__head-wrap">
                             <div class="s-steps__counter">2 этап
                             </div>
-                            <div class="s-steps__title">Определение точек роста для формирования имиджа лидера рынка
+                            <div class="s-steps__title">Определение точек роста для&nbsp;формирования имиджа лидера рынка
                             </div>
                           </div>
                         </div>
@@ -311,7 +310,7 @@
                   </div>
                 </div>
                 <!-- /+e.slide.swiper-slide-->
-                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s">
+                <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
                       <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-3.jpg" alt=""/>
@@ -323,7 +322,7 @@
                           <div class="s-steps__head-wrap">
                             <div class="s-steps__counter">3 этап
                             </div>
-                            <div class="s-steps__title">Внедрение необходимых услуг по&nbsp;упаковке <br/> в&nbsp;ваш бизнес
+                            <div class="s-steps__title">Внедрение необходимых услуг&nbsp;по&nbsp;упаковке <br/> в&nbsp;ваш бизнес
                             </div>
                           </div>
                         </div>
@@ -385,7 +384,7 @@
                     <div class="s-complex__img-wrap"><img class="lazy res-i" src="#" data-src="img/servise-3.png" alt=""/>
                     </div>
                     <div class="s-complex__caption">
-                      <div class="s-complex__title"><span>Контекстная </span> <span>реклама</span>
+                      <div class="s-complex__title"><span>Контекстная  реклама</span>
                       </div>
                       <div class="s-complex__text">Создаем рекламную кампанию, полностью берем на&nbsp;себя управление, оптимизируем бюджет и&nbsp;ежемесячно присылаем отчеты.
                       </div>
@@ -706,7 +705,7 @@
             <div class="col">
               <div class="section-title">
                 <h2 class="wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.12s"><span class="underline"> Закажите детальный разбор</span> 
-                  упаковки вашего бизнеса<br/>
+                  упаковкио&nbsp;вашего бизнеса<br/>
                 </h2>
                 <div class="h2 wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.24s"> за <span class="strike text-white">15 000<span class="rub text-white">r</span></span><span class="date">до&nbsp;30&nbsp;мая</span></div>
               </div>
@@ -1254,7 +1253,7 @@
                   <li>South Africa <span>+27</span></li>
                   <li>Zambia <span>+260</span></li>
                   <li>Zimbabwe <span>+263</span></li>
-                </ul><input class="form-wrap__input form-control" type="text" name="phone" autocomplete="off" placeholder="Ваш телефон"/>
+                </ul><input class="form-wrap__input form-control" type="text" name="phone" autocomplete="off" placeholder="Телефон"/>
               </label>
             </div>
           </div>
@@ -1264,7 +1263,7 @@
           </div>
         </div>
         <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text text-secondary">
+          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text text-gray">
             Принимаю  <a class="text-body" href="#">условия передачи данных</a> 
              и&nbsp;согласен с&nbsp;<a class="text-body" href="#">политикой конфеденциальности.</a></span>
           </label>

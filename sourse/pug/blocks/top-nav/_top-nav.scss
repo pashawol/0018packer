@@ -1,3 +1,9 @@
+.op-0{
+	opacity: 0;
+}
+.fixed .top-nav:not(.top-nav--fixed){
+	z-index: 0;
+}
 .top-nav {
 	z-index: 1001;
 	&__container{
@@ -238,8 +244,8 @@ $h: em(2);
 	}
 	&__inner {
 		background-color: #ffffff;
-		padding-top: rem(160);
-		padding-bottom: rem(160px);
+		padding-top: rem(40);
+		padding-bottom: rem(40px);
 		
 		ul {
 			margin-bottom: 0;
@@ -306,6 +312,7 @@ $h: em(2);
 			@extend .text-body;
 			position: relative;
 			text-decoration: none !important;
+			margin-bottom: .3em;
 			z-index: 2;
 			&::before{
 				content: '';

@@ -9,7 +9,7 @@ text-rendering: geometricPrecision;
 	-webkit-overflow-scrolling: touch;
 }
 html {
-	background-position: center 6359px;
+	background-position: center 0;
 	background-repeat: no-repeat;
 	// @include media-breakpoint-up(sm) {
 
@@ -17,22 +17,22 @@ html {
 	// 	margin-right: 0;
 	// }
 
-	// background-image: url(../screen/lend_v2-2.jpg);
+	// background-image: url(../screen/lend_v2.jpg);
 }
 		body {
 		
 			// opacity: .7;
 			// background-color: transparent;
 		}
-		// @include media-breakpoint-up(xxl) {
+		@include media-breakpoint-up(xxl) {
 
-		// 	.header-block{
-		// 		.container{
+			.header-block{
+				.container{
 					
-		// 			min-height: 950px !important;
-		// 		}
-		// 	}
-		// }
+					min-height: 1000px !important;
+				}
+			}
+		}
 // .main-wrapper{
 // 	&::before{
 // 		content:  url(../screen/lend_v2.jpg);
@@ -143,7 +143,7 @@ h2{
 	@include media-breakpoint-up(md) {
 		padding-bottom: em(28);
 	}
-	padding-bottom: em(15);
+	padding-bottom: em(10);
 	&__text{
 		@extend .h5;
 		@include media-breakpoint-up(md) {
@@ -173,10 +173,11 @@ h2{
 		@extend .btn-primary;
 		@include media-breakpoint-up(md) {
 
-			width: rem(365);
+			// width: rem(365);
+			margin-top: rem(38);
 		}
-		width: rem(325);
-		margin-top: rem(38);
+		margin-top: rem(18);
+		width: rem(365);
 	}
 }
 
@@ -206,28 +207,17 @@ html {
 		// font-size: 18px;
 	}
 	
-	// @include media-breakpoint-up(md) {
-
-	// 	font-size: 16px;
-	// }
-
-	// @include font-size($em-base);
+ 
 }
+ 
 body {
 	min-width: 320px;
-	position: relative;
-
-	
-	&.fixed {
-		overflow: hidden;
-		position: absolute;
-		max-width: calc(100% - calc(100vw - 100%));
+	position: relative;  
+	&.fixed { 
+		overflow: hidden; 
 		width: 100%;
-		left: 0;
 		top: 0;
-		z-index: 999;
-		// width: 100vw;
- 
+		z-index: 999; 
 	}
 }
 ul{
@@ -513,9 +503,11 @@ input::-webkit-inner-spin-button {
 		clip: rect(0 0 0 0 );
 		overflow: hidden;
 }
+@include media-breakpoint-up(lg) {
 
-.wow{
-	visibility: hidden;
+	.wow{
+		visibility: hidden;
+}
 }
 
 .blockWithAnimate{
@@ -601,7 +593,9 @@ input::-webkit-inner-spin-button {
 			height: auto !important;
 			transform: translate3d(0px, 0px, 0px) !important; 
 			flex-wrap: wrap;  
-
+			.swiper-slide{
+				margin-right: 0 !important;
+			}
 			.swiper-slide-duplicate{
 				display: none !important;
 			}
@@ -639,3 +633,32 @@ input::-webkit-inner-spin-button {
 
  
  
+
+.scrollblock{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 30%;
+	
+	left: 0;
+	@include media-breakpoint-down(md){
+		display: none;
+	}
+	// top: 0;
+	// top: 50%;
+	&__text{
+		// @include a-cent(x);
+		width: 100%;
+		text-align: center; 
+		@include media-breakpoint-up(xl) {
+
+			font-size: calc(   13.4vw);
+		}
+		font-size: calc(   13.3vw);
+		text-transform: uppercase;
+		font-weight: 900;
+		line-height: 1;
+	 	color: #ffffff;
+	}
+}

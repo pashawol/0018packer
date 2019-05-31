@@ -7,6 +7,14 @@
 			max-width: em(800);
 			line-height: 1.46;
 		}
+		@include media-breakpoint-down(md) {
+			&__btn{
+
+			}
+			&__text{
+				padding-top: 0;
+			}
+		}
 	}
 		 
 

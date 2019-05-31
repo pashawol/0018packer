@@ -12,14 +12,39 @@
 			background-color: $body-color;
 		}
 	}
+	h2 + .h2{
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(12);
+			margin-bottom: .9rem;
+		}
+	}
 	.date{
-		@extend .h5;
 		display: inline-block;
 		background-color: #ffffff;
 		padding: em(4) em(7);
 		font-weight: 900;
 		position: relative;
-		top: em(-5);
+		@include media-breakpoint-up(xxl) {
+			top:  em(-12);
+			
+		}
+		
+		@include media-breakpoint-up(lg) {
+			top:  em(-11);
+			
+		}
+		
+		
+		@include media-breakpoint-up(md) {
+			
+			font-size: em(8.14);
+			top:  em(-10);
+		}
+		font-size: em(12);
+		// top:  em(-7);
+		top:  em(-6);
+
+		margin-bottom: 0;
 	}
 	.section-title{
 		padding-bottom: 0;
@@ -38,6 +63,7 @@
 		color: $primary;
 		background-color: $body-color;
 		margin-bottom: em(25);
+		
 	}
 ul{
 
@@ -60,23 +86,35 @@ ul{
 	}
 	ul{
 		position: relative;
-		margin-bottom: rem(60);
 		text-align: left;
-		 .before{
+		
+		.before{
 			content: '';
+			@include media-breakpoint-up(xl) {
+				
+				margin-bottom: rem(60);
+			}
 			@include media-breakpoint-up(lg) {
-
+				
 				background-image: url(../img/arrow-down.png);
 				width: rem(143px);
 				height: rem(235px);
 			}
+			@include media-breakpoint-up(sm) {
+				
+			}
 			@include media-breakpoint-up(md) {
-
+				margin-bottom: rem(50);
+				
 				width: rem(50px);
 				height: rem(141px);
-			background-image: url(../img/arr-down-sm.png);
-			background-size: cover;
-			top: 90%;
+				background-image: url(../img/arr-down-sm.png);
+				background-size: cover;
+				@include media-breakpoint-only(xl) {
+
+					top: 45%;
+				}
+				top: 90%;
 			right: 0;
 			transform: translateX(-60%);
 			// margin-left: -50%;
@@ -97,6 +135,12 @@ ul{
 		text-align: left;
 	}
 	text-align: center;
+	img{
+		@include media-breakpoint-down(xxl) {
+			max-height: 620px;
+		}
+
+	}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -119,7 +163,15 @@ ul{
 	@include media-breakpoint-down(xl) {}
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	ul{
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(90);
+		}
+		@include media-breakpoint-down(xs) {
+			margin-bottom: rem(70);
+
+		} 
+	}
 
 }

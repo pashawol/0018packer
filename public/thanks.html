@@ -12,11 +12,14 @@
     <meta name="theme-color" content="#f9d749">
     <script src="js/pace.min.js"></script>
     <style>
+      .prld-on{
+      	overflow: hidden;
+      }
       .pace {
       	/* pointer-events: none; */
       	user-select: none;
       	z-index: 10000;
-      	position: absolute;
+      	position: fixed;
       	top: 0;
       	left: 0;
       	width: 100%;
@@ -26,7 +29,7 @@
       	justify-content: center;
       	align-items: center;
       	opacity: 1;
-      	@include mt;
+      	 
       }
       
       .pace-inactive {
@@ -34,7 +37,7 @@
       	z-index: -100;
       }
       .pace .pace-progress {
-      	background: #575757;
+      	background: #e6c53a;
       	position: fixed;
       	z-index: 2000;
       	top: 50%;
@@ -62,9 +65,7 @@
     <div class="main-wrapper">
       <!-- start s-thanks-->
       <div class="s-thanks">
-        <div class="container">
-          <div class="s-thanks__img-wrap"><img class="res-i" src="img/logo-dark.png" alt=""/>
-          </div>
+        <div class="container"><a class="s-thanks__img-wrap d-block" href="/"><img class="res-i" src="img/logo-dark.png" alt=""/></a>
           <div class="section-title text-center">
             <h1> <span class="underline">Спасибо</span> 
               за&nbsp;обращение!
@@ -370,7 +371,7 @@
                   <li>South Africa <span>+27</span></li>
                   <li>Zambia <span>+260</span></li>
                   <li>Zimbabwe <span>+263</span></li>
-                </ul><input class="form-wrap__input form-control" type="text" name="phone" autocomplete="off" placeholder="Ваш телефон"/>
+                </ul><input class="form-wrap__input form-control" type="text" name="phone" autocomplete="off" placeholder="Телефон"/>
               </label>
             </div>
           </div>
@@ -380,7 +381,7 @@
           </div>
         </div>
         <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text text-secondary">
+          <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text text-gray">
             Принимаю  <a class="text-body" href="#">условия передачи данных</a> 
              и&nbsp;согласен с&nbsp;<a class="text-body" href="#">политикой конфеденциальности.</a></span>
           </label>

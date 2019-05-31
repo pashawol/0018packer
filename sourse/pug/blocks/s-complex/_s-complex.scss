@@ -22,25 +22,30 @@
 	}
 	&__title{
 		@extend h5;
-		line-height: 1;
+		line-height: 2;
+		
+			@include media-breakpoint-up(sm) {
+		max-width: em(150);
+		margin-left: em(8);
+			}
 		@include media-breakpoint-up(md) {
 
 			padding-bottom: rem(22);
 		}
 		padding-bottom: rem(8);
 		span{
-			display: inline-block;
+			 
 			background-color: $primary;
-			padding: em(6.55) em(10);
-			margin-bottom: em(2);
-			@include media-breakpoint-up(xl) {
-				margin-right: 0;
-			}
-			margin-right: em(-15);
+			padding: em(6) 0;
+		 
+			box-shadow: em(10) 0  0px $primary,
+									em(-10) 0 0px 0px $primary;
 		}
 		&--gray{
-			span{
+			span{ 
 				background-color: #f1f1f1;
+				box-shadow: em(8) 0  0px #f1f1f1,
+									em(-8) 0 0px 0px #f1f1f1;
 			}
 		}
 	}
@@ -132,10 +137,7 @@
 			 padding-left: 10px;
 			 padding-right: 10px;
 		}
-		&__title{
-		 
-				margin-left: em(-15);
-	} 
+	 
 	} 
 
 }

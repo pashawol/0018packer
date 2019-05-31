@@ -70,9 +70,9 @@
 				@include media-breakpoint-up(xl){
 					height: rem(200);
 					
-					transform: translateX(rem(48)) rotate(-45deg)  ;
-					top: 68%;
-					left: 100%;
+					transform: translateX(rem(58)) rotate(-45deg)  ;
+					top: 71%;
+					left: 98%;
 				}
 				@include media-breakpoint-up(lg){
 
@@ -102,7 +102,7 @@
 				top: 70%;
 				right: 100%;
 
-					transform: translateX(rem(-48)) rotate(45deg) !important;
+					transform: translateX(rem(-53)) rotate(45deg) !important;
 				}
 			}
 		}
@@ -158,7 +158,7 @@
 		display: inline-block;
 		padding: em(12) em(18) em(10);
 		line-height: 1;
-		margin-bottom: em(10);
+		margin-bottom: em(26);
 		width: auto;
 		flex-shrink: 1;
 		flex-grow: 1;
@@ -236,7 +236,7 @@
 
 	@include media-breakpoint-only(sm) {}
 
-	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(md) {padding-bottom: 1rem;}
 
 	@include media-breakpoint-only(lg) {}
 
@@ -247,7 +247,9 @@
 
 	@include media-breakpoint-down(lg) {}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+		
+	}
 
 	@include media-breakpoint-down(sm) {}
 
