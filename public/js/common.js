@@ -262,6 +262,7 @@ jQuery(document).ready(function ($) {
 					el: $(this).find('.swiper-pagination'),
 					clickable: true,
 				},
+			
 				navigation: {
 					nextEl: $(this).find('.swiper-button-next'),
 					prevEl: $(this).find('.swiper-button-prev'),
@@ -269,18 +270,71 @@ jQuery(document).ready(function ($) {
 				loop: true,
 			});
 		});
+		var speed = 5000;
+		
 		var swiper5 = new Swiper($('.s-cases__slider--js'), {
 			slidesPerView: 1,
 			watchOverflow: true,
+			fadeEffect: {
+				crossFade: true
+			},
+			effect: 'fade', 
 			spaceBetween: 0,
 			allowTouchMove: false,
 			pagination: {
 				el: $(".s-cases").find('.swiper-pagination'),
 				clickable: true,
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '" data-index='+ (index + 1)+'><span class="before"></span></span>';
+				},
 			},
+			// autoplay: {
+			// 	delay: speed,
+			// },
 			loop: true,
 			loopFillGroupWithBlank: true,
+			on: {
+			slideChange: function () {
+				
+				$(".swiper-pagination-bullet-active").nextAll().find('.before').stop().animate({ 	width: "0",  	}, 0 );
+				$(".swiper-pagination-bullet-active").prevAll().find('.before').stop().animate({ 	width: "100%",  	}, 0 );
+				widthPug()
+			},
+			
+			reachEnd: function () {
+				progressElem.width(0);
+			},
+
+		}
 		}); 
+
+		var progressElem = 	$(".swiper-pagination-bullet  ").find(".before");
+		// var slideIndex = 
+		function widthPug(){
+			$(".swiper-pagination-bullet-active .before").stop().animate({ 	width: "0",  	}, 0 );
+			$(".swiper-pagination-bullet-active .before").animate({
+				width: "100%", 
+			}, speed, function(){
+				swiper5.slideNext( );
+			} );
+			
+		} 
+		widthPug()
+
+		$(".s-cases__control--left").click(function(){
+			swiper5.slidePrev( );
+			
+		
+		})
+		
+		$(".s-cases__control--right").click(function(){
+			swiper5.slideNext( );
+			// $(".swiper-pagination-bullet-active").find('.before').width(0);
+			// $(".swiper-pagination-bullet-active").nextAll().find('.before').width(0);
+			// $(".swiper-pagination-bullet-active").prevAll().find('.before').width("100%");
+			
+		})
+
 			$('.s-team').each(function () {
 				var swiper4 = new Swiper($(this).find('.s-team__slider'), {
 					slidesPerView: 1,

@@ -1,4 +1,6 @@
 .s-cases {
+
+
 	.section-title{
 		margin-left: auto;
 		margin-right: auto;
@@ -46,9 +48,10 @@
 		margin-bottom: em(9);
 	}
 	&__caption{
-		position: relative;
+	
 		max-width: rem(600);
 	}
+ 
 	&__container{
 		min-height: 100%;
 		position: relative;
@@ -107,7 +110,7 @@
 	}
 	&__img{
 		position: absolute;
-	 
+	 pointer-events: none;
 	 
 	}
 	&__slide--1 	&__img{
@@ -371,6 +374,8 @@
 		@extend .btn;
 		@extend .btn-primary;
 		width: rem(260);
+		position: relative;
+		z-index: 4;
 	}
 
 	.swiper-pagination{
@@ -386,7 +391,7 @@
 			border-radius: rem(2px);
 			background-color: rgba($color: #fff, $alpha: .2);
 			position: relative;
-			&::before{
+			.before{
 				content: '';
 				height: 100%;
 				position: absolute;
@@ -394,8 +399,7 @@
 				top: 0;
 				width: 0%;
 				background-color: #fff;
-				border-radius: rem(2px);
-				@include mt;
+				border-radius: rem(2px); 
 			}
 			&::after{
 				content: '';
@@ -403,15 +407,32 @@
 				height: rem(40);
 				@include a-cent
 			}
-			&:hover,
-			&-active{
-				&::before{
+			// &:hover,
+			// &-active{
+			// 	&::before{
 
-					width: 50%;
-				}
-			}
+			// 		width: 50%;
+			// 	}
+			// }
 		}
 		// opacity: 0.2;
+	}
+	&__slide{
+		position: relative;
+	}
+	&__control{
+		position: absolute;
+		width: 100vw;
+		top: 0;
+		cursor: pointer;
+		height: 100%;
+		&--left{
+			right: 50%;
+		}
+		&--right{
+			// right: 50;
+			left: 50%;
+		}
 	}
 		 
 	@include media-breakpoint-up(xl) {}

@@ -21,6 +21,8 @@ mixin s-cases()
 									each item in items
 										+e.label= item
 								+e.text.d-none.d-md-block= p
+								+e.control--left
+								+e.control--right
 								+e.btn(href= a target="_blank") Смотреть кейс 
 							+e.img--phone
 								img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
