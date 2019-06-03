@@ -74,6 +74,7 @@
 		text-align: center;
 		@include media-breakpoint-down(xs) {
 			@include font-size($h5-font-size * .8);
+			margin-bottom: rem(20);
 		} 
 	}
 		 
