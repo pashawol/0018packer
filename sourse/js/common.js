@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
 				loop: true,
 			});
 		});
-		var speed = 1115000;
+		var speed =  5000;
 		
 		var swiper5 = new Swiper($('.s-cases__slider--js'), {
 			slidesPerView: 1,
