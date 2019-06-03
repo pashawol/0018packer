@@ -37,12 +37,12 @@
 	 .icon{
 		 font-size: rem(55);
 		 line-height: 1;
-		 &-why-2 {
+		 &-why-3 {
 			position: relative;
 			top: em(1);
 
 		 }
-		 &-why-3 {
+		 &-why-4 {
 			font-size: rem(30);
 
 		 }
@@ -119,3 +119,11 @@
 	@include media-breakpoint-down(xs) {} 
 
 }
+
+
+// .pace-inactive {
+// 	opacity: 0;
+//  z-index: -100;
+
+ 
+// }

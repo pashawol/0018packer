@@ -6,6 +6,119 @@ wrapper = document.querySelector('.main-wrapper')
 
 var prld = $('.prld');
 
+
+function allSlider() {
+	$(".section").each(function () {
+		var swiper2 = new Swiper($(this).find('.slider--js'), {
+			slidesPerView: 'auto',
+			watchOverflow: true,
+			spaceBetween: 30,
+			pagination: {
+				el: $(this).find('.swiper-pagination'),
+				clickable: true,
+			},
+		
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev'),
+			},
+			loop: true,
+		});
+	});
+	var speed =  5000;
+	
+	var swiper5 = new Swiper($('.s-cases__slider--js'), {
+		slidesPerView: 1,
+		watchOverflow: true,
+		// fadeEffect: {
+		// 	crossFade: true
+		// },
+		effect: 'fade', 
+		spaceBetween: 0,
+		allowTouchMove: false,
+		pagination: {
+			el: $(".s-cases").find('.swiper-pagination'),
+			clickable: true,
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '" data-index='+ (index + 1)+'><span class="before"></span></span>';
+			},
+		},
+		autoplay: {
+			delay: speed,
+		},
+		loop: true,
+		loopFillGroupWithBlank: true,
+		on: {
+		slideChange: function () {
+			
+			$(".swiper-pagination-bullet-active").nextAll().find('.before').stop().animate({ 	width: "0",  	}, 0 );
+			$(".swiper-pagination-bullet-active").prevAll().find('.before').stop().animate({ 	width: "100%",  	}, 0 );
+			widthPug()
+		},
+		
+		reachEnd: function () {
+			progressElem.width(0);
+		},
+
+	}
+	}); 
+
+	var progressElem = 	$(".swiper-pagination-bullet  ").find(".before");
+	// var slideIndex = 
+	function widthPug(){
+		$(".swiper-pagination-bullet-active .before").stop().animate({ 	width: "0",  	}, 0 );
+		$(".swiper-pagination-bullet-active .before").animate({
+			width: "100%", 
+		}, speed, function(){
+			swiper5.slideNext( );
+		} );
+		
+	} 
+	widthPug()
+
+	$(".s-cases__control--left").click(function(){
+		swiper5.slidePrev( );
+		
+	
+	})
+	
+	$(".s-cases__control--right").click(function(){
+		swiper5.slideNext( );
+		// $(".swiper-pagination-bullet-active").find('.before').width(0);
+		// $(".swiper-pagination-bullet-active").nextAll().find('.before').width(0);
+		// $(".swiper-pagination-bullet-active").prevAll().find('.before').width("100%");
+		
+	})
+
+		$('.s-team').each(function () {
+			var swiper4 = new Swiper($(this).find('.s-team__slider'), {
+				slidesPerView: 1,
+				watchOverflow: true,
+				spaceBetween: 0,
+				touchStartForcePreventDefault: true,
+				navigation: {
+					nextEl: $(this).find('.swiper-button-next'),
+					prevEl: $(this).find('.swiper-button-prev'),
+				},
+				pagination: {
+					el: $(this).find('.swiper-pagination'),
+					clickable: true,
+				},
+				loop: true,
+				breakpointsInverse: true,
+				// Responsive breakpoints
+				breakpoints: {
+
+					// when window width is <= 640px
+					991: {
+						slidesPerView: 4,
+					}
+				}
+			});
+		})
+
+}
+
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJX
 	LazyFunction: function () {
@@ -252,143 +365,14 @@ jQuery(document).ready(function ($) {
 		return false;
 	});
 
-	function allSlider() {
-		$(".section").each(function () {
-			var swiper2 = new Swiper($(this).find('.slider--js'), {
-				slidesPerView: 'auto',
-				watchOverflow: true,
-				spaceBetween: 30,
-				pagination: {
-					el: $(this).find('.swiper-pagination'),
-					clickable: true,
-				},
-			
-				navigation: {
-					nextEl: $(this).find('.swiper-button-next'),
-					prevEl: $(this).find('.swiper-button-prev'),
-				},
-				loop: true,
-			});
-		});
-		var speed =  5000;
-		
-		var swiper5 = new Swiper($('.s-cases__slider--js'), {
-			slidesPerView: 1,
-			watchOverflow: true,
-			// fadeEffect: {
-			// 	crossFade: true
-			// },
-			effect: 'fade', 
-			spaceBetween: 0,
-			// allowTouchMove: false,
-			pagination: {
-				el: $(".s-cases").find('.swiper-pagination'),
-				clickable: true,
-				renderBullet: function (index, className) {
-					return '<span class="' + className + '" data-index='+ (index + 1)+'><span class="before"></span></span>';
-				},
-			},
-			autoplay: {
-				delay: speed,
-			},
-			loop: true,
-			loopFillGroupWithBlank: true,
-			on: {
-			slideChange: function () {
-				
-				$(".swiper-pagination-bullet-active").nextAll().find('.before').stop().animate({ 	width: "0",  	}, 0 );
-				$(".swiper-pagination-bullet-active").prevAll().find('.before').stop().animate({ 	width: "100%",  	}, 0 );
-				widthPug()
-			},
-			
-			reachEnd: function () {
-				progressElem.width(0);
-			},
 
-		}
-		}); 
-
-		var progressElem = 	$(".swiper-pagination-bullet  ").find(".before");
-		// var slideIndex = 
-		function widthPug(){
-			$(".swiper-pagination-bullet-active .before").stop().animate({ 	width: "0",  	}, 0 );
-			$(".swiper-pagination-bullet-active .before").animate({
-				width: "100%", 
-			}, speed, function(){
-				swiper5.slideNext( );
-			} );
-			
-		} 
-		widthPug()
-
-		// $(".s-cases__control--left").click(function(){
-		// 	swiper5.slidePrev( );
-			
-		
-		// })
-		
-		// $(".s-cases__control--right").click(function(){
-		// 	swiper5.slideNext( );
-		// 	// $(".swiper-pagination-bullet-active").find('.before').width(0);
-		// 	// $(".swiper-pagination-bullet-active").nextAll().find('.before').width(0);
-		// 	// $(".swiper-pagination-bullet-active").prevAll().find('.before').width("100%");
-			
-		// })
-
-			$('.s-team').each(function () {
-				var swiper4 = new Swiper($(this).find('.s-team__slider'), {
-					slidesPerView: 1,
-					watchOverflow: true,
-					spaceBetween: 0,
-					touchStartForcePreventDefault: true,
-					navigation: {
-						nextEl: $(this).find('.swiper-button-next'),
-						prevEl: $(this).find('.swiper-button-prev'),
-					},
-					pagination: {
-						el: $(this).find('.swiper-pagination'),
-						clickable: true,
-					},
-					loop: true,
-					breakpointsInverse: true,
-					// Responsive breakpoints
-					breakpoints: {
- 
-						// when window width is <= 640px
-						991: {
-							slidesPerView: 4,
-						}
-					}
-				});
-			})
- 
-	}
 
 	$('.scrollblock--js').paroller();
 
 	// var preloadImages = [];
 	// preloadImages[0] = new Image();
 	// preloadImages[0].src = 'https://helios-expert.ru/wp-content/themes/helioss/img/load.png';
-	Pace.on('start', function () {
-		document.documentElement.className += " loading-proccessing";
-	});
 
-	Pace.on('hide', function () {
-		document.getElementById("html-doc").className =
-			document.getElementById("html-doc").className
-			.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
-
-		body.classList.remove('prld-on');
-		var wow = new WOW({
-			mobile: false
-		});
-		wow.init();
-		setTimeout(function() {
-
-			JSCCommon.mobileMenu();
-		},100);
-		allSlider();
-	});
 	$(window).on('load', function () {
 
 	});

@@ -11,6 +11,28 @@
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#f9d749">
     <script src="js/pace.min.js"></script>
+    <script>
+      	Pace.on('start', function () {
+      	document.documentElement.className += " loading-proccessing";
+      });
+      
+      Pace.on('hide', function () {
+      	document.getElementById("html-doc").className =
+      		document.getElementById("html-doc").className
+      		.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
+      
+      	body.classList.remove('prld-on');
+      	var wow = new WOW({
+      		mobile: false
+      	});
+      	wow.init();
+      	setTimeout(function() {
+      
+      		JSCCommon.mobileMenu();
+      	},100);
+      	allSlider();
+      });
+    </script>
     <style>
       .prld-on{
       	overflow: hidden;
@@ -48,16 +70,17 @@
       	transition: .05s ease-in transform;
       	
       }
-      .pace .heading { 
-      	position: relative;
-      	z-index: 2001; 
-      	
-      }
-      	.pace .heading::before{
+      				.pace::after{
       		content: url(img/prld.png);
       		display: block;
-      		background-color: #f9d749;
-      	}
+      		background-color: #f9d749; 
+      		position: fixed;
+      		z-index: 2000; 
+      		left: 50%;
+      		transform: translateX(-50%);
+      		margin-top: -.5px; 
+      		transition: .05s ease-in transform;
+      		}
     </style>
     <link rel="stylesheet" href="css/main.min.css">
   </head>
