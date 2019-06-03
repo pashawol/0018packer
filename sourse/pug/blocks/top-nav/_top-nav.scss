@@ -56,6 +56,7 @@
 	&__tel{
 		@extend h6;
 		@extend .text-body;
+		text-decoration: none !important;
 		@include media-breakpoint-up(sm) {
 
 			color: #ffffff !important;

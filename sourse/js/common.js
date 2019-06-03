@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
 				loop: true,
 			});
 		});
-		var speed = 5000;
+		var speed = 1115000;
 		
 		var swiper5 = new Swiper($('.s-cases__slider--js'), {
 			slidesPerView: 1,
@@ -288,9 +288,9 @@ jQuery(document).ready(function ($) {
 					return '<span class="' + className + '" data-index='+ (index + 1)+'><span class="before"></span></span>';
 				},
 			},
-			// autoplay: {
-			// 	delay: speed,
-			// },
+			autoplay: {
+				delay: speed,
+			},
 			loop: true,
 			loopFillGroupWithBlank: true,
 			on: {
@@ -373,24 +373,24 @@ jQuery(document).ready(function ($) {
 		document.documentElement.className += " loading-proccessing";
 	});
 
+	Pace.on('hide', function () {
+		document.getElementById("html-doc").className =
+			document.getElementById("html-doc").className
+			.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
+
+		body.classList.remove('prld-on');
+		var wow = new WOW({
+			mobile: false
+		});
+		wow.init();
+		setTimeout(function() {
+
+			JSCCommon.mobileMenu();
+		},100);
+		allSlider();
+	});
 	$(window).on('load', function () {
 
-		Pace.on('hide', function () {
-			document.getElementById("html-doc").className =
-				document.getElementById("html-doc").className
-				.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
-
-			body.classList.remove('prld-on');
-			var wow = new WOW({
-				mobile: false
-			});
-			wow.init();
-			setTimeout(function() {
-
-				JSCCommon.mobileMenu();
-			},100);
-			allSlider();
-		});
 	});
 	// preloader
 	// prld.delay(1050).fadeOut(function(){

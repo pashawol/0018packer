@@ -24,8 +24,9 @@ mixin s-cases()
 								+e.control--left
 								+e.control--right
 								+e.btn(href= a target="_blank") Смотреть кейс 
-							+e.img--phone
-								img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
+							if i
+								+e.img--phone
+									img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
 									
 							if d
 								+e.img--desktop.d-none.d-lg-block
@@ -46,10 +47,28 @@ mixin s-cases()
 									img.lazy(src="#" data-src=`img/cases/slide-${i}-${rSm}.png`, alt="")
 									
 					// /+e.slide
+				
+				mixin slide3(a,i,t,p, ...items)
+					+e.slide.swiper-slide.img-bg(class=`s-cases__slide--${i}`)
+						img.lazy-bg(src="#" data-src=`img/cases/slide-${i}-bg-sm.jpg`, alt="")
+						//- +e.bg.img-bg
+						+e.container.container
+							+e.caption
+								+e.title= t
+								+e.labels
+									each item in items
+										+e.label= item
+								+e.text.d-none.d-md-block= p
+								+e.control--left
+								+e.control--right
+								+e.btn(href= a target="_blank") Смотреть кейс  
+									
+					// /+e.slide
+				
 				+slide("https://1pnk.com/","","right-sm","desktop","left-lg","right-lg","1","Первая нерудная компания","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Корпоративный сайт","Брендинг" )
 
 				+slide("https://toucan.market/","","","desktop","left","right","2","TOUCAN","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-магазин","Брендинг" )
 				
-				+slide("https://www.snab-baza.ru/","","","","","","3","Техномаркет «БАЗА»","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-каталог","Брендинг","Корпоративный сайт") 
+				+slide3("https://www.snab-baza.ru/","3","Техномаркет «БАЗА»","Адаптивный корпоративный сайт-каталог для официального представительства ЗАО «Могилевский комбинат силикатных изделий» в России.","Интернет-каталог","Брендинг","Корпоративный сайт") 
 			.swiper-pagination
 	// end s-cases
