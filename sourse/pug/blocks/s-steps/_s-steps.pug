@@ -15,29 +15,26 @@ mixin s-steps()
 							.row
 								+e.col.col-6.d-none.d-lg-block
 									+e.img-wrap
-										img.res-i.lazy(src="#", data-src=`img/step-${i}.jpg` alt="")
+										img.res-i.swiper-lazy(src="#", data-src=`img/step-${i}.jpg` alt="")
 								.col
 									+e.left-block
 										block
 								
 						// /+e.slide.swiper-slide
 					+item("1")
-						+e.head.img-bg
-							img.lazy-bg(src="#" , data-src=`img/step-1.jpg` , alt="")
+						+e.head.img-bg.swiper-lazy( data-src=`img/step-1.jpg`) 
 							+e.head-wrap
 								+e.counter 1 этап
 								+e.title Анализ текущего состояния упаковки бизнеса и&nbsp;поиск уязвимых мест
 						+e.text Осуществляем детальный разбор всех точек соприкосновения вашего бизнеса с&nbsp;клиентом, ищем уязвимые места, изучаем позиционирование, прорабатываем целевую аудиторию и&nbsp;исследуем конкурентов.
 					+item("2")
-						+e.head.img-bg
-							img.lazy-bg(src="#" , data-src=`img/step-2.jpg` , alt="")
+						+e.head.img-bg.swiper-lazy( data-src=`img/step-2.jpg`) 
 							+e.head-wrap
 								+e.counter 2 этап
 								+e.title Определение точек роста для&nbsp;формирования имиджа лидера рынка
 						+e.text На&nbsp;основе полученных данных формируем аудиторский отчет в&nbsp;котором намечаем стратегию развития, предоставляем рекомендации по&nbsp;усилению упаковки компании и&nbsp;формированию имиджа лидера в&nbsp;своей нише.
 					+item("3")
-						+e.head.img-bg
-							img.lazy-bg(src="#" , data-src=`img/step-3.jpg` , alt="")
+						+e.head.img-bg.swiper-lazy( data-src=`img/step-3.jpg`) 
 							+e.head-wrap
 								+e.counter 3 этап
 								+e.title Внедрение необходимых услуг&nbsp;по&nbsp;упаковке 

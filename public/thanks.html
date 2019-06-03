@@ -10,95 +10,6 @@
     <link rel="shortcut icon" type="image/ico" href="img/favicon/favicon.ico">
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#f9d749">
-    <script src="js/pace.min.js"></script>
-    <script>
-      	Pace.on('start', function () {
-      	document.documentElement.className += " loading-proccessing";
-      });
-      
-      Pace.on('hide', function () {
-      	document.getElementById("html-doc").className =
-      		document.getElementById("html-doc").className
-      		.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
-      
-      	body.classList.remove('prld-on');
-      	var wow = new WOW({
-      		mobile: false
-      	});
-      	wow.init();
-      	setTimeout(function() {
-      
-      		JSCCommon.mobileMenu();
-      	},100);
-      	allSlider();
-      });
-    </script>
-    <style>
-      .prld-on{
-      	overflow: hidden;
-      }
-      .pace {
-      	/* pointer-events: none; */
-      	user-select: none;
-      	z-index: 10000;
-      	position: fixed;
-      	top: 0;
-      	left: 0;
-      	width: 100%;
-      	height: 100vh;
-      	background-color: #f9d749; 
-      	display: flex;
-      	justify-content: center;
-      	align-items: center;
-      	opacity: 1;
-      	 
-      }
-      	.pace-inactive {
-      	opacity: 0;
-      	z-index: -100;
-      	
-      }
-      
-      .pace .pace-progress {
-      	background: #e6c53a;
-      	position: fixed;
-      	z-index: 2000;
-      	top: 50%;
-      	margin-top: -.5px;
-      	right: 100%;
-      	width: 100%;
-      	height: 1px;
-      	transition: .05s ease-in transform;
-      	
-      }
-      				.pace::after{
-      		content: url(img/prld.png);
-      		display: block;
-      		background-color: #f9d749; 
-      		position: fixed;
-      		z-index: 2000; 
-      		left: 50%;
-      		transform: translateX(-50%);
-      		margin-top: -.5px; 
-      		transition: .05s ease-in transform;
-      		}
-      
-      	.pace-before {
-      		display: block; 
-      		margin-top: 260px;  
-      		left: 50%;
-      		content: attr(data-progress-text); 
-      		font-weight: 100;
-      		font-size: 1rem;
-      		line-height: 1;
-      		text-align: center;
-      		color: #1d1b1d;  
-      		font-weight: bold;
-      	}
-      
-      
-      
-    </style>
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body class="prld-on">
@@ -430,13 +341,5 @@
     </div>
     <!-- #modal-call-->
     <!-- modal-->
-    <script src="js/jquery.min.js"></script>
-    <!-- modal libs-->
-    <!-- modal libs-->
-    <!-- slider libs-->
-    <!-- /slider libs-->
-    <!-- /for svg libs-->
-    <script src="js/scripts.min.js"></script>
-    <script src="js/common.js"></script>
   </body>
 </html>

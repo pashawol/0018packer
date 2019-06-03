@@ -35,26 +35,7 @@ html#html-doc(lang="ru"  class="oh loading-enabled")
 
 		script(src="js/pace.min.js")
 		script.
-				Pace.on('start', function () {
-				document.documentElement.className += " loading-proccessing";
-			});
-
-			Pace.on('hide', function () {
-				document.getElementById("html-doc").className =
-					document.getElementById("html-doc").className
-					.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
-
-				body.classList.remove('prld-on');
-				var wow = new WOW({
-					mobile: false
-				});
-				wow.init();
-				setTimeout(function() {
-
-					JSCCommon.mobileMenu();
-				},100);
-				allSlider();
-			});
+			
 		style.
 			.prld-on{
 				overflow: hidden;

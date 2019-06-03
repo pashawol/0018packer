@@ -11,28 +11,7 @@
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#f9d749">
     <script src="js/pace.min.js"></script>
-    <script>
-      	Pace.on('start', function () {
-      	document.documentElement.className += " loading-proccessing";
-      });
-      
-      Pace.on('hide', function () {
-      	document.getElementById("html-doc").className =
-      		document.getElementById("html-doc").className
-      		.replace(new RegExp('(?:^|\\s)' + 'loading-proccessing' + '(?:\\s|$)'), ' ');
-      
-      	body.classList.remove('prld-on');
-      	var wow = new WOW({
-      		mobile: false
-      	});
-      	wow.init();
-      	setTimeout(function() {
-      
-      		JSCCommon.mobileMenu();
-      	},100);
-      	allSlider();
-      });
-    </script>
+    <script></script>
     <style>
       .prld-on{
       	overflow: hidden;
@@ -307,12 +286,12 @@
                 <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
-                      <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-1.jpg" alt=""/>
+                      <div class="s-steps__img-wrap"><img class="res-i swiper-lazy" src="#" data-src="img/step-1.jpg" alt=""/>
                       </div>
                     </div>
                     <div class="col">
                       <div class="s-steps__left-block">
-                        <div class="s-steps__head img-bg"><img class="lazy-bg" src="#" data-src="img/step-1.jpg" alt=""/>
+                        <div class="s-steps__head img-bg swiper-lazy" data-src="img/step-1.jpg"> 
                           <div class="s-steps__head-wrap">
                             <div class="s-steps__counter">1 этап
                             </div>
@@ -330,12 +309,12 @@
                 <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
-                      <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-2.jpg" alt=""/>
+                      <div class="s-steps__img-wrap"><img class="res-i swiper-lazy" src="#" data-src="img/step-2.jpg" alt=""/>
                       </div>
                     </div>
                     <div class="col">
                       <div class="s-steps__left-block">
-                        <div class="s-steps__head img-bg"><img class="lazy-bg" src="#" data-src="img/step-2.jpg" alt=""/>
+                        <div class="s-steps__head img-bg swiper-lazy" data-src="img/step-2.jpg"> 
                           <div class="s-steps__head-wrap">
                             <div class="s-steps__counter">2 этап
                             </div>
@@ -353,12 +332,12 @@
                 <div class="s-steps__slide swiper-slide wow fadeInUp" data-wow-duration="0.6s"> 
                   <div class="row">
                     <div class="s-steps__col col-6 d-none d-lg-block">
-                      <div class="s-steps__img-wrap"><img class="res-i lazy" src="#" data-src="img/step-3.jpg" alt=""/>
+                      <div class="s-steps__img-wrap"><img class="res-i swiper-lazy" src="#" data-src="img/step-3.jpg" alt=""/>
                       </div>
                     </div>
                     <div class="col">
                       <div class="s-steps__left-block">
-                        <div class="s-steps__head img-bg"><img class="lazy-bg" src="#" data-src="img/step-3.jpg" alt=""/>
+                        <div class="s-steps__head img-bg swiper-lazy" data-src="img/step-3.jpg"> 
                           <div class="s-steps__head-wrap">
                             <div class="s-steps__counter">3 этап
                             </div>
@@ -498,16 +477,16 @@
       </div>
       <!-- end s-complex-->
       <!-- start s-team-->
-      <div class="s-team section bg-dark text-white block-with-lazy wow fadeInUp" id="s-team" data-wow-duration="0.6s">
+      <div class="s-team section bg-dark text-white wow fadeInUp" data-wow-duration="0.6s" id="s-team">
         <div class="container">
           <div class="section-title text-center">
             <h2> <span class="text-primary">Упаковщики&nbsp;</span>&mdash; это дизайн-команда с&nbsp;аналитическим подходом</h2>
           </div>
-          <div class="s-team__slider s-team__slider--js swiper-container">
+          <div class="s-team__slider s-team__slider--js swiper-container"> 
             <div class="swiper-wrapper">
                 <div class="s-team__slide swiper-slide"> 
                   <div class="s-team__item">
-                    <div class="s-team__img-wrap"><img class="lazy" src="#" data-src="img/team-1.png" alt=""/>
+                    <div class="s-team__img-wrap"><img src="img/team-1.png" alt=""/>
                     </div>
                     <div class="s-team__caption">
                       <div class="s-team__title">3 
@@ -520,7 +499,7 @@
                 <!-- /+e.slide.swiper-slide-->
                 <div class="s-team__slide swiper-slide"> 
                   <div class="s-team__item">
-                    <div class="s-team__img-wrap"><img class="lazy ml2" src="#" data-src="img/team-2.png" alt=""/>
+                    <div class="s-team__img-wrap"><img class="ml2" src="img/team-2.png" alt=""/>
                     </div>
                     <div class="s-team__caption">
                       <div class="s-team__title">100+
@@ -533,7 +512,7 @@
                 <!-- /+e.slide.swiper-slide-->
                 <div class="s-team__slide swiper-slide"> 
                   <div class="s-team__item">
-                    <div class="s-team__img-wrap"><img class="lazy ml" src="#" data-src="img/team-3.png" alt=""/>
+                    <div class="s-team__img-wrap"><img class="ml" src="img/team-3.png" alt=""/>
                     </div>
                     <div class="s-team__caption">
                       <div class="s-team__title">10+
@@ -546,7 +525,7 @@
                 <!-- /+e.slide.swiper-slide-->
                 <div class="s-team__slide swiper-slide"> 
                   <div class="s-team__item">
-                    <div class="s-team__img-wrap"><img class="lazy" src="#" data-src="img/team-4.png" alt=""/>
+                    <div class="s-team__img-wrap"><img src="img/team-4.png" alt=""/>
                     </div>
                     <div class="s-team__caption">
                       <div class="s-team__title">90%
