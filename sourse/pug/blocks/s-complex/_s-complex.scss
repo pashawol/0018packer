@@ -16,8 +16,11 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: rem(40);
-		img{
+		.icon{
 			flex-shrink: 0;
+			// max-width: 100%;
+			// max-height: 100%;
+			font-size: rem(90);
 		}
 	}
 	&__title{

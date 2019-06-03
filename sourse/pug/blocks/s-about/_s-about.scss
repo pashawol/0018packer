@@ -94,10 +94,10 @@
 		}
 		@include media-breakpoint-up(md) {
 
-			width: rem(341);
 			margin-bottom: rem(100);
 		}
-		width: rem(295);
+		width: rem(341);
+		// width: rem(295);
 		margin-bottom: rem(30);
 }
 .section-title {

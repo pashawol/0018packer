@@ -15,7 +15,7 @@ mixin s-why()
 						+e.item(class="wow fadeInUp" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .2 * i}s`)
 							+e.head
 								+e.img-wrap
-									img.lazy.res-i(src="#" data-src=`img/why-${i}.png`, alt="")
+									+icon(`why-${i}`)
 								+e.title= t
 							block
 					// /+e.col.col-6

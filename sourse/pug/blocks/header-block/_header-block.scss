@@ -19,18 +19,22 @@
 		@include media-breakpoint-up(sm) {
 
 			margin-top: em(19);
+			margin-bottom: .5rem;
 		}
+		margin-bottom: 0;
 		margin-top: em(15);
 		// margin-bottom: 0;
-		margin-bottom: .5rem;
 		line-height: 1;
 		// margin-top: em(10);
+		@include media-breakpoint-down(xs) {
+			@include font-size($h1-font-size *.7);
+		}
 	}
 	&__sub-title{
 		line-height: 1;
 		@extend .h3;
 		@include media-breakpoint-down(xs) {
-			@include font-size($h1-font-size *.90);
+			@include font-size($h1-font-size *.7);
 		}
 		@include media-breakpoint-up(sm) {
 			
@@ -73,11 +77,12 @@
 		}
 		padding-bottom: rem(25);
 		justify-content: center;
-		justify-content: space-between;
 		@include media-breakpoint-up(sm) {
+			justify-content: space-between;
 
 			padding-top: rem(240);
 		}
+		justify-content: center;
 		padding-top: rem(60);
 		z-index: 2;
 		// padding-bottom: rem(25);
@@ -111,18 +116,17 @@
 				position: absolute;
 				@include a-cent(x);
 				margin-top: 0;
+				display: block;
+				margin-left: auto;
+				margin-right: auto; 
+				bottom: 40px;
+				width: $em-base;
+				margin-top: 20px;
+	
+				height: rem(37px);
+				background-repeat: no-repeat;
+				// margin-left: rem(-100);
 			}
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			background-image: url(../img/mouse.png);
-			bottom: 40px;
-			width: $em-base;
-			margin-top: 20px;
-
-			height: rem(37px);
-			background-repeat: no-repeat;
-			// margin-left: rem(-100);
 		}
 	}
 	
@@ -231,8 +235,9 @@
 	
 	&__logo{
 		// margin-bottom: rem(15);
-		min-height: rem(134px * 1);
+		height: rem(134px * .96);
 		img{
+			height: 100%;
 			// width: rem(150px * 1.2);
 		}
 		

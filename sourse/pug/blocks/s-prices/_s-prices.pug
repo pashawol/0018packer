@@ -13,7 +13,7 @@ mixin s-prices()
 							+e.slide.swiper-slide(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * .1 * x}s`)
 								+e.item
 									+e.img-wrap
-										img.lazy.res-i(src="#" data-src=`img/servise-${x}.png`, alt="")
+										+icon(`servise-${x}`)
 									+e.title-wrap
 										+e.title= t
 									+e.price= pr

@@ -31,13 +31,22 @@
 	background-color: #fff;
 		@include media-breakpoint-up(lg) {
 			padding: 0;
-			padding: rem(10) rem(10);
+			// padding: rem(10) rem(10);
 		}
-	padding: rem(20) rem(15);
-	img{
-		max-width: 100%;
-		max-height: 100%;
-	}
+	// padding: rem(20) rem(15);
+	 .icon{
+		 font-size: rem(55);
+		 line-height: 1;
+		 &-why-2 {
+			position: relative;
+			top: em(1);
+
+		 }
+		 &-why-3 {
+			font-size: rem(30);
+
+		 }
+	 }
 	display: flex;
 	align-items: center;
 	justify-content: center;

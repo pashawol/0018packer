@@ -21,7 +21,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if ((lazyImage).display !== "none") {
+								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -62,7 +62,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if ((lazyImage).display !== "none") {
+								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
@@ -231,7 +231,7 @@ jQuery(document).ready(function ($) {
 	}
 	$(window).resize(function () {
 		heightses();
-		paddingInput();
+		// paddingInput();
 	});
 	$(window).on("load", function () {
 		heightses();
@@ -439,8 +439,8 @@ jQuery(document).ready(function ($) {
 	var codeSpan = $(".input-phone").find('.code-span');
 
 	function paddingInput() {
-
-		$(".input-phone input").css('padding-left', 74 + codeSpan.width());
+		console.log($(".input-phone input").css("padding-left"));
+		$(".input-phone input").css('padding-left',0).css('padding-left',  codeSpan.width()  + 20 );
 	}
 	phone.find('.code-menu li').click(function () {
 		if (!$(this).hasClass('border')) {
@@ -508,7 +508,6 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-
-
+ 
 
 });
