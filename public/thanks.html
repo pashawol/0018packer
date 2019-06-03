@@ -53,11 +53,12 @@
       	opacity: 1;
       	 
       }
-      
-      .pace-inactive {
+      	.pace-inactive {
       	opacity: 0;
       	z-index: -100;
+      	
       }
+      
       .pace .pace-progress {
       	background: #e6c53a;
       	position: fixed;
@@ -81,6 +82,22 @@
       		margin-top: -.5px; 
       		transition: .05s ease-in transform;
       		}
+      
+      	.pace-before {
+      		display: block; 
+      		margin-top: 260px;  
+      		left: 50%;
+      		content: attr(data-progress-text); 
+      		font-weight: 100;
+      		font-size: 1rem;
+      		line-height: 1;
+      		text-align: center;
+      		color: #1d1b1d;  
+      		font-weight: bold;
+      	}
+      
+      
+      
     </style>
     <link rel="stylesheet" href="css/main.min.css">
   </head>
