@@ -341,12 +341,13 @@
 		@include bgs;
 		@include media-breakpoint-up(lg) {
 			background-image: url(../img/cases/slide-3-bg-lg.jpg) !important; 
+			background-position: center center;
 		}
 		
 		@include media-breakpoint-up(sm) {
 			background-position: left center;
+			background-image: url(../img/cases/slide-3-bg-md.jpg) !important; 
 		}
-		background-image: url(../img/cases/slide-3-bg-md.jpg) !important; 
 		background-position: top center;
 
 	}

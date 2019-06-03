@@ -14,18 +14,18 @@
 		
 	}
 	@include media-breakpoint-down(md) {
-
+		
 		h2 +	.section-title__text{
 			padding-top: rem(20);
 		}
 	}
-		&__bg{
+	&__bg{
 		position: absolute;
 		z-index: -1;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
+		@include a-cent;
+		width: 95%;
+		height: 95%;
+		background-size: contain;
 		// background-image: url(../img/);
 	}
 

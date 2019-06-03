@@ -275,12 +275,12 @@ jQuery(document).ready(function ($) {
 		var swiper5 = new Swiper($('.s-cases__slider--js'), {
 			slidesPerView: 1,
 			watchOverflow: true,
-			fadeEffect: {
-				crossFade: true
-			},
+			// fadeEffect: {
+			// 	crossFade: true
+			// },
 			effect: 'fade', 
 			spaceBetween: 0,
-			allowTouchMove: false,
+			// allowTouchMove: false,
 			pagination: {
 				el: $(".s-cases").find('.swiper-pagination'),
 				clickable: true,
@@ -321,19 +321,19 @@ jQuery(document).ready(function ($) {
 		} 
 		widthPug()
 
-		$(".s-cases__control--left").click(function(){
-			swiper5.slidePrev( );
+		// $(".s-cases__control--left").click(function(){
+		// 	swiper5.slidePrev( );
 			
 		
-		})
+		// })
 		
-		$(".s-cases__control--right").click(function(){
-			swiper5.slideNext( );
-			// $(".swiper-pagination-bullet-active").find('.before').width(0);
-			// $(".swiper-pagination-bullet-active").nextAll().find('.before').width(0);
-			// $(".swiper-pagination-bullet-active").prevAll().find('.before').width("100%");
+		// $(".s-cases__control--right").click(function(){
+		// 	swiper5.slideNext( );
+		// 	// $(".swiper-pagination-bullet-active").find('.before').width(0);
+		// 	// $(".swiper-pagination-bullet-active").nextAll().find('.before').width(0);
+		// 	// $(".swiper-pagination-bullet-active").prevAll().find('.before').width("100%");
 			
-		})
+		// })
 
 			$('.s-team').each(function () {
 				var swiper4 = new Swiper($(this).find('.s-team__slider'), {
