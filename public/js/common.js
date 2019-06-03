@@ -134,7 +134,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight * 2 )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -175,7 +175,7 @@ var JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+								if (((lazyImage.getBoundingClientRect().top  - lazyImage.closest(".block-with-lazy").clientHeight * 2 )<= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
