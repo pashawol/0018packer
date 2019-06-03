@@ -30,9 +30,12 @@ function allSlider() {
 	var swiper5 = new Swiper($('.s-cases__slider--js'), {
 		slidesPerView: 1,
 		watchOverflow: true,
-		// fadeEffect: {
-		// 	crossFade: true
-		// },
+		fadeEffect: {
+			crossFade: true
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
 		effect: 'fade', 
 		spaceBetween: 0,
 		allowTouchMove: false,

@@ -5,12 +5,12 @@ mixin top-nav()
 	+b.top-nav(class="wow fadeIn" data-wow-duration=`${dur}s` data-wow-delay=`${delay}s`)
 		+e.container.container
 			.row 
-				.col.d-none.d-sm-block
+				.col.d-none.d-md-block
 					+e.logo(href="/").d-block
 						img.res-i.res-i(src="img/logo.png", alt="")
-				.col-lg-auto.col.d-sm-none.d-xl-block
+				.col-lg-auto.col.d-md-none.d-xl-block
 					+e.tel(href="tel:+79959669888") +7 995 96 69 888
-				.col-xl-auto.col-sm-2.col-auto 
+				.col-xl-auto.col-md-2.col-auto 
 					+b.toggle-menu-mobile--js.--size
 						svg.ham.hamRotate.ham1(viewBox='0 0 100 100', width='80', )
 							path.line.top(d='m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40')
@@ -19,11 +19,11 @@ mixin top-nav()
 	+b.top-nav--fixed
 		.container
 			.row
-				.col.d-none.d-sm-block
-					+e.logo.d-none.d-sm-block
-				.col-lg-auto.col.d-sm-none.d-xl-block.op-0
+				.col.d-none.d-md-block
+					+e.logo.d-none.d-md-block
+				.col-lg-auto.col.d-md-none.d-xl-block.op-0
 					+e.tel(href="tel:+79959669888") +7 995 96 69 888
-				.col-xl-auto.col-sm-2.col-auto
+				.col-xl-auto.col-md-2.col-auto
 					+b.toggle-menu-mobile--js
 						svg.ham.hamRotate.ham1(viewBox='0 0 100 100', width='80', )
 							path.line.top(d='m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40')

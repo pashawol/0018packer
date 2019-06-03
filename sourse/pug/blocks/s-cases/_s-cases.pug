@@ -12,8 +12,7 @@ mixin s-cases()
 			.swiper-wrapper
 				mixin slide(a, lSm, rSm, d,l,r,i,t,p, ...items)
 					+e.slide.swiper-slide(class=`s-cases__slide--${i}`)
-						+e.bg.img-bg
-							img.lazy-bg(src="#" data-src=`img/cases/slide-${i}-bg.jpg`, alt="")
+						+e.bg.img-bg.swiper-lazy(  data-background=`img/cases/slide-${i}-bg.jpg` ) 
 						+e.container.container
 							+e.caption
 								+e.title= t
@@ -26,32 +25,30 @@ mixin s-cases()
 								+e.btn(href= a target="_blank") Смотреть кейс 
 							if i
 								+e.img--phone
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-phone.png`, alt="")
 									
 							if d
 								+e.img--desktop.d-none.d-lg-block
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-${d}.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-${d}.png`, alt="")
 							
 							if l
 								+e.img--left
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-${l}.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-${l}.png`, alt="")
 							if lSm
 								+e.img--left.--sm.d-lg-none
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-${lSm}.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-${lSm}.png`, alt="")
 							
 							if r
 								+e.img--right
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-${r}.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-${r}.png`, alt="")
 							if rSm
 								+e.img--right.--sm.d-lg-none
-									img.lazy(src="#" data-src=`img/cases/slide-${i}-${rSm}.png`, alt="")
+									img.swiper-lazy(src="#" data-src=`img/cases/slide-${i}-${rSm}.png`, alt="")
 									
 					// /+e.slide
 				
 				mixin slide3(a,i,t,p, ...items)
-					+e.slide.swiper-slide.img-bg(class=`s-cases__slide--${i}`)
-						img.lazy-bg(src="#" data-src=`img/cases/slide-${i}-bg-sm2.jpg`, alt="")
-						//- +e.bg.img-bg
+					+e.slide.swiper-slide.img-bg.swiper-lazy(class=`s-cases__slide--${i}`   data-background=`img/cases/slide-${i}-bg-sm2.jpg` ) 
 						+e.container.container
 							+e.caption
 								+e.title= t

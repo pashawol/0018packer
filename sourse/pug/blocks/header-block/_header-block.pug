@@ -4,7 +4,7 @@ mixin header-block()
 	+b.header-block#header-block(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`) 
 		.container(class="wow fadeIn" data-wow-duration=`${dur * 2}s` data-wow-delay=`${delay * 2}s`) 
 			+e.head.blockWithAnimate
-				+e.logo.d-sm-none(href="/")
+				+e.logo.d-md-none(href="/")
 					img.res-i(src="img/prld.png", alt="")
 					
 				h1
@@ -12,15 +12,15 @@ mixin header-block()
 					span.d-block Создаем имидж
 					span.d-block лидера рынка
 				+e.sub-title с помощью упаковки
-				+e.text.d-none.d-sm-block Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
-				.blockWithAnimate.d-sm-none
+				+e.text.d-none.d-md-block Проведем детальный разбор текущего состояния упаковки вашего бизнеса, прежде чем внедрим в&nbsp;Ваш бизнес какой-либо инструмент.
+				.blockWithAnimate.d-md-none
 					+e.foot
 						+e.foot-item Сайты
 						+e.foot-item Брендинг
 						+e.foot-item SMM
 						+e.foot-item Реклама 
 				+e.btn.popup-with-move-anim(href="#modal-call" data-order="Стать лидером рынка"   ) Стать лидером рынка
-			.blockWithAnimate.d-none.d-sm-block
+			.blockWithAnimate.d-none.d-md-block
 				+e.foot
 					+e.foot-item Сайты
 					+e.foot-item Брендинг
