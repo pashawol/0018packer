@@ -41,6 +41,11 @@
 		text-align: center;
 		margin-bottom: rem(30);
 		padding-bottom: 0;
+		&__text{
+			@include media-breakpoint-down(xs) {
+				@include font-size($h5-font-size * .8);
+			} 
+		}
 		&__btn{
 			margin-left: auto;
 			margin-right: auto;
@@ -67,6 +72,9 @@
 			// margin-bottom: rem(30);
 		}
 		text-align: center;
+		@include media-breakpoint-down(xs) {
+			@include font-size($h5-font-size * .8);
+		} 
 	}
 		 
 	@include media-breakpoint-up(xl) {}
